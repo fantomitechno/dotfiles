@@ -1,0 +1,8 @@
+{
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.iconTheme": "catppuccin-mocha",
+    "editor.tabSize": 2,
+    "nix.enableLanguageServer": true,
+    "explorer.confirmDelete": false,
+    "editor.formatOnSave": true
+}

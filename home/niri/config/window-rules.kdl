@@ -1,0 +1,64 @@
+window-rule {
+    match title="Picture in picture"
+    open-floating true
+    default-floating-position x=100 y=100 relative-to="bottom-right"
+    tiled-state true
+}
+
+window-rule {
+    match app-id=r#"obs"#
+    open-on-workspace "obs"
+    open-maximized true
+}
+
+window-rule {
+    match app-id=r#"steam"#
+    open-on-workspace "stm"
+}
+
+window-rule {
+    match app-id=r#"tidal"#
+    open-on-workspace "oss"
+}
+
+window-rule {
+    match app-id=r#"^vesktop$"#
+    open-on-workspace "dsc"
+    open-maximized true
+}
+
+window-rule {
+    match app-id=r#"brave"#
+    open-maximized true
+    open-on-workspace "brow"
+}
+
+window-rule {
+    match app-id="codium"
+    open-maximized true
+}
+
+window-rule {
+    match app-id=r#"kitty"#
+    open-maximized true
+    opacity 0.65
+    open-on-workspace "term"
+}
+
+window-rule {
+    match app-id="nm-connection-editor"
+    open-floating true
+    default-floating-position x=660 y=335
+}
+
+window-rule {
+    match app-id="org.pulseaudio.pavucontrol"
+    open-floating true
+    default-column-width { fixed 702; }
+    default-window-height { fixed 496; }
+}
+
+window-rule {
+    geometry-corner-radius 6
+    clip-to-geometry true
+}
