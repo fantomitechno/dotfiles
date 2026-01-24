@@ -5,7 +5,7 @@
   ...
 }:
 let
-  dotfileFolder = "${config.home.homeDirectory}/dotfile";
+  dotfileFolder = "${config.home.homeDirectory}/dotfiles";
   configFolder = "${dotfileFolder}/home/config";
 in
 {
