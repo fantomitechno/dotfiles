@@ -13,7 +13,7 @@
     kitty
     starship
     wget
-    zinit
+    yt-dlp
 
     # programing
     docker

@@ -5,6 +5,9 @@
     enable = true;
     enableCompletion = true;
 
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+
     shellAliases = {
       grep = "grep --color=auto";
       cat = "bat";
