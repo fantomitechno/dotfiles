@@ -33,7 +33,7 @@
         specialArgs = { inherit globals; };
         modules = [
           ./hosts/laptop/configuration.nix
-          ./host/common
+          ./hosts/common
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

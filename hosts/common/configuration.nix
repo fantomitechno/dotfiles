@@ -1,4 +1,4 @@
-{ globals, pks, ... } :
+{ globals, pkgs, ... } :
 
 {
   networking = {

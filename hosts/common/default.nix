@@ -1,6 +1,8 @@
+{ pkgs, globals, ... }:
+
 {
-  import [
+  imports = [
     ./configuration.nix
     ./packages.nix
-  ]
+  ];
 }
