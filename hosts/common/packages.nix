@@ -20,6 +20,7 @@
     docker-compose
     gcc
     git
+    gitmoji-cli
     go
     gopls
     gnumake
