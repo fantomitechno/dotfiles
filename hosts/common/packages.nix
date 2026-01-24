@@ -3,30 +3,33 @@
 {
   environment.systemPackages = with pkgs; [
     # terminal stuff
-    kitty
-    fastfetch
+    bat
     btop
+    curl
+    dig
+    duf
+    fastfetch
+    glib
+    kitty
     starship
     wget
-    curl
-    bat
-    git
-    glib
-    lazygit
-    lazydocker
-    go
-    fastfetch
+    zinit
+
+    # programing
     docker
     docker-compose
     gcc
+    git
+    go
+    gopls
     gnumake
-    duf
-    dig
+    lazydocker
+    lazygit
 
     # media
     ffmpeg
-    playerctl
     obs-studio
+    playerctl
     tidal-hifi
     vlc
 
@@ -50,26 +53,24 @@
     xwayland-satellite
     jq
     xdg-desktop-portal-wlr
+    pavucontrol
 
     # apps
-    vesktop
-    nautilus
-    steam
     bitwarden-desktop
+    nautilus
     proton-pass
     signal-desktop
+    steam
+    vesktop
 
     # network :3
     openvpn
     tailscale
 
     # idk I'll find out later
-    nh
-    gopls
     musl
-    pavucontrol
-    polkit
     nixfmt
+    polkit
   ];
 
   xdg.portal.wlr.enable = true;
@@ -90,8 +91,8 @@
   };
 
   programs = {
-    nix-ld.enable = true;
     niri.enable = true;
+    nix-ld.enable = true;
     xwayland.enable = true;
     zsh.enable = true;
 
