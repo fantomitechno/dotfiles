@@ -68,7 +68,7 @@
       "on-scroll-down": "tz_down",
       "on-scroll-up": "shift_up",
       "on-scroll-down": "shift_down"
-      }
+    }
   },
 
   "niri/window": {
@@ -211,6 +211,7 @@
     "status-icons": {
       "paused": "⏸"
     },
+    "interval": 2,
     "ignored-players": [ "chromium" ],
     "max-length": 60
   }

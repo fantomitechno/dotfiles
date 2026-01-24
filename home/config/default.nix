@@ -17,4 +17,6 @@ in
     config.lib.file.mkOutOfStoreSymlink "${configFolder}/codium/settings.json";
   xdg.configFile."VSCodium/User/keybindings.json".source =
     config.lib.file.mkOutOfStoreSymlink "${configFolder}/codium/keybindings.json";
+  
+  
 }

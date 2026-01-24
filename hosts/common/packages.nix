@@ -21,6 +21,7 @@
     gcc
     gnumake
     duf
+    dig
 
     # media
     ffmpeg
@@ -56,6 +57,7 @@
     steam
     bitwarden-desktop
     proton-pass
+    signal-desktop
 
     # network :3
     openvpn

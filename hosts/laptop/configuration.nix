@@ -29,9 +29,15 @@
   boot.kernelPackages = pkgs.linuxPackages;
 
   networking = {
-    nameservers = [ "1.1.1.1" "9.9.9.9" ];
+    nameservers = [
+      "1.1.1.1"
+      "9.9.9.9"
+    ];
     hostName = globals.HostName;
     networkmanager.enable = true;
+    hosts = {
+      "100.116.20.78" = [ "knot.fantomitechno.dev" ];
+    };
   };
 
   time.timeZone = "Europe/Paris";
@@ -59,7 +65,7 @@
     ];
     shell = pkgs.zsh;
   };
-  
+
   security.polkit.enable = true;
   virtualisation.docker.enable = true;
 

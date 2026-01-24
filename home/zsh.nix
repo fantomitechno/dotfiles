@@ -8,6 +8,7 @@
     shellAliases = {
       grep = "grep --color=auto";
       cat = "bat";
+      df = "duf";
     };
 
     initContent = ''
