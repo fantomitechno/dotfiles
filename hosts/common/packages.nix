@@ -89,6 +89,7 @@
     displayManager.ly.enable = true;
     # services.openssh.enable = true;
     tailscale.enable = true;
+    blueman.enable = true;
   };
 
   programs = {
