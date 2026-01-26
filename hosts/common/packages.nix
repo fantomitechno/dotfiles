@@ -59,6 +59,7 @@
     # apps
     bitwarden-desktop
     nautilus
+    olympus
     proton-pass
     signal-desktop
     steam

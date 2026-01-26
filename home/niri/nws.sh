@@ -3,7 +3,7 @@
 # Query windows, sort by app_id, and format for wofi with icons
 win=$(niri msg -j windows | jq -r '.[] | "\(.app_id)\t\(.title)\t\(.id)"' \
     | sort -k1,1 \
-    | awk -F'\t' '{print $1 " - " $2}' \
+    | awk -F'\t' '{print $1 " - " $2 "\t" $3}' \
     | wofi  -d --prompt "Switch window:")
 
 # Extract ID (second tab field)

@@ -17,6 +17,11 @@ window-rule {
 }
 
 window-rule {
+    match app-id="love"
+    open-on-workspace "stm"
+}
+
+window-rule {
     match app-id=r#"tidal"#
     open-on-workspace "oss"
 }
