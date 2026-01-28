@@ -18,5 +18,6 @@ in
   xdg.configFile."VSCodium/User/keybindings.json".source =
     config.lib.file.mkOutOfStoreSymlink "${configFolder}/codium/keybindings.json";
   
-  
+  home.file.".ssh/config".source =
+    config.lib.file.mkOutOfStoreSymlink "${configFolder}/ssh_config";
 }
