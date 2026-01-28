@@ -10,6 +10,7 @@
     networkmanager.enable = true;
     hosts = {
       "100.116.20.78" = [ "knot.fantomitechno.dev" ];
+      "192.168.1.1" = [ "mabbox.bytel.fr" ];
     };
   };
 
