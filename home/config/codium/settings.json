@@ -6,5 +6,6 @@
   "explorer.confirmDelete": false,
   "editor.formatOnSave": true,
   "git.autofetch": true,
-  "security.workspace.trust.untrustedFiles": "open"
+  "security.workspace.trust.untrustedFiles": "open",
+  "git.confirmSync": false
 }

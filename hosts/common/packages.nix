@@ -10,10 +10,14 @@
     duf
     fastfetch
     glib
+    inetutils
     kitty
+    python3
     starship
+    unzip
     wget
     yt-dlp
+    zip
 
     # programing
     docker
@@ -91,6 +95,7 @@
     # services.openssh.enable = true;
     tailscale.enable = true;
     blueman.enable = true;
+    udisks2.enable = true;
   };
 
   programs = {

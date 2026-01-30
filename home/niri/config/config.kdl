@@ -27,6 +27,8 @@ output "eDP-1" {
     scale 1
 }
 
+
+
 overview {
     zoom 0.25
 }

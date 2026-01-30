@@ -12,6 +12,7 @@
       grep = "grep --color=auto";
       cat = "bat";
       df = "duf";
+      ssh = "TERM=xterm-256color kitten ssh";
     };
 
     initContent = ''
