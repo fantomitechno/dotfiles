@@ -65,6 +65,7 @@
     nautilus
     olympus
     proton-pass
+    protonup-rs
     signal-desktop
     steam
     vesktop
