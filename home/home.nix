@@ -14,6 +14,7 @@
     ./niri
     ./waybar
 
+    ./clipboard.nix
     ./codium.nix
     ./git.nix
     ./terminal.nix

@@ -46,6 +46,7 @@
 
     # DE stuff
     adw-gtk3
+    cliphist
     grub2
     jq
     ly
@@ -60,7 +61,7 @@
     waybar
     waybar-mpris
     waypaper
-    wl-clipboard-rs
+    wl-clipboard
     wlogout
     wofi
     xdg-desktop-portal-wlr
@@ -81,7 +82,9 @@
 
     # network :3
     openvpn
+    protonvpn-gui
     tailscale
+    wireguard-tools
   ];
 
   xdg.portal.wlr.enable = true;
@@ -117,7 +120,7 @@
 
     # Nix but looks like linux
     nix-ld.enable = true;
-    
+
     # My terminal uwu
     zsh.enable = true;
 

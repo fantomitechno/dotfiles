@@ -87,7 +87,8 @@ binds {
     Mod+Ctrl+Shift+Equal { set-column-width "-5%"; }
     Mod+Ctrl+Equal { set-column-width "+5%"; }
 
-    Mod+V       { toggle-window-floating; }
+    Mod+Shift+V       { toggle-window-floating; }
+    Mod+V { spawn-sh "cliphist list | wofi -S dmenu | cliphist decode | wl-copy"; }
 
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
