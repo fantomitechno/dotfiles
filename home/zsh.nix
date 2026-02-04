@@ -22,5 +22,14 @@
       eval "$(starship init zsh)"
       eval "fastfetch"
     '';
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = [
+        "docker"
+        "docker-compose"
+        "history-substring-search"
+      ];
+    };
   };
 }
