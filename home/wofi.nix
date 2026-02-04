@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   programs.wofi = {
@@ -11,7 +11,7 @@
       allow_markup = true;
       width = 400;
       term = "kitty";
-      dmenu-parse_action=true;
+      dmenu-parse_action = true;
     };
     style = ''
       window {

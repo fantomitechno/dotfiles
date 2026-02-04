@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   globals,
   ...
@@ -32,6 +31,11 @@
     theme.name = "Adwaita";
 
     colorScheme = "dark";
+
+    iconTheme = {
+      package = pkgs.yaru-theme;
+      name = "Yaru-purple";
+    };
   };
   qt = {
     enable = true;
