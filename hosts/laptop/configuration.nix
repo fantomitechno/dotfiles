@@ -21,7 +21,8 @@
     grub.device = "/dev/nvme0n1";
     grub.minegrub-theme = {
       enable = true;
-      splash = "NixOS for the win!";
+      splash = "100% NixOS";
+      background = "background_options/1.18 - [Caves And Cliffs 2].png";
     };
     grub.useOSProber = true;
     efi.canTouchEfiVariables = true;

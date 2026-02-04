@@ -84,6 +84,8 @@ binds {
 
     Mod+Shift+Equal { set-column-width "-10%"; }
     Mod+Equal { set-column-width "+10%"; }
+    Mod+Ctrl+Shift+Equal { set-column-width "-5%"; }
+    Mod+Ctrl+Equal { set-column-width "+5%"; }
 
     Mod+V       { toggle-window-floating; }
 

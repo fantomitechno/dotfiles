@@ -17,7 +17,14 @@ in
     config.lib.file.mkOutOfStoreSymlink "${configFolder}/codium/settings.json";
   xdg.configFile."VSCodium/User/keybindings.json".source =
     config.lib.file.mkOutOfStoreSymlink "${configFolder}/codium/keybindings.json";
+  xdg.configFile."udiskie/config.yml".source =
+    config.lib.file.mkOutOfStoreSymlink "${configFolder}/udiskie.yml";
   
   home.file.".ssh/config".source =
     config.lib.file.mkOutOfStoreSymlink "${configFolder}/ssh_config";
+
+
+  
+  xdg.configFile."mimeapps.list".source =
+    config.lib.file.mkOutOfStoreSymlink "${configFolder}/mime.list";
 }

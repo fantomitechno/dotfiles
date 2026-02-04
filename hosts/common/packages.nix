@@ -2,6 +2,10 @@
 
 {
   environment.systemPackages = with pkgs; [
+    # low level stuff that is annoying :c
+    musl
+    polkit
+
     # terminal stuff
     bat
     btop
@@ -30,6 +34,8 @@
     gnumake
     lazydocker
     lazygit
+    nil
+    nixfmt
 
     # media
     ffmpeg
@@ -39,31 +45,34 @@
     vlc
 
     # DE stuff
+    adw-gtk3
+    grub2
+    jq
+    ly
+    networkmanagerapplet
+    papirus-icon-theme
+    pavucontrol
+    swayidle
+    swaylock-effects
+    swaynotificationcenter
+    swww
+    udiskie
+    waybar
     waybar-mpris
     waypaper
-    swww
-    waybar
-    networkmanagerapplet
-    swaylock-effects
-    swayidle
-    swaynotificationcenter
     wl-clipboard-rs
     wlogout
     wofi
-    adw-gtk3
-    papirus-icon-theme
-    ly
-    grub2
+    xdg-desktop-portal-wlr
     xwayland
     xwayland-satellite
-    jq
-    xdg-desktop-portal-wlr
-    pavucontrol
 
     # apps
     bitwarden-desktop
+    loupe
     nautilus
     olympus
+    pinta
     proton-pass
     protonup-rs
     signal-desktop
@@ -73,11 +82,6 @@
     # network :3
     openvpn
     tailscale
-
-    # idk I'll find out later
-    musl
-    nixfmt
-    polkit
   ];
 
   xdg.portal.wlr.enable = true;
@@ -91,25 +95,42 @@
   };
 
   services = {
+    # DM
     displayManager.enable = true;
     displayManager.ly.enable = true;
     # services.openssh.enable = true;
+
+    # Network
     tailscale.enable = true;
+
+    # Bluetooth
     blueman.enable = true;
+
+    # Auto mount usb keys
     udisks2.enable = true;
   };
 
   programs = {
+    # WM
     niri.enable = true;
-    nix-ld.enable = true;
     xwayland.enable = true;
+
+    # Nix but looks like linux
+    nix-ld.enable = true;
+    
+    # My terminal uwu
     zsh.enable = true;
 
+    # Gayming
     steam = {
       enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
     };
+    # GameMode is a daemon/lib combo for Linux that allows games to request a set of optimisations be temporarily applied to the host OS and/or a game process.
     gamemode.enable = true;
+
+    # PDF Viewer
+    evince.enable = true;
   };
 }
