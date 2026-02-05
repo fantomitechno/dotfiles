@@ -70,6 +70,7 @@
 
     # apps
     bitwarden-desktop
+    libreoffice
     loupe
     nautilus
     olympus

@@ -1,7 +1,5 @@
 {
   config,
-  pkgs,
-  globals,
   ...
 }:
 let
@@ -19,12 +17,12 @@ in
     config.lib.file.mkOutOfStoreSymlink "${configFolder}/codium/keybindings.json";
   xdg.configFile."udiskie/config.yml".source =
     config.lib.file.mkOutOfStoreSymlink "${configFolder}/udiskie.yml";
-  
-  home.file.".ssh/config".source =
-    config.lib.file.mkOutOfStoreSymlink "${configFolder}/ssh_config";
-
-
-  
   xdg.configFile."mimeapps.list".source =
     config.lib.file.mkOutOfStoreSymlink "${configFolder}/mime.list";
+
+  xdg.configFile."starship.toml".source =
+    config.lib.file.mkOutOfStoreSymlink "${configFolder}/starship.toml";
+
+  home.file.".ssh/config".source = config.lib.file.mkOutOfStoreSymlink "${configFolder}/ssh_config";
+
 }

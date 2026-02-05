@@ -39,7 +39,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit globals; };
-              home-manager.users.${globals.UserName} = import ./home/home.nix;
+              home-manager.users.${globals.UserName} = import ./home;
             }
             minegrub-theme.nixosModules.default
           ];
@@ -55,7 +55,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit globals; };
-              home-manager.users.${globals.UserName} = import ./home/home.nix;
+              home-manager.users.${globals.UserName} = import ./home;
             }
             minegrub-theme.nixosModules.default
           ];

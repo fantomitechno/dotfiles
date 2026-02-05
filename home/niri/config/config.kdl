@@ -95,3 +95,8 @@ layer-rule {
     place-within-backdrop true
 }
 
+gestures {
+    hot-corners {
+        off
+    }
+}

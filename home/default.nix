@@ -11,6 +11,7 @@
   imports = [
     ./config
     ./fastfetch
+    ./libreoffice
     ./niri
     ./waybar
 
