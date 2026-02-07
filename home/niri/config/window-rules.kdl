@@ -1,6 +1,7 @@
 window-rule {
     match title="Picture in picture"
     open-floating true
+    open-focused false
     default-floating-position x=100 y=100 relative-to="bottom-right"
     tiled-state true
 }

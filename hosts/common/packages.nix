@@ -53,6 +53,7 @@
     networkmanagerapplet
     papirus-icon-theme
     pavucontrol
+    sunsetr
     swayidle
     swaylock-effects
     swaynotificationcenter

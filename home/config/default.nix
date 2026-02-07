@@ -22,6 +22,8 @@ in
 
   xdg.configFile."starship.toml".source =
     config.lib.file.mkOutOfStoreSymlink "${configFolder}/starship.toml";
+  xdg.configFile."sunsetr/sunsetr.toml".source =
+    config.lib.file.mkOutOfStoreSymlink "${configFolder}/sunsetr.toml";
 
   home.file.".ssh/config".source = config.lib.file.mkOutOfStoreSymlink "${configFolder}/ssh_config";
 
