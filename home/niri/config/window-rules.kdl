@@ -12,6 +12,11 @@ window-rule {
 }
 
 window-rule {
+    match app-id=r#"[Mm]inecraft"#
+    open-maximized true
+}
+
+window-rule {
     match app-id=r#"steam"#
     open-on-workspace "stm"
 }
