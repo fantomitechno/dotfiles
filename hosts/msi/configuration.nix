@@ -14,12 +14,6 @@
   # Bootloader
   boot.loader = {
     systemd-boot.enable = true;
-    grub.enable = false;
-    grub.device = "/dev/nvme0n1p1";
-    grub.minegrub-theme = {
-      enable = true;
-      splash = "NixOS for the win!";
-    };
     efi.canTouchEfiVariables = true;
   };
   boot.kernelPackages = pkgs.linuxPackages;
