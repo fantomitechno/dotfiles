@@ -1,9 +1,8 @@
-{ globals, pkgs, ... } :
+{ globals, pkgs, ... }:
 
 {
   networking = {
     nameservers = [
-      "1.1.1.1"
       "9.9.9.9"
     ];
     hostName = globals.HostName;
@@ -18,7 +17,6 @@
 
   time.timeZone = "Europe/Paris";
   i18n.defaultLocale = "en_US.UTF-8";
-
 
   users.users.${globals.UserName} = {
     isNormalUser = true;
@@ -37,7 +35,6 @@
 
   security.polkit.enable = true;
   virtualisation.docker.enable = true;
-
 
   nix.settings.experimental-features = [
     "nix-command"
