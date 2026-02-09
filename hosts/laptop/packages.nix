@@ -11,5 +11,7 @@
 
     # Raspberry pi
     rpi-imager
+
+    kdePackages.kdenlive
   ];
 }
