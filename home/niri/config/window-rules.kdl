@@ -73,3 +73,10 @@ window-rule {
     geometry-corner-radius 6
     clip-to-geometry true
 }
+
+window-rule {
+    match app-id="org.gnome.Calculator"
+    open-floating true
+    default-column-width { fixed 360; }
+    default-window-height { fixed 616; }
+}

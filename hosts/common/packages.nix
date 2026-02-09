@@ -71,6 +71,7 @@
 
     # apps
     bitwarden-desktop
+    gnome-calculator
     libreoffice
     loupe
     nautilus

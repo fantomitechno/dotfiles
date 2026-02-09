@@ -13,6 +13,7 @@ binds {
     Mod+M hotkey-overlay-title="Open Tidal " { spawn "tidal-hifi"; }
     Mod+C hotkey-overlay-title="Open a Text Editor " { spawn "codium"; }
     Mod+S hotkey-overlay-title="Open Steam " { spawn "steam"; }
+    Mod+Return hotkey-overlay-title="Open Calculator " { spawn "gnome-calculator"; }
 
     Mod+A hotkey-overlay-title="Run an Application" { spawn-sh "wofi --show drun"; }
     Super+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn-sh "swaylock "; }
