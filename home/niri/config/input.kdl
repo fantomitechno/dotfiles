@@ -47,6 +47,8 @@ binds {
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-or-workspace-down; }
     Mod+Up    { focus-window-or-workspace-up; }
+    Mod+WheelScrollDown cooldown-ms=150  { focus-window-or-workspace-down; }
+    Mod+WheelScrollUp cooldown-ms=150    { focus-window-or-workspace-up; }
     Mod+Right { focus-column-right; }
 
     Mod+Ctrl+Left  { move-column-left; }
