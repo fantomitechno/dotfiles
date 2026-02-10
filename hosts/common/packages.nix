@@ -71,6 +71,7 @@
 
     # apps
     bitwarden-desktop
+    file-roller
     gnome-calculator
     libreoffice
     loupe

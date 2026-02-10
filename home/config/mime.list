@@ -15,9 +15,11 @@ image/jpg=org.gnome.Loupe.desktop
 image/gif=org.gnome.Loupe.desktop
 application/xml=codium.desktop
 inode/directory=org.gnome.Nautilus.desktop
+application/zip=org.gnome.FileRoller.desktop
 
 [Added Associations]
 image/png=org.gnome.Loupe.desktop;
 text/plain=codium.desktop;
 text/md=codium.desktop;
 application/xml=codium.desktop;
+application/zip=org.gnome.FileRoller.desktop;
