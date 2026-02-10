@@ -18,19 +18,12 @@
     }:
     let
       system = "x86_64-linux";
-      globals = {
-        UserName = "fantomitechno";
-        HostName = "fantomitechno-nixos";
-        GitName = "Simon R. - fantomitechno";
-        GitEmail = "me@fantomitechno.dev";
-      };
 
     in
     {
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit globals; };
           modules = [
             ./hosts/laptop/configuration.nix
             ./hosts/common
@@ -38,15 +31,16 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit globals; };
-              home-manager.users.${globals.UserName} = import ./home;
+              home-manager.extraSpecialArgs = {
+                type = "laptop";
+              };
+              home-manager.users."fantomitechno" = import ./home;
             }
             minegrub-theme.nixosModules.default
           ];
         };
         desktop = nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit globals; };
           modules = [
             ./hosts/desktop/configuration.nix
             ./hosts/common
@@ -54,14 +48,15 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit globals; };
-              home-manager.users.${globals.UserName} = import ./home;
+              home-manager.extraSpecialArgs = {
+                type = "desktop";
+              };
+              home-manager.users."fantomitechno" = import ./home;
             }
           ];
         };
         msi = nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit globals; };
           modules = [
             ./hosts/msi/configuration.nix
             ./hosts/common
@@ -69,8 +64,10 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit globals; };
-              home-manager.users.${globals.UserName} = import ./home;
+              home-manager.extraSpecialArgs = {
+                type = "laptop";
+              };
+              home-manager.users."fantomitechno" = import ./home;
             }
           ];
         };

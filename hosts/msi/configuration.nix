@@ -23,6 +23,8 @@
     variant = "";
   };
 
+  networking.hostName = "fantomitechno-msi";
+
   # Configure console keymap
   console.keyMap = "fr";
 

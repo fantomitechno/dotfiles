@@ -1,7 +1,7 @@
-{ config, ... }:
+{ config, type, ... }:
 let
   dotfileFolder = "${config.home.homeDirectory}/dotfiles";
-  niriFolder = "${dotfileFolder}/home/niri";
+  niriFolder = "${dotfileFolder}/home/niri/${type}";
 in
 {
   xdg.configFile."niri".source = config.lib.file.mkOutOfStoreSymlink "${niriFolder}/config";

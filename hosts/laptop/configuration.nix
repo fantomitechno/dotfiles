@@ -31,6 +31,8 @@
     variant = "";
   };
 
+  networking.hostName = "fantomitechno-laptop";
+
   # Configure console keymap
   console.keyMap = "fr";
 

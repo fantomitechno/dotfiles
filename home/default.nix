@@ -1,12 +1,11 @@
 {
   pkgs,
-  globals,
   ...
 }:
 
 {
   home.stateVersion = "25.05";
-  home.homeDirectory = "/home/${globals.UserName}";
+  home.homeDirectory = "/home/fantomitechno";
 
   imports = [
     ./config
@@ -63,5 +62,4 @@
 
   services.swww.enable = true;
   services.swaync.enable = true;
-
 }

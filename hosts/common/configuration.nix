@@ -1,11 +1,10 @@
-{ globals, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   networking = {
     nameservers = [
       "9.9.9.9"
     ];
-    hostName = globals.HostName;
     networkmanager.enable = true;
     hosts = {
       "100.116.20.78" = [ "knot.fantomitechno.dev" ];
@@ -18,7 +17,7 @@
   time.timeZone = "Europe/Paris";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  users.users.${globals.UserName} = {
+  users.users."fantomitechno" = {
     isNormalUser = true;
     description = "Simon Renoux";
     extraGroups = [
