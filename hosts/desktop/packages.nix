@@ -8,6 +8,8 @@
     # Games
     prismlauncher
 
+    # Video editing
     kdePackages.kdenlive
+    audacity
   ];
 }
