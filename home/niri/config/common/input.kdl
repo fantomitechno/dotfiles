@@ -50,6 +50,8 @@ binds {
     Mod+WheelScrollDown cooldown-ms=150  { focus-window-or-workspace-down; }
     Mod+WheelScrollUp cooldown-ms=150    { focus-window-or-workspace-up; }
     Mod+Right { focus-column-right; }
+    Mod+Shift+WheelScrollDown cooldown-ms=150  { focus-column-right; }
+    Mod+Shift+WheelScrollUp cooldown-ms=150    { focus-column-left; }
     Mod+O     { focus-monitor-left; }
     Mod+P     { focus-monitor-right; }
 
