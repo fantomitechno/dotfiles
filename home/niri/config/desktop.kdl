@@ -28,6 +28,22 @@ workspace "term" {
 workspace "stm" {
     open-on-output "DP-1"
 }
+
 workspace "other" {
     open-on-output "DP-1"
+}
+
+workspace "edit" {
+    open-on-output "DP-1"
+}
+
+window-rule {
+    match app-id="kdenlive"
+    open-on-workspace "edit"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="Audacity"
+    open-on-workspace "edit"
 }
