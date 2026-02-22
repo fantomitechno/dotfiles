@@ -27,4 +27,6 @@ in
 
   home.file.".ssh/config".source = config.lib.file.mkOutOfStoreSymlink "${configFolder}/ssh_config";
 
+  xdg.configFile."gitmoji-nodejs/config.json".source =
+    config.lib.file.mkOutOfStoreSymlink "${configFolder}/gitmoji.toml";
 }
