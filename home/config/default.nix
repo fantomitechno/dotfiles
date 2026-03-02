@@ -25,8 +25,8 @@ in
   xdg.configFile."sunsetr/sunsetr.toml".source =
     config.lib.file.mkOutOfStoreSymlink "${configFolder}/sunsetr.toml";
 
-  home.file.".ssh/config".source = config.lib.file.mkOutOfStoreSymlink "${configFolder}/ssh_config";
-
   xdg.configFile."gitmoji-nodejs/config.json".source =
-    config.lib.file.mkOutOfStoreSymlink "${configFolder}/gitmoji.toml";
+    config.lib.file.mkOutOfStoreSymlink "${configFolder}/gitmoji.json";
+
+  home.file.".ssh/config".source = config.lib.file.mkOutOfStoreSymlink "${configFolder}/ssh_config";
 }
