@@ -8,3 +8,4 @@ These dotfiles are used for
 
 - my laptop
 - my desked laptop
+- my desktop
