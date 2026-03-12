@@ -36,8 +36,8 @@ binds {
     XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
     XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
 
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+    // XF86MonBrightnessUp allow-when-locked=true { spawn-sh "sunsetr set night_gamma+=5"; }
+    // XF86MonBrightnessDown allow-when-locked=true { spawn-sh "sunsetr set night_gamma-=5"; }
 
     Mod+TAB repeat=false { toggle-overview; }
     Mod+Shift+TAB repeat=false { spawn "~/.local/bin/nws.sh"; } 
