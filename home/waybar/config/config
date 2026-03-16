@@ -5,6 +5,7 @@
   "modules-left": [
     "niri/workspaces",
     "niri/window",
+    "mpris",
   ],
 
   "modules-center": [
@@ -12,8 +13,9 @@
   ],
 
   "modules-right": [
-    "mpris",
     "group/tray-expander",
+    "tray",
+    "custom/notification",
     "battery",
     "custom/exit"
   ],
@@ -33,8 +35,6 @@
       "memory",
       "cpu",
       "network",
-      "tray",
-      "custom/notification",
     ]
   },
   "niri/workspaces": {
