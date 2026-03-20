@@ -5,6 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs?ref=nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
 
     minegrub-theme.url = "github:Lxtharia/minegrub-theme";
   };
@@ -14,6 +15,7 @@
       nixpkgs,
       home-manager,
       minegrub-theme,
+      millennium,
       ...
     }:
     let
@@ -25,6 +27,9 @@
         laptop = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
+            {
+              nixpkgs.overlays = [ millennium.overlays.default ];
+            }
             ./hosts/laptop/configuration.nix
             ./hosts/common
             home-manager.nixosModules.home-manager
@@ -42,6 +47,9 @@
         desktop = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
+            {
+              nixpkgs.overlays = [ millennium.overlays.default ];
+            }
             ./hosts/desktop/configuration.nix
             ./hosts/common
             home-manager.nixosModules.home-manager
@@ -58,6 +66,9 @@
         msi = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
+            {
+              nixpkgs.overlays = [ millennium.overlays.default ];
+            }
             ./hosts/msi/configuration.nix
             ./hosts/common
             home-manager.nixosModules.home-manager

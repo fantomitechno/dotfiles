@@ -81,7 +81,6 @@
     proton-pass
     protonup-rs
     signal-desktop
-    steam
     vesktop
 
     # network :3
@@ -131,6 +130,7 @@
     # Gayming
     steam = {
       enable = true;
+      package = pkgs.millennium-steam;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
     };
