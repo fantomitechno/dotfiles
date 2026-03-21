@@ -3,9 +3,6 @@ include "window-rules.kdl"
 
 input {
     keyboard {
-        xkb {
-            layout "fr,us,es"
-        }
         numlock
     }
     touchpad {

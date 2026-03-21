@@ -1,0 +1,10 @@
+include "common/laptop.kdl"
+
+input {
+    keyboard {
+        xkb {
+            layout "us,fr"
+            variant "intl"
+        }
+    }
+}

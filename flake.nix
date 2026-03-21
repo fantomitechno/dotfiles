@@ -38,6 +38,7 @@
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = {
                 type = "laptop";
+                kb = "us";
               };
               home-manager.users."fantomitechno" = import ./home;
             }
@@ -58,6 +59,7 @@
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = {
                 type = "desktop";
+                kb = "fr";
               };
               home-manager.users."fantomitechno" = import ./home;
             }
@@ -77,6 +79,7 @@
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = {
                 type = "laptop";
+                kb = "fr";
               };
               home-manager.users."fantomitechno" = import ./home;
             }

@@ -1,4 +1,4 @@
-include "common/config.kdl"
+include "config.kdl"
 
 output "eDP-1" {
     mode "1920x1080@60.049"

@@ -13,28 +13,20 @@
 
   # Bootloader
   boot.loader = {
-    systemd-boot.enable = false;
-    grub.enable = true;
-    grub.device = "/dev/nvme0n1";
-    grub.minegrub-theme = {
-      enable = true;
-      splash = "100% NixOS";
-      background = "background_options/1.18 - [Caves And Cliffs 2].png";
-    };
-    grub.useOSProber = true;
+    systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
   };
   boot.kernelPackages = pkgs.linuxPackages;
 
   services.xserver.xkb = {
-    layout = "fr";
+    layout = "us";
     variant = "";
   };
 
   networking.hostName = "fantomitechno-laptop";
 
   # Configure console keymap
-  console.keyMap = "fr";
+  console.keyMap = "us";
 
   environment.variables = {
     LD_LIBRARY_PATH = "/run/opengl-driver/lib";
