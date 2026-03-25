@@ -16,4 +16,6 @@ tmp/
 buildid
 lastsynchronized
 
+cache
+backup
 .lock
