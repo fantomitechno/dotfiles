@@ -81,6 +81,7 @@
     proton-pass
     protonup-rs
     signal-desktop
+    tetrio-desktop
     vesktop
 
     # network :3
