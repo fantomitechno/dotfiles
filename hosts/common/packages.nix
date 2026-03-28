@@ -89,6 +89,7 @@
     protonvpn-gui
     tailscale
     wireguard-tools
+    wireshark
   ];
 
   xdg.portal.wlr.enable = true;
@@ -140,5 +141,8 @@
 
     # PDF Viewer
     evince.enable = true;
+
+    # Network
+    wireshark.enable = true;
   };
 }
