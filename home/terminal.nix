@@ -17,6 +17,7 @@
         df = "duf";
         ssh = "TERM=xterm-256color kitten ssh";
         lt = "tree --gitignore";
+        rebuild = "cd /home/fantomitechno/dotfiles && sudo nixos-rebuild switch --flake .#laptop";
       };
 
       initContent = ''
