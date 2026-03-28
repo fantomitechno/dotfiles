@@ -8,7 +8,6 @@
       catppuccin.catppuccin-vsc-icons
       detachhead.basedpyright
       esbenp.prettier-vscode
-      github.copilot
       jnoortheen.nix-ide
       leonardssh.vscord
       # minecraftcommands.syntax-mcfunction
