@@ -19,7 +19,6 @@
     ./git.nix
     ./terminal.nix
     ./wofi.nix
-    ./zsh.nix
   ];
 
   dconf.settings = {

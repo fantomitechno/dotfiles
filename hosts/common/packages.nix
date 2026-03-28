@@ -18,6 +18,7 @@
     kitty
     python3
     starship
+    tree
     unzip
     wget
     yt-dlp
