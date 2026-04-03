@@ -11,3 +11,9 @@ workspace "term"
 workspace "stm"
 workspace "obs"
 workspace "other"
+
+
+//window-rule {
+//    match app-id="at.yrlf.wl_mirror"
+//    open-on-output="HDMI-A-1"
+//}

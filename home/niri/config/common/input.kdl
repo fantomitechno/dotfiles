@@ -41,6 +41,7 @@ binds {
 
     Mod+TAB repeat=false { toggle-overview; }
     Mod+Shift+TAB repeat=false { spawn "~/.local/bin/nws.sh"; } 
+    Mod+Shift+P repeat=false { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)"; }
 
     Mod+Q repeat=false { close-window; }
 
@@ -114,5 +115,4 @@ binds {
     Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
     Mod+Escape { spawn-sh "wlogout"; }
-    Mod+Shift+P { power-off-monitors; }
 }
