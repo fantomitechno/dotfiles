@@ -77,6 +77,7 @@
     gnome-calculator
     libreoffice
     loupe
+    mumble
     nautilus
     olympus
     pinta
