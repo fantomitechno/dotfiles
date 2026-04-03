@@ -37,6 +37,8 @@
       package = pkgs.yaru-theme;
       name = "Yaru-purple";
     };
+
+    gtk4.theme = null;
   };
   qt = {
     enable = true;
