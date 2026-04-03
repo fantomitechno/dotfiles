@@ -64,6 +64,7 @@
     waybar-mpris
     waypaper
     wl-clipboard
+    wl-mirror
     wlogout
     wofi
     xdg-desktop-portal-wlr
@@ -87,7 +88,7 @@
 
     # network :3
     openvpn
-    protonvpn-gui
+    proton-vpn
     tailscale
     wireguard-tools
     wireshark
