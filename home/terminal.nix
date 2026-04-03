@@ -48,6 +48,16 @@
             sha256 = "1lzrn0n4fxfcgg65v0qhnj7wnybybqzs4adz7xsrkgmcsr0ii8b7";
           };
         }
+        {
+          name = "autoswitch_virtualenv";
+          file = "autoswitch_virtualenv.plugin.zsh";
+          src = pkgs.fetchFromGitHub {
+            owner = "MichaelAquilina";
+            repo = "zsh-autoswitch-virtualenv";
+            rev = "3.9.0";
+            sha256 = "sha256-j2YX+OcYbvS2G/KUNzcWbJepm9bZlegp1r8ZjcY6Nnw";
+          };
+        }
       ];
     };
   };
