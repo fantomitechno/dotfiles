@@ -6,8 +6,9 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
-
     minegrub-theme.url = "github:Lxtharia/minegrub-theme";
+    niri-float-sticky.url = "github:probeldev/niri-float-sticky";
+    niri-float-sticky.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -16,6 +17,7 @@
       home-manager,
       minegrub-theme,
       millennium,
+      niri-float-sticky,
       ...
     }:
     let
@@ -39,6 +41,7 @@
               home-manager.extraSpecialArgs = {
                 type = "laptop";
                 kb = "us";
+                inherit niri-float-sticky;
               };
               home-manager.users."fantomitechno" = import ./home;
             }
@@ -60,6 +63,7 @@
               home-manager.extraSpecialArgs = {
                 type = "desktop";
                 kb = "fr";
+                inherit niri-float-sticky;
               };
               home-manager.users."fantomitechno" = import ./home;
             }
@@ -80,6 +84,7 @@
               home-manager.extraSpecialArgs = {
                 type = "laptop";
                 kb = "fr";
+                inherit niri-float-sticky;
               };
               home-manager.users."fantomitechno" = import ./home;
             }

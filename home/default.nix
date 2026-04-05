@@ -1,5 +1,6 @@
 {
   pkgs,
+  niri-float-sticky,
   ...
 }:
 
@@ -59,9 +60,12 @@
     zoxide.enable = true;
     obs-studio.enable = true;
     obs-studio.plugins = [ pkgs.obs-studio-plugins.wlrobs ];
-
   };
 
-  services.swww.enable = true;
+  home.packages = [
+    niri-float-sticky.packages.${pkgs.system}.default
+  ];
+
+  services.awww.enable = true;
   services.swaync.enable = true;
 }

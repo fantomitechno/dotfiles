@@ -73,7 +73,8 @@ spawn-sh-at-startup "udiskie"
 spawn-sh-at-startup "wl-paste --watch cliphist store"
 spawn-sh-at-startup "blueman-applet"
 spawn-sh-at-startup "waypaper --random"
-spawn-sh-at-startup "swayidle -w timeout 600 'swaylock -f' timeout 900 'niri msg output power off' resume 'niri msg output power on' before-sleep 'swaylock -f'"
+spawn-sh-at-startup "swayidle -w timeout 900 'swaylock -f' timeout 900 'niri msg output power off' resume 'niri msg output power on' before-sleep 'swaylock -f'"
+spawn-at-startup "niri-float-sticky"
 
 layer-rule {
     place-within-backdrop true
