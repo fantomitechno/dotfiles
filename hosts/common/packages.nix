@@ -47,6 +47,7 @@
 
     # DE stuff
     adw-gtk3
+    awww
     cliphist
     grub2
     jq
@@ -58,7 +59,6 @@
     swayidle
     swaylock-effects
     swaynotificationcenter
-    swww
     udiskie
     waybar
     waybar-mpris
