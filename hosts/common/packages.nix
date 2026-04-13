@@ -40,7 +40,6 @@
 
     # media
     ffmpeg
-    obs-studio
     playerctl
     tidal-hifi
     vlc

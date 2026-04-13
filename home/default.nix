@@ -59,7 +59,13 @@
     zsh.enable = true;
     zoxide.enable = true;
     obs-studio.enable = true;
-    obs-studio.plugins = [ pkgs.obs-studio-plugins.wlrobs ];
+    obs-studio.plugins = with pkgs.obs-studio-plugins; [
+      wlrobs
+      obs-backgroundremoval
+      obs-pipewire-audio-capture
+      obs-vkcapture
+      obs-multi-rtmp
+    ];
   };
 
   home.packages = [
