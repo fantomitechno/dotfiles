@@ -71,11 +71,13 @@
     xwayland-satellite
 
     # apps
+    archipelago
     bitwarden-desktop
     file-roller
     gnome-calculator
     libreoffice
     loupe
+    lumafly
     mumble
     nautilus
     olympus
