@@ -13,5 +13,7 @@
     rpi-imager
 
     kdePackages.kdenlive
+
+    eduvpn-client
   ];
 }
