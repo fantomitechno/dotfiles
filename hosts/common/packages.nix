@@ -75,6 +75,7 @@
     bitwarden-desktop
     file-roller
     gnome-calculator
+    jetbrains.idea-oss
     libreoffice
     loupe
     lumafly
