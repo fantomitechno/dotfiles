@@ -6,6 +6,7 @@
     mongodb-compass
 
     # Games
+    parsec-bin
     prismlauncher
 
     # Video editing
