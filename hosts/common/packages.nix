@@ -121,6 +121,9 @@
 
     # Auto mount usb keys
     udisks2.enable = true;
+
+    # Nautilus fixes
+    gvfs.enable = true;
   };
 
   programs = {
