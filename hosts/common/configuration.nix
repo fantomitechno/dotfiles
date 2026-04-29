@@ -5,7 +5,13 @@
     nameservers = [
       "9.9.9.9"
     ];
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+
+      plugins = with pkgs; [
+        networkmanager-openvpn
+      ];
+    };
     hosts = {
       "100.116.20.78" = [
         "knot.fantomitechno.dev"
