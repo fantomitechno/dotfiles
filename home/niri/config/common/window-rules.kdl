@@ -41,7 +41,18 @@ window-rule {
 }
 
 window-rule {
+    match title=r".*Microsoft Teams"
+    open-on-workspace "dsc"
+}
+
+window-rule {
     match app-id=r#"brave"#
+    open-maximized true
+    open-on-workspace "brow"
+}
+
+window-rule {
+    match app-id=r#"firefox"#
     open-maximized true
     open-on-workspace "brow"
 }
