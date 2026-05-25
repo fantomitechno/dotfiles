@@ -12,7 +12,10 @@
     # Raspberry pi
     rpi-imager
 
+    # Editing for Ms. Jay "Parrot" Dash
     kdePackages.kdenlive
+
+    framework-tool
 
     eduvpn-client
 
