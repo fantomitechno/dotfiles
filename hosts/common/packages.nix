@@ -37,6 +37,7 @@
     lazygit
     nil
     nixfmt
+    texliveFull
 
     # media
     ffmpeg
