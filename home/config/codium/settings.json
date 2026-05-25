@@ -9,7 +9,7 @@
   "security.workspace.trust.untrustedFiles": "open",
   "git.confirmSync": false,
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
   },
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js",
@@ -32,5 +32,8 @@
     "*.db3": "${capture}.${extname}-*",
     "*.sdb": "${capture}.${extname}-*",
     "*.s3db": "${capture}.${extname}-*"
-  }
+  },
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+  "vs-code-prettier-eslint.prettierLast": true,
+  "diffEditor.ignoreTrimWhitespace": false
 }
