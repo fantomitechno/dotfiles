@@ -15,5 +15,9 @@
     kdePackages.kdenlive
 
     eduvpn-client
+
+    # Internship
+    firefox
+    teams-for-linux
   ];
 }
