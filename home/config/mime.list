@@ -16,6 +16,7 @@ image/gif=org.gnome.Loupe.desktop
 application/xml=codium.desktop
 inode/directory=org.gnome.Nautilus.desktop;codium.desktop
 application/zip=org.gnome.FileRoller.desktop
+x-scheme-handler/mailto=brave-browser.desktop
 
 [Added Associations]
 image/png=org.gnome.Loupe.desktop;
