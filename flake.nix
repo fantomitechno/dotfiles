@@ -1,21 +1,26 @@
 {
-  description = "NixOS configuration for the Fox";
+  description = "fantomitechno's Nix config";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs?ref=nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
-    minegrub-theme.url = "github:Lxtharia/minegrub-theme";
-    niri-float-sticky.url = "github:probeldev/niri-float-sticky";
-    niri-float-sticky.inputs.nixpkgs.follows = "nixpkgs";
+
+    niri-float-sticky = {
+      url = "github:probeldev/niri-float-sticky";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     {
       nixpkgs,
       home-manager,
-      minegrub-theme,
       millennium,
       niri-float-sticky,
       ...
@@ -36,15 +41,16 @@
             ./hosts/common
             home-manager.nixosModules.home-manager
             {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = {
-                inherit niri-float-sticky;
-                hostname = "laptop";
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = {
+                  inherit niri-float-sticky;
+                  hostname = "laptop";
+                };
+                users."fantomitechno" = import ./home;
               };
-              home-manager.users."fantomitechno" = import ./home;
             }
-            minegrub-theme.nixosModules.default
           ];
         };
         fantomitechno-desktop = nixpkgs.lib.nixosSystem {
@@ -57,13 +63,15 @@
             ./hosts/common
             home-manager.nixosModules.home-manager
             {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = {
-                inherit niri-float-sticky;
-                hostname = "desktop";
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = {
+                  inherit niri-float-sticky;
+                  hostname = "desktop";
+                };
+                users."fantomitechno" = import ./home;
               };
-              home-manager.users."fantomitechno" = import ./home;
             }
           ];
         };
@@ -77,13 +85,15 @@
             ./hosts/common
             home-manager.nixosModules.home-manager
             {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = {
-                inherit niri-float-sticky;
-                hostname = "msi";
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = {
+                  inherit niri-float-sticky;
+                  hostname = "msi";
+                };
+                users."fantomitechno" = import ./home;
               };
-              home-manager.users."fantomitechno" = import ./home;
             }
           ];
         };

@@ -41,16 +41,23 @@
 
     gtk4.theme = null;
   };
+
   qt = {
     enable = true;
     style.name = "adwaita";
   };
-  home.pointerCursor = {
-    enable = true;
-    gtk.enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Amber";
-    size = 12;
+
+  home = {
+    pointerCursor = {
+      enable = true;
+      gtk.enable = true;
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Amber";
+      size = 12;
+    };
+    packages = [
+      niri-float-sticky.packages.${pkgs.system}.default
+    ];
   };
 
   programs = {
@@ -58,20 +65,20 @@
     go.enable = true;
     zsh.enable = true;
     zoxide.enable = true;
-    obs-studio.enable = true;
-    obs-studio.plugins = with pkgs.obs-studio-plugins; [
-      wlrobs
-      obs-backgroundremoval
-      obs-pipewire-audio-capture
-      obs-vkcapture
-      obs-multi-rtmp
-    ];
+    obs-studio = {
+      enable = true;
+      plugins = with pkgs.obs-studio-plugins; [
+        wlrobs
+        obs-backgroundremoval
+        obs-pipewire-audio-capture
+        obs-vkcapture
+        obs-multi-rtmp
+      ];
+    };
   };
 
-  home.packages = [
-    niri-float-sticky.packages.${pkgs.system}.default
-  ];
-
-  services.awww.enable = true;
-  services.swaync.enable = true;
+  services = {
+    awww.enable = true;
+    swaync.enable = true;
+  };
 }

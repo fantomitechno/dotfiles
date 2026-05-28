@@ -111,9 +111,10 @@
 
   services = {
     # DM
-    displayManager.enable = true;
-    displayManager.ly.enable = true;
-    # services.openssh.enable = true;
+    displayManager = {
+      enable = true;
+      ly.enable = true;
+    };
 
     # Network
     tailscale.enable = true;
