@@ -37,5 +37,9 @@
   "vs-code-prettier-eslint.prettierLast": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "nix.serverPath": "nil",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "basedpyright.analysis.diagnosticSeverityOverrides": {
+    "reportUnusedCallResult": "none",
+    "reportUnknownLambdaType": "hint"
+  }
 }

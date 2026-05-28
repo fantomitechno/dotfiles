@@ -1,10 +1,14 @@
 [
   {
     "key": "ctrl+s",
-    "command": "-workbench.action.files.save"
+    "command": "-workbench.action.files.save",
   },
   {
     "key": "ctrl+s",
-    "command": "workbench.action.files.saveAll"
-  }
+    "command": "workbench.action.files.saveAll",
+  },
+  {
+    "key": "ctrl+q",
+    "command": "-workbench.action.quit",
+  },
 ]

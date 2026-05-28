@@ -15,6 +15,11 @@
       url = "github:probeldev/niri-float-sticky";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix4vscode = {
+      url = "github:nix-community/nix4vscode";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -23,6 +28,7 @@
       home-manager,
       millennium,
       niri-float-sticky,
+      nix4vscode,
       ...
     }:
     let
@@ -35,7 +41,10 @@
           inherit system;
           modules = [
             {
-              nixpkgs.overlays = [ millennium.overlays.default ];
+              nixpkgs.overlays = [
+                millennium.overlays.default
+                nix4vscode.overlays.default
+              ];
             }
             ./hosts/laptop/configuration.nix
             ./hosts/common
@@ -57,7 +66,10 @@
           inherit system;
           modules = [
             {
-              nixpkgs.overlays = [ millennium.overlays.default ];
+              nixpkgs.overlays = [
+                millennium.overlays.default
+                nix4vscode.overlays.default
+              ];
             }
             ./hosts/desktop/configuration.nix
             ./hosts/common
@@ -79,7 +91,10 @@
           inherit system;
           modules = [
             {
-              nixpkgs.overlays = [ millennium.overlays.default ];
+              nixpkgs.overlays = [
+                millennium.overlays.default
+                nix4vscode.overlays.default
+              ];
             }
             ./hosts/msi/configuration.nix
             ./hosts/common
