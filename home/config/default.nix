@@ -28,5 +28,8 @@ in
   xdg.configFile."gitmoji-nodejs/config.json".source =
     config.lib.file.mkOutOfStoreSymlink "${configFolder}/gitmoji.json";
 
+  xdg.configFile."nixpkgs/config.nix".source =
+    config.lib.file.mkOutOfStoreSymlink "${configFolder}/config.nix";
+
   home.file.".ssh/config".source = config.lib.file.mkOutOfStoreSymlink "${configFolder}/ssh_config";
 }
