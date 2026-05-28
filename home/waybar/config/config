@@ -16,6 +16,8 @@
     "group/tray-expander",
     "tray",
     "custom/notification",
+    "memory",
+    "cpu",
     "battery",
     "custom/exit"
   ],
@@ -32,8 +34,6 @@
       "custom/expand-icon",
       "pulseaudio",
       "disk",
-      "memory",
-      "cpu",
       "network",
     ]
   },
