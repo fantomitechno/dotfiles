@@ -1,0 +1,25 @@
+window-rule {
+    match app-id="nm-connection-editor"
+    open-floating true
+    default-floating-position x=660 y=335
+}
+
+window-rule {
+    match app-id="org.pulseaudio.pavucontrol"
+    open-floating true
+    default-column-width { fixed 702; }
+    default-window-height { fixed 496; }
+}
+
+
+window-rule {
+    match app-id="org.gnome.Calculator"
+    open-floating true
+    default-column-width { fixed 360; }
+    default-window-height { fixed 616; }
+}
+
+window-rule {
+    match app-id="vlc"
+    open-maximized true
+}

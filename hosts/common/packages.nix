@@ -74,6 +74,7 @@
     # apps
     archipelago
     bitwarden-desktop
+    brave
     file-roller
     gnome-calculator
     jetbrains.idea-oss

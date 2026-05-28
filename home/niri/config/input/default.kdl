@@ -1,0 +1,16 @@
+input {
+    keyboard {
+        numlock
+    }
+
+    touchpad {
+        tap
+    }
+
+    trackpoint {
+        off
+    }
+    
+    warp-mouse-to-focus
+    focus-follows-mouse max-scroll-amount="20%"
+}

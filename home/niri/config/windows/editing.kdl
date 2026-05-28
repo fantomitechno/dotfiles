@@ -1,0 +1,16 @@
+window-rule {
+    match app-id="kdenlive"
+    open-on-workspace "edit"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="Audacity"
+    open-on-workspace "edit"
+}
+
+window-rule {
+    match app-id=r#"obs"#
+    open-on-workspace "obs"
+    open-maximized true
+}

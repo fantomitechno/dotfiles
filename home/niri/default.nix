@@ -1,7 +1,6 @@
 {
   config,
-  type,
-  kb,
+  hostname,
   ...
 }:
 let
@@ -9,10 +8,9 @@ let
   niriFolder = "${dotfileFolder}/home/niri";
 in
 {
+  xdg.configFile."niri/configs".source = config.lib.file.mkOutOfStoreSymlink "${niriFolder}/config";
   xdg.configFile."niri/config.kdl".source =
-    config.lib.file.mkOutOfStoreSymlink "${niriFolder}/config/${type}${kb}.kdl";
-  xdg.configFile."niri/common".source =
-    config.lib.file.mkOutOfStoreSymlink "${niriFolder}/config/common";
+    config.lib.file.mkOutOfStoreSymlink "${niriFolder}/config/${hostname}.kdl";
 
   xdg.configFile."swaylock/config".source =
     config.lib.file.mkOutOfStoreSymlink "${niriFolder}/swaylock.conf";

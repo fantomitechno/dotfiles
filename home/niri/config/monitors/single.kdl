@@ -1,5 +1,3 @@
-include "config.kdl"
-
 output "eDP-1" {
     mode "1920x1080@60.049"
     scale 1
@@ -10,10 +8,5 @@ workspace "brow"
 workspace "term"
 workspace "stm"
 workspace "obs"
+workspace "edit"
 workspace "other"
-
-
-//window-rule {
-//    match app-id="at.yrlf.wl_mirror"
-//    open-on-output="HDMI-A-1"
-//}

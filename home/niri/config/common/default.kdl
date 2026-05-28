@@ -1,0 +1,18 @@
+include "gestures.kdl"
+include "layout.kdl"
+include "startup.kdl"
+
+
+overview {
+    zoom 0.25
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+layer-rule {
+    place-within-backdrop true
+}

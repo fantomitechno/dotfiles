@@ -36,9 +36,6 @@
       "wireshark"
       "docker"
     ];
-    packages = with pkgs; [
-      brave
-    ];
     shell = pkgs.zsh;
   };
 

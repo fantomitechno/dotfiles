@@ -1,5 +1,3 @@
-include "common/laptop.kdl"
-
 input {
     keyboard {
         xkb {

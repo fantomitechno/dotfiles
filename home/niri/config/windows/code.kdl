@@ -1,0 +1,16 @@
+window-rule {
+    match app-id="codium"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="jetbrains-idea"
+    open-maximized true
+}
+
+window-rule {
+    match app-id=r#"kitty"#
+    open-maximized true
+    opacity 0.65
+    open-on-workspace "term"
+}

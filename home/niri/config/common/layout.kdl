@@ -1,0 +1,24 @@
+layout {
+    gaps 5
+
+    focus-ring {
+        width 1
+
+        active-gradient from="#d06005" to="#9a09ba" angle=45 
+        inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+    }
+
+    border {
+        off
+    }
+
+    shadow {
+        on
+        draw-behind-window true
+        softness 50
+        spread 5
+        offset x=0 y=5
+        color "#0007"
+    }
+    background-color "transparent"
+}

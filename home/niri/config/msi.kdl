@@ -1,0 +1,7 @@
+include "configs/binds/default.kdl"
+include "configs/binds/custom_keys/function_keys.kdl"
+include "configs/common/default.kdl"
+include "configs/input/default.kdl"
+include "configs/input/layout_fr.kdl"
+include "configs/monitors/single.kdl"
+include "configs/windows/default.kdl"

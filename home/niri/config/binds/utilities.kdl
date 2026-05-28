@@ -1,0 +1,27 @@
+binds {
+    Mod+Shift+Comma { show-hotkey-overlay; }
+    Mod+Shift+O hotkey-overlay-title="toggle opacity" { toggle-window-rule-opacity; }
+
+    Mod+W hotkey-overlay-title="toggle waybar" repeat=false { spawn-sh "pkill waybar || waybar"; }
+    Mod+Shift+W hotkey-overlay-title="random wallpaper" { spawn-sh "waypaper --random"; }    
+
+    Mod+A hotkey-overlay-title="Run an Application" { spawn-sh "wofi --show drun"; }
+    Super+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn-sh "swaylock "; }
+
+    Mod+TAB repeat=false { toggle-overview; }
+    Mod+Shift+TAB repeat=false { spawn "~/.local/bin/nws.sh"; } 
+    Mod+Shift+P repeat=false { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)"; }
+
+    Mod+Q repeat=false { close-window; }
+    
+    Mod+V { spawn-sh "cliphist list | wofi -S dmenu | cliphist decode | wl-copy"; }
+
+
+    Print { screenshot; }
+    Ctrl+Print { screenshot-screen; }
+    Alt+Print { screenshot-window; }
+
+    Mod+Shift+E { quit; }
+    Ctrl+Alt+Delete { quit; }
+    Mod+Escape { spawn-sh "wlogout"; }
+}

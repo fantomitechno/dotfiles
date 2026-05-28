@@ -1,0 +1,10 @@
+window-rule {
+    match app-id=r#"^vesktop$"#
+    open-on-workspace "dsc"
+    open-maximized true
+}
+
+window-rule {
+    match title=r".*Microsoft Teams"
+    open-on-workspace "dsc"
+}

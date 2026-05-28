@@ -26,7 +26,7 @@
     in
     {
       nixosConfigurations = {
-        laptop = nixpkgs.lib.nixosSystem {
+        fantomitechno-laptop = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
             {
@@ -39,16 +39,15 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = {
-                type = "laptop";
-                kb = "us";
                 inherit niri-float-sticky;
+                hostname = "laptop";
               };
               home-manager.users."fantomitechno" = import ./home;
             }
             minegrub-theme.nixosModules.default
           ];
         };
-        desktop = nixpkgs.lib.nixosSystem {
+        fantomitechno-desktop = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
             {
@@ -61,15 +60,14 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = {
-                type = "desktop";
-                kb = "fr";
                 inherit niri-float-sticky;
+                hostname = "desktop";
               };
               home-manager.users."fantomitechno" = import ./home;
             }
           ];
         };
-        msi = nixpkgs.lib.nixosSystem {
+        fantomitechno-msi = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
             {
@@ -82,9 +80,8 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = {
-                type = "laptop";
-                kb = "fr";
                 inherit niri-float-sticky;
+                hostname = "msi";
               };
               home-manager.users."fantomitechno" = import ./home;
             }
