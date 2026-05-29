@@ -48,6 +48,7 @@
     # DE stuff
     adw-gtk3
     awww
+    brightnessctl
     cliphist
     grub2
     jq
@@ -55,7 +56,6 @@
     networkmanagerapplet
     papirus-icon-theme
     pavucontrol
-    sunsetr
     swayidle
     swaylock-effects
     swaynotificationcenter

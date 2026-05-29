@@ -26,6 +26,7 @@ window#waybar {
 
 /* === Module Defaults === */
 #workspaces,
+#backlight,
 #window,
 #memory,
 #clock,
@@ -40,6 +41,7 @@ window#waybar {
 #custom-startmenu,
 #custom-exit,
 #group-tray-expander,
+#taskbar,
 #custom-expand-icon,
 #mpris {
     border-radius: 6px;
@@ -48,7 +50,17 @@ window#waybar {
     background: #000000;
 }
 
+window#waybar.empty #window {
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    font-size: 0;
+}
+
 /* === Individual Modules === */
+#backlight { color: #8716f1; }
 #memory { color: #E6B673; }
 #clock { color: #B8CC52; }
 #cpu { color: #F3F4F5; }
@@ -67,4 +79,9 @@ window#waybar {
 /* === Tray === */
 .tray-group-item {
     padding: 0 4px;
+}
+
+#taskbar button {
+    margin: 0px 1px;
+    padding: 0px 6px;
 }

@@ -10,10 +10,14 @@
 
   "modules-center": [
     "clock",
+    "wlr/taskbar"
   ],
 
   "modules-right": [
-    "group/tray-expander",
+    "backlight",
+    "pulseaudio",
+    "disk",
+    "network",
     "tray",
     "custom/notification",
     "memory",
@@ -21,29 +25,25 @@
     "battery",
     "custom/exit"
   ],
-
-  "group/tray-expander": {
-    "orientation": "inherit",
-    "drawer": {
-      "click-to-reveal": true,
-      "transition-right-to-left": true,
-      "transition-duration": 600,
-      "children-class": "tray-group-item"
-    },
-    "modules": [
-      "custom/expand-icon",
-      "pulseaudio",
-      "disk",
-      "network",
-    ]
-  },
   "niri/workspaces": {
-    "format": "{name}",
+    "format": "{value}",
     "current-only": true,
+    "hide-empty": true
   },
   "wlr/taskbar": {
-    "tooltip-format": "{title} | {app_id}",
-},
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "ignore-list": [
+       "Picture in picture"
+    ],
+    "icon-size": 12
+  },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{percent}% {icon}",
+    "format-icons": ["", ""]
+  },
 
   "clock": {
     "format": "{:%I:%M %p}  ",
@@ -92,7 +92,6 @@
   "disk": {
     "format": " {free}",
     "tooltip": true
-    // "on-click": "kitty -e sh -c df -h ; read"
   },
 
   "network": {
@@ -106,13 +105,6 @@
     "format-ethernet": " {bandwidthDownBits}",
     "format-wifi": " {bandwidthDownBits}",
     "format-disconnected": "󰤮",
-    "tooltip": false
-  },
-
-
-
-  "custom/expand-icon": {
-    "format": "",
     "tooltip": false
   },
 

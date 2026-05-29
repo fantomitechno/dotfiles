@@ -22,8 +22,6 @@ in
 
   xdg.configFile."starship.toml".source =
     config.lib.file.mkOutOfStoreSymlink "${configFolder}/starship.toml";
-  xdg.configFile."sunsetr/sunsetr.toml".source =
-    config.lib.file.mkOutOfStoreSymlink "${configFolder}/sunsetr.toml";
 
   xdg.configFile."gitmoji-nodejs/config.json".source =
     config.lib.file.mkOutOfStoreSymlink "${configFolder}/gitmoji.json";
