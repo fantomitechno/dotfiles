@@ -11,6 +11,7 @@
       init.defaultBranch = "main";
       pull.rebase = true;
       color.ui = "auto";
+      push.autoSetupRemote = true;
     };
   };
 }
