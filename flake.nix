@@ -9,10 +9,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    millennium = {
-      url = "github:SteamClientHomebrew/Millennium/next?dir=packages/nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # millennium = {
+    #   url = "github:SteamClientHomebrew/Millennium/next?dir=packages/nix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     niri-float-sticky = {
       url = "github:probeldev/niri-float-sticky";
@@ -29,7 +29,7 @@
     {
       nixpkgs,
       home-manager,
-      millennium,
+      # millennium,
       niri-float-sticky,
       nix4vscode,
       ...
@@ -45,7 +45,7 @@
           modules = [
             {
               nixpkgs.overlays = [
-                millennium.overlays.default
+                # millennium.overlays.default
                 nix4vscode.overlays.default
               ];
             }
@@ -70,7 +70,7 @@
           modules = [
             {
               nixpkgs.overlays = [
-                millennium.overlays.default
+                # millennium.overlays.default
                 nix4vscode.overlays.default
               ];
             }
@@ -95,7 +95,7 @@
           modules = [
             {
               nixpkgs.overlays = [
-                millennium.overlays.default
+                # millennium.overlays.default
                 nix4vscode.overlays.default
               ];
             }
