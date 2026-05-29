@@ -9,7 +9,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+    millennium = {
+      url = "github:SteamClientHomebrew/Millennium/next?dir=packages/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     niri-float-sticky = {
       url = "github:probeldev/niri-float-sticky";
