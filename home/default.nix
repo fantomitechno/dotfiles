@@ -75,6 +75,7 @@
         obs-multi-rtmp
       ];
     };
+    # lutris.enable = true;
   };
 
   services = {
