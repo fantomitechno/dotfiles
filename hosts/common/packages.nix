@@ -73,9 +73,9 @@
 
     # apps
     archipelago
-    bitwarden-desktop
     brave
     file-roller
+    gimp
     gnome-calculator
     jetbrains.idea-oss
     libreoffice
@@ -84,8 +84,6 @@
     mumble
     nautilus
     olympus
-    pinta
-    proton-pass
     protonup-rs
     signal-desktop
     tetrio-desktop
