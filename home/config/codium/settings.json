@@ -41,5 +41,8 @@
   "basedpyright.analysis.diagnosticSeverityOverrides": {
     "reportUnusedCallResult": "none",
     "reportUnknownLambdaType": "hint"
+  },
+  "json.schemaDownload.trustedDomains": {
+    "https://github.com": true
   }
 }
