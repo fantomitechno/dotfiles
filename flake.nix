@@ -2,10 +2,10 @@
   description = "fantomitechno's Nix config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -29,7 +29,6 @@
     {
       nixpkgs,
       home-manager,
-      # millennium,
       niri-float-sticky,
       nix4vscode,
       ...
@@ -37,83 +36,39 @@
     let
       system = "x86_64-linux";
 
+      commonModules = hostname: [
+        {
+          nixpkgs.overlays = [ nix4vscode.overlays.default ];
+        }
+        ./hosts/${hostname}/configuration.nix
+        ./hosts/common
+        home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            extraSpecialArgs = {
+              inherit niri-float-sticky;
+              hostname = hostname;
+            };
+            users."fantomitechno" = import ./home;
+          };
+        }
+      ];
     in
     {
       nixosConfigurations = {
         fantomitechno-laptop = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [
-            {
-              nixpkgs.overlays = [
-                # millennium.overlays.default
-                nix4vscode.overlays.default
-              ];
-            }
-            ./hosts/laptop/configuration.nix
-            ./hosts/common
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = {
-                  inherit niri-float-sticky;
-                  hostname = "laptop";
-                };
-                users."fantomitechno" = import ./home;
-              };
-            }
-          ];
+          modules = commonModules "laptop";
         };
         fantomitechno-desktop = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [
-            {
-              nixpkgs.overlays = [
-                # millennium.overlays.default
-                nix4vscode.overlays.default
-              ];
-            }
-            ./hosts/desktop/configuration.nix
-            ./hosts/common
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = {
-                  inherit niri-float-sticky;
-                  hostname = "desktop";
-                };
-                users."fantomitechno" = import ./home;
-              };
-            }
-          ];
+          modules = commonModules "desktop";
         };
         fantomitechno-msi = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [
-            {
-              nixpkgs.overlays = [
-                # millennium.overlays.default
-                nix4vscode.overlays.default
-              ];
-            }
-            ./hosts/msi/configuration.nix
-            ./hosts/common
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = {
-                  inherit niri-float-sticky;
-                  hostname = "msi";
-                };
-                users."fantomitechno" = import ./home;
-              };
-            }
-          ];
+          modules = commonModules "msi";
         };
       };
     };
