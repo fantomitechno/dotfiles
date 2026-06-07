@@ -9,8 +9,7 @@
   ],
 
   "modules-center": [
-    "clock",
-    "wlr/taskbar"
+    "clock"
   ],
 
   "modules-right": [
@@ -30,25 +29,16 @@
     "current-only": true,
     "hide-empty": true
   },
-  "wlr/taskbar": {
-    "tooltip-format": "{title}",
-    "on-click": "activate",
-    "ignore-list": [
-       "Picture in picture"
-    ],
-    "icon-size": 12
-  },
 
   "backlight": {
     "device": "intel_backlight",
     "format": "{percent}% {icon}",
-    "format-icons": ["", ""]
+    "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"]
   },
 
   "clock": {
-    "format": "{:%I:%M %p}  ",
+    "format": "{:%a %m/%d/%y 󰃭 | %I:%M:%S %p}  ",
     "interval": 1,
-    "format-alt": "{:%a %m/%d/%y | %I:%M:%S %p}  ",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode"          : "year",
@@ -72,7 +62,49 @@
   },
 
   "niri/window": {
-    "separate-outputs": false
+	  "format": "{title} - {app_id}",
+    "separate-outputs": false,
+    "rewrite": {
+      "(?!.*(brave-browser|codium|vesktop|kitty)).*[Oo]pen.*": " opn",
+      "(.*) - Twitch - Brave - brave-browser": " $1",
+      "(.*) - YouTube - Brave - brave-browser": " $1",
+      "(?!.* - (Twitch|YouTube) - Brave)(.*) - Brave - brave-browser": " $2",
+      "(.*) - (.*) - VSCodium - codium": " $2/$1",
+      "(.*) - VSCodium - codium": " $1",
+      "VSCodium - codium": " Empty",
+      "[• ]*Discord - vesktop": "",
+      "[• ]*Discord . ([^@#].*) - vesktop": " $1",
+      "[• ]*Discord . @(.*) - vesktop": " DM/$1",
+      "[• ]*Discord . #(.*) . (.*) - vesktop": " $2/$1",
+      "Steam - steam": "󰓓 stm",
+      "(?!Steam)(.*) - steam": "󰓓 $1",
+      "Lumafly - Lumafly": "󰠭 lmfl",
+      "(.*) - hollow_knight.x86_64": "󰠭󰷟 hk",
+      "(.*) - Hollow Knight Silksong": "󰠭󰎑 hk",
+      "Bluetooth Devices - .blueman-manager-wrapped": "󰂯 blth",
+      "Volume Control - org.pulseaudio.pavucontrol": " vlm",
+      "(.*) - kitty": " [$1]",
+      "Signal - signal": "󰭹 sign",
+      "(.*) - org.gnome.Nautilus": " $1",
+      "(.*) - org.gnome.FileRoller": " $1",
+      "[Mm]inecraft (.*) - [Mm]inecraft (.*)": "󰍳 $1",
+      "(.*) - org.prismlauncher.PrismLauncher": "󰍳 Prism",
+      "Olympus - love": " olmps",
+      "Lönn - (.*) - love": " $1",
+      "Celeste - celeste": " clst",
+      "Network Connections - nm-connection-editor": "󱫋 ntwk",
+      "(.*) . Microsoft Teams - teams-for-linux": "󰊻 $1",
+      "(.*) — Mozilla Firefox - firefox": " $1",
+      "(.*) - VLC Media Player - vlc": "󰕼 $1",
+      "VLC Media Player - vlc": "󰕼 vlc",
+      "Starting Everest... - EverestSplash-linux": " evrst boot",
+      "Picture in picture - " : "󰹗 pip",
+      "The Wireshark Network Analyzer - org.wireshark.Wireshark": "󱙳 wrsk",
+      "(?!The Wireshark Network Analyzer)(.*) - org.wireshark.Wireshark": "󱙳 $1",
+      "OBS (.*) - Profile: (.*) - Scenes: (.*) - com.obsproject.Studio": "󰑋 $2/$3",
+      "(.*) / (.*) — Kdenlive - org.kde.kdenlive": "󱄣 $1",
+      "NineSols - steam_app(.*)": "󰄛 nnsls"
+    }
   },
 
   "memory": {
@@ -139,7 +171,7 @@
   "custom/exit": {
     "tooltip": false,
     "format": "⏻",
-    "on-click": "sleep 0.1 && wlogout"
+    "on-click": "wlogout"
   },
 
   "custom/startmenu": {
@@ -205,6 +237,6 @@
     },
     "interval": 2,
     "ignored-players": [ "chromium" ],
-    "max-length": 60
+    "max-length": 30
   }
 }

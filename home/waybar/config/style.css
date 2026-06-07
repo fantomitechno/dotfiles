@@ -41,7 +41,6 @@ window#waybar {
 #custom-startmenu,
 #custom-exit,
 #group-tray-expander,
-#taskbar,
 #custom-expand-icon,
 #mpris {
     border-radius: 6px;
@@ -79,9 +78,4 @@ window#waybar.empty #window {
 /* === Tray === */
 .tray-group-item {
     padding: 0 4px;
-}
-
-#taskbar button {
-    margin: 0px 1px;
-    padding: 0px 6px;
 }

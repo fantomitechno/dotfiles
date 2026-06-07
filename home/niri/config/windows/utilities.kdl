@@ -1,12 +1,19 @@
 window-rule {
     match app-id="nm-connection-editor"
-    open-floating true
-    default-floating-position x=660 y=335
+    default-column-width { fixed 702; }
+    default-window-height { fixed 496; }
 }
 
 window-rule {
     match app-id="org.pulseaudio.pavucontrol"
-    open-floating true
+    open-floating false
+    default-column-width { fixed 702; }
+    default-window-height { fixed 496; }
+}
+
+window-rule {
+    match app-id=".blueman-manager-wrapped"
+    open-floating false
     default-column-width { fixed 702; }
     default-window-height { fixed 496; }
 }
