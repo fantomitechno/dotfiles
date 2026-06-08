@@ -21,12 +21,40 @@
         "thunderbolt"
         "usb_storage"
         "sd_mod"
+        "cros_ec"
+        "cros_ec_lpcs"
       ];
       kernelModules = [ ];
     };
     kernelModules = [ "kvm-amd" ];
-    extraModulePackages = [ ];
+    extraModulePackages = with config.boot.kernelPackages; [
+      framework-laptop-kmod
+    ];
+    kernelParams = [
+      "quiet"
+      "loglevel=3"
+      "systemd.show_status=auto"
+      "rd.udev.log_level=3"
+      # There seems to be an issue with panel self-refresh (PSR) that
+      # causes hangs for users.
+      #
+      # https://community.frame.work/t/fedora-kde-becomes-suddenly-slow/58459
+      # https://gitlab.freedesktop.org/drm/amd/-/issues/3647
+      "amdgpu.dcdebugmask=0x10"
+      # Enables the amd cpu scaling https://www.kernel.org/doc/html/latest/admin-guide/pm/amd-pstate.html
+      # On recent AMD CPUs this can be more energy efficient.
+      "amd_pstate=active"
+    ];
   };
+
+  # Custom udev rules
+  services.udev.extraRules = ''
+    # Ethernet expansion card support
+    ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="0bda", ATTR{idProduct}=="8156", ATTR{power/autosuspend}="20"
+  '';
+
+  # Needed for desktop environments to detect/manage display brightness
+  hardware.sensor.iio.enable = true;
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/b3eaa7e8-812e-4a8b-b491-5a9d3fe50b08";
@@ -42,8 +70,23 @@
     ];
   };
 
+  services.xserver.videoDrivers = [ "modesetting" ];
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+  hardware.amdgpu.initrd.enable = true;
+
   swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  # AMD has better battery life with PPD over TLP:
+  # https://community.frame.work/t/responded-amd-7040-sleep-states/38101/13
+  services.power-profiles-daemon.enable = true;
+
+  services.fstrim.enable = true;
 }

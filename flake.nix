@@ -23,11 +23,6 @@
       url = "github:nix-community/nix4vscode?tag=nix4vscode-v0.0.12";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nixos-hardware = {
-      url = "github:NixOS/nixos-hardware";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -36,7 +31,6 @@
       home-manager,
       niri-float-sticky,
       nix4vscode,
-      nixos-hardware,
       ...
     }:
     let
@@ -66,9 +60,7 @@
       nixosConfigurations = {
         fantomitechno-laptop = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = commonModules "laptop" ++ [
-            nixos-hardware.nixosModules.framework-13-7040-amd
-          ];
+          modules = commonModules "laptop";
         };
         fantomitechno-desktop = nixpkgs.lib.nixosSystem {
           inherit system;
