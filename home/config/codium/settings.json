@@ -44,5 +44,6 @@
   },
   "json.schemaDownload.trustedDomains": {
     "https://github.com": true
-  }
+  },
+  "editor.fontFamily": "'JetBrainsMono Nerd Font Propo', monospace"
 }
