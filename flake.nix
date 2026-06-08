@@ -15,12 +15,12 @@
     # };
 
     niri-float-sticky = {
-      url = "github:probeldev/niri-float-sticky";
+      url = "github:probeldev/niri-float-sticky?tag=v0.0.8";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix4vscode = {
-      url = "github:nix-community/nix4vscode";
+      url = "github:nix-community/nix4vscode?tag=nix4vscode-v0.0.12";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
