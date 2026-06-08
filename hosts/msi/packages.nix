@@ -1,8 +1,5 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [ 
-    # Games
-    prismlauncher
-  ];
+  environment.systemPackages = with pkgs; [ ];
 }

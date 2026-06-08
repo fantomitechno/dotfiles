@@ -33,6 +33,7 @@
     go
     gopls
     gnumake
+    jetbrains.idea-oss
     lazydocker
     lazygit
     nil
@@ -77,7 +78,6 @@
     gimp
     gnome-calculator
     gnome-calendar
-    jetbrains.idea-oss
     libreoffice
     loupe
     lumafly
@@ -85,9 +85,10 @@
     nautilus
     olympus
     pandora-launcher
+    parsec-bin
+    prismlauncher
     protonup-rs
     signal-desktop
-    tetrio-desktop
     vesktop
 
     # network :3

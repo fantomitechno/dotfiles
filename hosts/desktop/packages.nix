@@ -5,10 +5,6 @@
     # Nantarena
     mongodb-compass
 
-    # Games
-    parsec-bin
-    prismlauncher
-
     # Video editing
     kdePackages.kdenlive
     audacity

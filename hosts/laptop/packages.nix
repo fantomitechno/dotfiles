@@ -6,18 +6,14 @@
     arp-scan
     mongodb-compass
 
-    # Games
-    prismlauncher
-
     # Raspberry pi
     rpi-imager
 
     # Editing for Ms. Jay "Parrot" Dash
     kdePackages.kdenlive
+    audacity
 
     framework-tool
-
-    eduvpn-client
 
     # Internship
     firefox
