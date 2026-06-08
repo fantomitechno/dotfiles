@@ -42,7 +42,6 @@
     # media
     ffmpeg
     playerctl
-    tidal-hifi
     vlc
 
     # DE stuff
@@ -77,6 +76,7 @@
     file-roller
     gimp
     gnome-calculator
+    gnome-calendar
     jetbrains.idea-oss
     libreoffice
     loupe
@@ -84,6 +84,7 @@
     mumble
     nautilus
     olympus
+    pandora-launcher
     protonup-rs
     signal-desktop
     tetrio-desktop
