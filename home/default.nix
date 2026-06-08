@@ -5,7 +5,7 @@
 }:
 
 {
-  home.stateVersion = "25.05";
+  home.stateVersion = "26.05";
   home.homeDirectory = "/home/fantomitechno";
 
   imports = [
@@ -57,6 +57,7 @@
     };
     packages = [
       niri-float-sticky.packages.${pkgs.system}.default
+      pkgs.umu-launcher
     ];
   };
 
@@ -75,7 +76,7 @@
         obs-multi-rtmp
       ];
     };
-    # lutris.enable = true;
+    lutris.enable = true;
   };
 
   services = {
