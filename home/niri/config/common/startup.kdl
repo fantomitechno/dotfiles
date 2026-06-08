@@ -10,4 +10,4 @@ spawn-sh-at-startup "swayidle -w timeout 900 'swaylock -f' timeout 900 'niri msg
 spawn-at-startup "niri-float-sticky"
 
 spawn-at-startup "vesktop"
-spawn-at-startup "steam -silent"
+spawn-sh-at-startup "steam -silent"
