@@ -138,7 +138,7 @@
     nix-ld.enable = true;
 
     # My terminal uwu
-    zsh.enable = true;
+    zsh.enable = true; # DO NOT REMOVE EVEN IF IT IS MANAGED BY HOME MANAGER
 
     # Gayming
     steam = {
