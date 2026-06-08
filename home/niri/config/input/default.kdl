@@ -1,6 +1,7 @@
 input {
     keyboard {
         numlock
+        track-layout "global"
     }
 
     touchpad {

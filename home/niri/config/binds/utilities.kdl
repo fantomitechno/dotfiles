@@ -24,4 +24,5 @@ binds {
     Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
     Mod+Escape { spawn-sh "wlogout"; }
+    Mod+Space { switch-layout "next"; }
 }
