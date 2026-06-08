@@ -137,9 +137,6 @@
     # Nix but looks like linux
     nix-ld.enable = true;
 
-    # My terminal uwu
-    zsh.enable = true;
-
     # Gayming
     steam = {
       enable = true;
