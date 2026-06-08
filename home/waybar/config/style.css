@@ -31,6 +31,7 @@ window#waybar {
 #memory,
 #clock,
 #idle_inhibitor,
+#language,
 #cpu,
 #disk,
 #battery,
@@ -59,6 +60,7 @@ window#waybar.empty #window {
 }
 
 /* === Individual Modules === */
+#language { color: #1b31fb; }
 #backlight { color: #8716f1; }
 #memory { color: #E6B673; }
 #clock { color: #B8CC52; }

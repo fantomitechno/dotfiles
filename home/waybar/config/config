@@ -13,6 +13,7 @@
   ],
 
   "modules-right": [
+    "niri/language",
     "backlight",
     "pulseaudio",
     "disk",
@@ -39,25 +40,10 @@
   "clock": {
     "format": "{:%a %m/%d/%y 󰃭 | %I:%M:%S %p}  ",
     "interval": 1,
-    "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "calendar": {
-      "mode"          : "year",
-      "mode-mon-col"  : 3,
-      "on-scroll"     : 1,
-      "format": {
-        "months":     "<span color='#ffead3'><b>{}</b></span>",
-        "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-        "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-        "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-        "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-        }
-      },
+    "tooltip": false,
     "actions":  {
       "on-click-right": "mode",
-      "on-scroll-up": "tz_up",
-      "on-scroll-down": "tz_down",
-      "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down"
+      "on-click": "gnome-calendar"
     }
   },
 
@@ -66,6 +52,7 @@
     "separate-outputs": false,
     "rewrite": {
       "(?!.*(brave-browser|codium|vesktop|kitty)).*[Oo]pen.*": " opn",
+      "(?!.*(brave-browser|codium|vesktop|kitty)).*[cC]hoose.*": " opn",
       "(.*) - Twitch - Brave - brave-browser": " $1",
       "(.*) - YouTube - Brave - brave-browser": " $1",
       "(?!.* - (Twitch|YouTube) - Brave)(.*) - Brave - brave-browser": " $2",
@@ -80,7 +67,7 @@
       "(?!Steam)(.*) - steam": "󰓓 $1",
       "Lumafly - Lumafly": "󰠭 lmfl",
       "(.*) - hollow_knight.x86_64": "󰠭󰷟 hk",
-      "(.*) - Hollow Knight Silksong": "󰠭󰎑 hk",
+      "(.*) - Hollow Knight Silksong": "󰠭󰎑 sk",
       "Bluetooth Devices - .blueman-manager-wrapped": "󰂯 blth",
       "Volume Control - org.pulseaudio.pavucontrol": " vlm",
       "(.*) - kitty": " [$1]",
@@ -88,7 +75,8 @@
       "(.*) - org.gnome.Nautilus": " $1",
       "(.*) - org.gnome.FileRoller": " $1",
       "[Mm]inecraft (.*) - [Mm]inecraft (.*)": "󰍳 $1",
-      "(.*) - org.prismlauncher.PrismLauncher": "󰍳 Prism",
+      "(.*) - org.prismlauncher.PrismLauncher": "󰍳 prsm",
+      "(.*) - PandoraLauncher": " pndr",
       "Olympus - love": " olmps",
       "Lönn - (.*) - love": " $1",
       "Celeste - celeste": " clst",
@@ -101,10 +89,43 @@
       "Picture in picture - " : "󰹗 pip",
       "The Wireshark Network Analyzer - org.wireshark.Wireshark": "󱙳 wrsk",
       "(?!The Wireshark Network Analyzer)(.*) - org.wireshark.Wireshark": "󱙳 $1",
-      "OBS (.*) - Profile: (.*) - Scenes: (.*) - com.obsproject.Studio": "󰑋 $2/$3",
-      "(.*) / (.*) — Kdenlive - org.kde.kdenlive": "󱄣 $1",
-      "NineSols - steam_app(.*)": "󰄛 nnsls"
+      "OBS .* - Profile: (.*) - Scenes: (.*) - com.obsproject.Studio": "󰑋 $1/$2",
+      "(.*) / .* — Kdenlive - org.kde.kdenlive": "󱄣 $1",
+      "NineSols - steam_app.*": "󰄛 nnsls",
+      ".* - ArchipelagoLauncher": "󱁏 archp",
+      "(.*) — LibreOffice Writer - libreoffice-writer": " $1",
+      "(.*) — LibreOffice Draw - libreoffice-draw": " $1",
+      "(.*) — LibreOffice Calc - libreoffice-calc": " $1",
+      "(.*) — LibreOffice Impress - libreoffice-impress": " $1",
+      "(.*) — LibreOffice Math - libreoffice-math": " $1",
+      "(.*) — LibreOffice Base - libreoffice-base": " $1",
+      "LibreOffice - libreoffice-startcenter": " lbr ofc",
+      "LibreOffice - ": " lbr ofc boot",
+      "Calendar - org.gnome.Calendar": "󰃭 cldr",
+      "Calculator - org.gnome.Calculator": " math",
+      "Lutris - net.lutris.Lutris": " ltrs",
+      "(?!Lutris)(.*) - net.lutris.Lutris": " $1",
+      "Image Viewer - org.gnome.Loupe": " img vwr",
+      "(?!Image Viewer)(.*) - org.gnome.Loupe": " $1",
+      "\\[(.*)\\]-.* \\(.*\\) (.*) – GIMP - gimp": "󱇣 $1 ($2)",
+      "(?!\\[(.*)\\]-.* \\(.*\\) (.*)).* - gimp": "󱇣 gimp",
+      "- jetbrains-idea": " intj boot",
+      "(.*) – (.*) \\[.*\\] - jetbrains-idea": " $1/$2",
+      "(?!\\[.*\\])(.*) – (.*) - jetbrains-idea": " $1/$2",
+      "(.*) — .* - org.gnome.Evince": " $1",
+      "Recent Documents - org.gnome.Evince": " pdf rdr",
+      "Waypaper - waypaper": " wppr",
+      "Proton VPN - proton.vpn.app.gtk": "󰒄 prtn vpn",
+      "MongoDB Compass - MongoDB Compass": " mngdb",
+      ".* - info.mumble.Mumble": " mble",
+      "Audacity - Audacity": " audcty",
+      "Audacity is starting up... - Audacity": " audcty boot",
+      "(?!Audacity)(.*) - Audacity": " $1"
     }
+  },
+
+  "niri/language": {
+	  "format": "󰌌 {short}",
   },
 
   "memory": {
@@ -134,10 +155,13 @@
       "󰤥",
       "󰤨"
     ],
-    "format-ethernet": " {bandwidthDownBits}",
-    "format-wifi": " {bandwidthDownBits}",
-    "format-disconnected": "󰤮",
-    "tooltip": false
+    "format": "{ifname}",
+    "format-wifi": "{essid} ({signalStrength}%) {icon}",
+    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+    "format-disconnected": "", //An empty format will hide the module.
+    "tooltip-format": "{ifname} {ipaddr}/{cidr} gtw {gwaddr} ",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50
   },
 
   "tray": {
@@ -148,14 +172,14 @@
   "pulseaudio": {
     "format": "{icon} {volume}% {format_source}",
     "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
+    "format-bluetooth-muted": "󰝟 {icon} {format_source}",
+    "format-muted": "󰝟 0% {format_source}",
     "format-source": " {volume}%",
     "format-source-muted": "",
     "format-icons": {
       "headphone": "",
-      "hands-free": "",
-      "headset": "",
+      "hands-free": "󰋎",
+      "headset": "󰋎",
       "phone": "",
       "portable": "",
       "car": "",
@@ -172,12 +196,6 @@
     "tooltip": false,
     "format": "⏻",
     "on-click": "wlogout"
-  },
-
-  "custom/startmenu": {
-    "tooltip": false,
-    "format": "",
-    "on-click": "wofi --show drun"
   },
 
   "custom/notification": {
@@ -206,9 +224,9 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon} {capacity}%",
-    "format-charging": "󰂄 {capacity}%",
-    "format-plugged": "󱘖 {capacity}%",
+    "format": "{icon} {capacity}% ({power:0.1f}W)",
+    "format-charging": "󰂄 {capacity}% ({power:0.1f}W)",
+    "format-plugged": "󱘖 {capacity}% ({power:0.1f}W)",
     "format-icons": [
       "󰁺",
       "󰁻",
@@ -226,17 +244,13 @@
   },
 
   "mpris": {
-    "format": "{player_icon} {dynamic}",
-    "format-paused": "{status_icon} <i>{dynamic}</i>",
-    "player-icons": {
-      "default": "▶",
-      "mpv": "🎵"
-    },
+    "format": "{status-icon} {dynamic}",
     "status-icons": {
-      "paused": "⏸"
+      "paused": "",
+      "playing": "",
+      "stopped": "" 
     },
     "interval": 2,
-    "ignored-players": [ "chromium" ],
-    "max-length": 30
+    "max-length": 40
   }
 }
