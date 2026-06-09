@@ -244,13 +244,17 @@
   },
 
   "mpris": {
-    "format": "{status-icon} {dynamic}",
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "player-icons": {
+      "default": "▶",
+      "mpv": "🎵"
+    },
     "status-icons": {
-      "paused": "",
-      "playing": "",
-      "stopped": "" 
+      "paused": "⏸"
     },
     "interval": 2,
-    "max-length": 40
+    "ignored-players": [ "chromium" ],
+    "max-length": 30
   }
 }
