@@ -5,6 +5,7 @@
     # Nantarena
     arp-scan
     mongodb-compass
+    nmap
 
     # Raspberry pi
     rpi-imager
