@@ -92,6 +92,7 @@
       "OBS .* - Profile: (.*) - Scenes: (.*) - com.obsproject.Studio": "󰑋 $1/$2",
       "(.*) / .* — Kdenlive - org.kde.kdenlive": "󱄣 $1",
       "NineSols - steam_app.*": "󰄛 nnsls",
+      "DELTARUNE - steam_app.*": "󰧼 dltrn",
       ".* - ArchipelagoLauncher": "󱁏 archp",
       "(.*) — LibreOffice Writer - libreoffice-writer": " $1",
       "(.*) — LibreOffice Draw - libreoffice-draw": " $1",
