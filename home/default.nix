@@ -1,6 +1,7 @@
 {
   pkgs,
   niri-float-sticky,
+  activate-linux,
   ...
 }:
 
@@ -57,6 +58,7 @@
     };
     packages = [
       niri-float-sticky.packages.${pkgs.system}.default
+      activate-linux.defaultPackage.${pkgs.system}
       pkgs.umu-launcher
     ];
   };

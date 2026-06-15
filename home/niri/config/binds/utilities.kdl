@@ -4,6 +4,7 @@ binds {
 
     Mod+W hotkey-overlay-title="toggle waybar" repeat=false { spawn-sh "pkill waybar || waybar"; }
     Mod+Shift+W hotkey-overlay-title="random wallpaper" { spawn-sh "waypaper --random"; }    
+    Mod+Shift+A hotkey-overlay-title="toggle activate linux" repeat=false { spawn-sh "pkill activate-linux || activate-linux"; }
 
     Mod+A hotkey-overlay-title="Run an Application" { spawn-sh "wofi --show drun"; }
     Super+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn-sh "swaylock "; }

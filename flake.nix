@@ -23,6 +23,11 @@
       url = "github:nix-community/nix4vscode?tag=nix4vscode-v0.0.12";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    activate-linux = {
+      url = "github:Kljunas2/activate-linux";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -31,6 +36,7 @@
       home-manager,
       niri-float-sticky,
       nix4vscode,
+      activate-linux,
       ...
     }:
     let
@@ -49,6 +55,7 @@
             useUserPackages = true;
             extraSpecialArgs = {
               inherit niri-float-sticky;
+              inherit activate-linux;
               hostname = hostname;
             };
             users."fantomitechno" = import ./home;

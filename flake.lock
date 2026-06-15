@@ -1,5 +1,26 @@
 {
   "nodes": {
+    "activate-linux": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": "utils"
+      },
+      "locked": {
+        "lastModified": 1728405649,
+        "narHash": "sha256-Ski9d0DrfiH6tl7TY6EMS1PRT9ay2s7xbXy2prhy0Uk=",
+        "owner": "Kljunas2",
+        "repo": "activate-linux",
+        "rev": "978d53de9a2cde0f608de1554c34c7dd090e01a4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Kljunas2",
+        "repo": "activate-linux",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -99,6 +120,7 @@
     },
     "root": {
       "inputs": {
+        "activate-linux": "activate-linux",
         "home-manager": "home-manager",
         "niri-float-sticky": "niri-float-sticky",
         "nix4vscode": "nix4vscode",
@@ -133,6 +155,21 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "utils": {
+      "locked": {
+        "lastModified": 1652776076,
+        "narHash": "sha256-gzTw/v1vj4dOVbpBSJX4J0DwUR6LIyXo7/SuuTJp1kM=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "04c1b180862888302ddfb2e3ad9eaa63afc60cf8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
         "type": "github"
       }
     }
