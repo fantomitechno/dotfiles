@@ -19,5 +19,8 @@
     # Internship
     firefox
     teams-for-linux
+
+    # Graphene installation process
+    androidenv.androidPkgs.platform-tools
   ];
 }
