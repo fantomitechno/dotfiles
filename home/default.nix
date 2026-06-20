@@ -67,7 +67,6 @@
     home-manager.enable = true;
     go.enable = true;
     zsh.enable = true;
-    zoxide.enable = true;
     obs-studio = {
       enable = true;
       plugins = with pkgs.obs-studio-plugins; [

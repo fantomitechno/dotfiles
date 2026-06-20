@@ -48,5 +48,6 @@
   "json.schemaDownload.trustedDomains": {
     "https://github.com": true
   },
-  "editor.fontFamily": "'JetBrainsMono Nerd Font Propo', monospace"
+  "editor.fontFamily": "'JetBrainsMono Nerd Font Propo', monospace",
+  "clangd.path": "~.config/VSCodium/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/22.1.0/clangd_22.1.0/bin/clangd"
 }

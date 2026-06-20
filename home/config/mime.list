@@ -25,3 +25,4 @@ text/md=codium.desktop;
 application/xml=codium.desktop;
 application/zip=org.gnome.FileRoller.desktop;
 application/yaml=codium.desktop;
+application/octet-stream=codium.desktop;

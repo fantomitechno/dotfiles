@@ -58,7 +58,6 @@
               inherit activate-linux;
               hostname = hostname;
             };
-            users."fantomitechno" = import ./home;
           };
         }
       ];

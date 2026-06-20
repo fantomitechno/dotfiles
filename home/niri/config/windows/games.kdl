@@ -22,6 +22,7 @@ window-rule {
 window-rule {
     match app-id=r#"[Cc]eleste"#
     open-on-workspace "stm"
+    open-maximized true
 }
 
 window-rule {
@@ -37,11 +38,13 @@ window-rule {
 window-rule {
     match app-id="hollow_knight.x86_64"
     open-on-workspace "stm"
+    open-maximized true
 }
 
 window-rule {
     match app-id="Hollow Knight Silksong"
     open-on-workspace "stm"
+    open-maximized true
 }
 
 window-rule {

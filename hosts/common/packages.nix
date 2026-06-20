@@ -106,6 +106,7 @@
     packages = with pkgs; [
       nerd-fonts.jetbrains-mono
       noto-fonts-cjk-sans
+      minecraftia
     ];
   };
 
