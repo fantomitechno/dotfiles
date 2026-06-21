@@ -68,7 +68,7 @@
                 };
 
                 users."fantomitechno" = { lib, ... }: {
-                  home.homeDirectory = lib.mkForce "/home/fantomitechno";
+                  home.homeDirectory = "/home/fantomitechno";
                   home.stateVersion = "26.05";
                 };
               };
