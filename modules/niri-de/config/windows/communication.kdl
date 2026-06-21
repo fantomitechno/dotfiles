@@ -12,3 +12,8 @@ window-rule {
     match app-id="signal"
     open-on-workspace "dsc"
 }
+
+window-rule {
+    match app-id="org.gnome.Fractal"
+    open-on-workspace "dsc"
+}
