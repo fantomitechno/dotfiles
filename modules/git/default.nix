@@ -1,7 +1,8 @@
-{ pkgs, ... }:
+{ ... }:
 {
   home-manager.users."fantomitechno" =
     {
+      pkgs,
       config,
       dotfileFolder,
       ...
