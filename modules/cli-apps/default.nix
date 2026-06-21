@@ -51,7 +51,7 @@
       ...
     }:
     let
-      defaultCliFolder = "${dotfileFolder}/modules/default-cli";
+      defaultCliFolder = "${dotfileFolder}/modules/cli-apps";
     in
     {
       programs = {
