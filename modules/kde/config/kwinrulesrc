@@ -1,0 +1,10 @@
+[General]
+count=1
+rules=a9ee6d1f-bd26-4d0d-b4f3-f3458424d35a
+
+[a9ee6d1f-bd26-4d0d-b4f3-f3458424d35a]
+Description=Settings for brave
+desktops=46ed0a70-6926-499a-a936-ee622a9c1619
+desktopsrule=3
+wmclass=brave
+wmclassmatch=2

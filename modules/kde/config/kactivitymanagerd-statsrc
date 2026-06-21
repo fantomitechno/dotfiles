@@ -1,0 +1,5 @@
+[Favorites-org.kde.plasma.kickoff.favorites.instance-4-6fb88338-4c5c-453a-bbe5-4574e7f9c080]
+ordering=preferred://browser,applications:systemsettings.desktop,applications:org.kde.discover.desktop,applications:vesktop.desktop
+
+[Favorites-org.kde.plasma.kickoff.favorites.instance-4-global]
+ordering=preferred://browser,applications:systemsettings.desktop,applications:org.kde.discover.desktop,applications:vesktop.desktop

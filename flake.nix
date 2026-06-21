@@ -32,50 +32,55 @@
 
   outputs =
     {
+      self,
       nixpkgs,
       home-manager,
-      niri-float-sticky,
       nix4vscode,
-      activate-linux,
       ...
     }:
     let
       system = "x86_64-linux";
 
-      commonModules = hostname: [
-        {
-          nixpkgs.overlays = [ nix4vscode.overlays.default ];
-        }
-        ./hosts/${hostname}/configuration.nix
-        ./hosts/common
-        home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            extraSpecialArgs = {
-              inherit niri-float-sticky;
-              inherit activate-linux;
-              hostname = hostname;
-            };
+      commonSystem =
+        hostname:
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = {
+            inherit hostname;
+            dotfileFolder = "/home/fantomitechno/dotfiles";
+            flakes = self;
           };
-        }
-      ];
+          modules = [
+            {
+              nixpkgs.overlays = [ nix4vscode.overlays.default ];
+            }
+            ./hosts
+            ./hosts/${hostname}
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = {
+                  inherit hostname;
+                  dotfileFolder = "/home/fantomitechno/dotfiles";
+                  flakes = self;
+                };
+
+                users."fantomitechno" = { lib, ... }: {
+                  home.homeDirectory = lib.mkForce "/home/fantomitechno";
+                  home.stateVersion = "26.05";
+                };
+              };
+            }
+          ];
+        };
     in
     {
       nixosConfigurations = {
-        fantomitechno-laptop = nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = commonModules "laptop";
-        };
-        fantomitechno-desktop = nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = commonModules "desktop";
-        };
-        fantomitechno-msi = nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = commonModules "msi";
-        };
+        fantomitechno-laptop = commonSystem "laptop";
+        fantomitechno-desktop = commonSystem "desktop";
+        fantomitechno-msi = commonSystem "msi";
       };
     };
 }
