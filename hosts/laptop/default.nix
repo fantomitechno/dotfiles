@@ -18,6 +18,7 @@
     "kde"
     "niri-de"
     "wallpapers"
+    "battery-notify.nix"
     "communication.nix"
     "editing.nix"
     "flint.nix"

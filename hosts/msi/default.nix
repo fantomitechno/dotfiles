@@ -15,6 +15,7 @@
     "git"
     "niri-de"
     "wallpapers"
+    "battery-notify.nix"
     "communication.nix"
     "customisation.nix"
     "games.nix"
