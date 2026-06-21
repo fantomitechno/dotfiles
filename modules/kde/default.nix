@@ -72,15 +72,12 @@
         config.lib.file.mkOutOfStoreSymlink "${kdeFolder}/kconf_updaterc";
       xdg.configFile."kded5rc".source = config.lib.file.mkOutOfStoreSymlink "${kdeFolder}/kded5rc";
       xdg.configFile."kdeglobals".source = config.lib.file.mkOutOfStoreSymlink "${kdeFolder}/kdeglobals";
-      xdg.configFile."kdenliverc".source = config.lib.file.mkOutOfStoreSymlink "${kdeFolder}/kdenliverc";
       xdg.configFile."kglobalshortcutsrc".source =
         config.lib.file.mkOutOfStoreSymlink "${kdeFolder}/kglobalshortcutsrc";
       xdg.configFile."kmenueditrc".source =
         config.lib.file.mkOutOfStoreSymlink "${kdeFolder}/kmenueditrc";
       xdg.configFile."ksmserverrc".source =
         config.lib.file.mkOutOfStoreSymlink "${kdeFolder}/ksmserverrc";
-      xdg.configFile."ktimezonedrc".source =
-        config.lib.file.mkOutOfStoreSymlink "${kdeFolder}/ktimezonedrc";
       xdg.configFile."kwalletrc".source = config.lib.file.mkOutOfStoreSymlink "${kdeFolder}/kwalletrc";
       xdg.configFile."kwinoutputconfigjson".source =
         config.lib.file.mkOutOfStoreSymlink "${kdeFolder}/kwinoutputconfigjson";
