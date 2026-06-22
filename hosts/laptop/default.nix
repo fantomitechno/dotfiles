@@ -14,6 +14,7 @@
     "kde"
     "niri-de"
     "battery-notify.nix"
+    "docker.nix"
     "editing.nix"
     "flint.nix"
     "framework.nix"

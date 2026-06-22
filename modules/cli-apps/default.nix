@@ -29,14 +29,11 @@
     zip
 
     # programing
-    docker
-    docker-compose
     cmake
     gcc
     go
     gopls
     gnumake
-    lazydocker
     nil
     nixfmt
     python3

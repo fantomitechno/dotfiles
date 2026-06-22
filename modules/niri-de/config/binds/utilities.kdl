@@ -3,7 +3,7 @@ binds {
     Mod+Shift+O hotkey-overlay-title="toggle opacity" { toggle-window-rule-opacity; }
 
     Mod+W hotkey-overlay-title="toggle waybar" repeat=false { spawn-sh "pkill waybar || waybar"; }
-    Mod+Shift+W hotkey-overlay-title="random wallpaper" { spawn-sh "waypaper --random"; }    
+    Mod+Shift+W hotkey-overlay-title="random wallpaper" { spawn-sh "waypaper --random; cd /home/fantomitechno/dotfiles/ && git restore modules/niri-de/waypaper.ini;"; }    
     Mod+Shift+A hotkey-overlay-title="toggle activate linux" repeat=false { spawn-sh "pkill activate-linux || activate-linux"; }
 
     Mod+A hotkey-overlay-title="Run an Application" { spawn-sh "wofi --show drun"; }

@@ -13,11 +13,12 @@
     "codium"
     "niri-de"
     "customisation.nix"
+    "docker.nix"
     "editing.nix"
     "games.nix"
-    "graphene.nix"
     "jetbrain.nix"
     "network.nix"
+    "nantarena.nix"
   ]);
 
   # Bootloader

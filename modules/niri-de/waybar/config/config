@@ -73,6 +73,7 @@
       "(.*) - kitty": " [$1]",
       "Signal - signal": "󰭹 sign",
       "Fractal - org.gnome.Fractal": "󰭹 mtrx",
+      ".* - fractal": "󰭹 mtrx",
       "(.*) - org.gnome.Nautilus": " $1",
       "(.*) - org.gnome.FileRoller": " $1",
       "[Mm]inecraft (.*) - [Mm]inecraft (.*)": "󰍳 $1",
