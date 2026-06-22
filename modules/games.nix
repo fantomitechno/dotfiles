@@ -12,6 +12,7 @@
     gamemode.enable = true;
   };
   environment.systemPackages = with pkgs; [
+    antimicrox
     archipelago
     lumafly
     mumble
