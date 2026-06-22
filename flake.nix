@@ -81,6 +81,7 @@
         fantomitechno-laptop = commonSystem "laptop";
         fantomitechno-desktop = commonSystem "desktop";
         fantomitechno-msi = commonSystem "msi";
+        conseil = commonSystem "conseil";
       };
     };
 }
