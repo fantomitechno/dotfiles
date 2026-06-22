@@ -9,19 +9,10 @@
     ../computer.nix
   ]
   ++ builtins.map (i: ../../modules/${i}) ([
-    "cli-apps"
-    "desktop-apps"
-    "fastfetch"
-    "git"
     "niri-de"
-    "wallpapers"
     "battery-notify.nix"
-    "communication.nix"
     "customisation.nix"
     "games.nix"
-    "greeter.nix"
-    "network.nix"
-    "terminal.nix"
   ]);
 
   # Bootloader
@@ -37,8 +28,6 @@
     layout = "fr";
     variant = "";
   };
-
-  networking.hostName = "fantomitechno-msi";
 
   # Configure console keymap
   console.keyMap = "fr";

@@ -10,27 +10,19 @@
     ../computer.nix
   ]
   ++ builtins.map (i: ../../modules/${i}) ([
-    "cli-apps"
     "codium"
-    "desktop-apps"
-    "fastfetch"
-    "git"
     "kde"
     "niri-de"
-    "wallpapers"
     "battery-notify.nix"
-    "communication.nix"
     "editing.nix"
     "flint.nix"
     "framework.nix"
     "games.nix"
     "graphene.nix"
-    "greeter.nix"
     "jetbrain.nix"
     "network.nix"
     "nantarena.nix"
     "raspberry.nix"
-    "terminal.nix"
   ]);
 
   # Bootloader
@@ -52,8 +44,6 @@
   };
 
   services.fprintd.enable = lib.mkForce false;
-
-  networking.hostName = "fantomitechno-laptop";
 
   console.keyMap = "us";
 

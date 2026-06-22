@@ -10,22 +10,14 @@
     ../computer.nix
   ]
   ++ builtins.map (i: ../../modules/${i}) ([
-    "cli-apps"
     "codium"
-    "desktop-apps"
-    "fastfetch"
-    "git"
     "niri-de"
-    "wallpapers"
-    "communication.nix"
     "customisation.nix"
     "editing.nix"
     "games.nix"
     "graphene.nix"
-    "greeter.nix"
     "jetbrain.nix"
     "network.nix"
-    "terminal.nix"
   ]);
 
   # Bootloader

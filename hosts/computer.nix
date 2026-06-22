@@ -1,6 +1,17 @@
 { pkgs, hostname, ... }:
 
 {
+  imports = builtins.map (i: ../modules/${i}) ([
+    "cli-apps"
+    "desktop-apps"
+    "fastfetch"
+    "git"
+    "wallpapers"
+    "communication.nix"
+    "greeter.nix"
+    "terminal.nix"
+  ]);
+
   networking = {
     networkmanager = {
       enable = true;
