@@ -76,7 +76,10 @@
         fantomitechno-laptop = commonSystem "laptop";
         fantomitechno-desktop = commonSystem "desktop";
         fantomitechno-msi = commonSystem "msi";
+
+        # Servers
         conseil = commonSystem "conseil";
+        fant0mib0t = commonSystem "fant0mib0t";
       };
     };
 }
