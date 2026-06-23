@@ -2,11 +2,3 @@ Host knot.fantomitechno.dev
     User git
     Hostname 100.116.20.78
     Port 2222
-
-Host testnetbox
-    User simon
-    Hostname 10.156.10.150
-
-Host netbox.flint.local
-    User netbox
-    Hostname 10.255.3.6
