@@ -41,4 +41,8 @@
       options = "--delete-older-than 14d";
     };
   };
+
+  home-manager.users."fantomitechno" = { lib, ... }: {
+    home.homeDirectory = "/home/fantomitechno";
+  };
 }
