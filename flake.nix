@@ -66,11 +66,6 @@
                   dotfileFolder = "/home/fantomitechno/dotfiles";
                   flakes = self;
                 };
-
-                users."fantomitechno" = { lib, ... }: {
-                  home.homeDirectory = "/home/fantomitechno";
-                  home.stateVersion = "26.05";
-                };
               };
             }
           ];
