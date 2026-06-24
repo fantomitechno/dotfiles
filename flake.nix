@@ -80,6 +80,17 @@
         # Servers
         conseil = commonSystem "conseil";
         fant0mib0t = commonSystem "fant0mib0t";
+
+        # Installer
+        # nix build --no-link --print-out-paths ".#installer"
+        installer = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./modules/installer.nix
+          ];
+        };
+
       };
+      installer = self.outputs.nixosConfigurations.installer.config.system.build.isoImage;
     };
 }
