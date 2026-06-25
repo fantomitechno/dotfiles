@@ -127,7 +127,8 @@
       ".* - info.mumble.Mumble": " mble",
       "Audacity - Audacity": " audcty",
       "Audacity is starting up... - Audacity": " audcty boot",
-      "(?!Audacity)(.*) - Audacity": " $1"
+      "(?!Audacity)(.*) - Audacity": " $1",
+      ".* - osu!": " osu!"
     }
   },
 
