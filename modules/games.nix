@@ -17,6 +17,7 @@
     lumafly
     mumble
     olympus
+    osu-lazer-bin
     pandora-launcher
     parsec-bin
     prismlauncher
