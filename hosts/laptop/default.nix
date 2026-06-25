@@ -24,6 +24,7 @@
     "network.nix"
     "nantarena.nix"
     "raspberry.nix"
+    "obs.nix"
   ]);
 
   # Bootloader

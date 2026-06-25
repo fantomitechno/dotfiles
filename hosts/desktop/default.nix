@@ -18,6 +18,7 @@
     "games.nix"
     "jetbrain.nix"
     "network.nix"
+    "obs.nix"
     "nantarena.nix"
   ]);
 
