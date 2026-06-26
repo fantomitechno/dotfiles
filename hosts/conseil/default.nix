@@ -7,7 +7,10 @@
   imports = [
     ./hardware-configuration.nix
     ../server.nix
-  ];
+  ]
+  ++ builtins.map (i: ../../modules/${i}) ([
+    "nas"
+  ]);
 
   # Bootloader
   boot = {

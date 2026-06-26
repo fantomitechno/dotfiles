@@ -28,6 +28,11 @@
       url = "github:Kljunas2/activate-linux";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    inputs.copyparty = {
+      url = "github:9001/copyparty?tag=v1.20.16";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -36,13 +41,14 @@
       nixpkgs,
       home-manager,
       nix4vscode,
+      copyparty,
       ...
     }:
     let
       system = "x86_64-linux";
 
       commonSystem =
-        hostname:
+        hostname: overlays:
         nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = {
@@ -52,7 +58,7 @@
           };
           modules = [
             {
-              nixpkgs.overlays = [ nix4vscode.overlays.default ];
+              nixpkgs.overlays = overlays;
             }
             ./hosts
             ./hosts/${hostname}
@@ -73,13 +79,13 @@
     in
     {
       nixosConfigurations = {
-        fantomitechno-laptop = commonSystem "laptop";
-        fantomitechno-desktop = commonSystem "desktop";
-        fantomitechno-msi = commonSystem "msi";
+        fantomitechno-laptop = commonSystem "laptop" [ nix4vscode.overlays.default ];
+        fantomitechno-desktop = commonSystem "desktop" [ nix4vscode.overlays.default ];
+        fantomitechno-msi = commonSystem "msi" [ ];
 
         # Servers
-        conseil = commonSystem "conseil";
-        fant0mib0t = commonSystem "fant0mib0t";
+        conseil = commonSystem "conseil" [ copyparty.overlays.default ];
+        fant0mib0t = commonSystem "fant0mib0t" [ ];
 
         # Installer
         # nix build --no-link --print-out-paths ".#installer"
