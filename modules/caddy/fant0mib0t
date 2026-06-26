@@ -1,0 +1,24 @@
+{
+  email simon@renoux.dev
+}
+
+(logging) {
+    log {
+        output file /var/log/{args[0]}.log
+        format console
+        # level error
+    }
+}
+
+fant0mib0t.renoux.dev {
+  respond "Welcome!"
+}
+
+
+matrix.fantomitechno.dev {
+  import logging matrix
+  reverse_proxy 127.0.0.1:6167 {
+    header_up X-Forwarded-For {remote_host}
+    header_up X-Forwarded-Proto {scheme}
+  }
+}
