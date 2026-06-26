@@ -1,14 +1,33 @@
 # fantom's Dotfiles
 
-Based on [JotaFab/s13los](https://github.com/JotaFab/s13los)
+At first inspired by [JotaFab/s13los](https://github.com/JotaFab/s13los)
 
-Desktop Environement is built with Waybar and Niri
+Desktop Environement is built with Waybar and Niri but can also be KDE as a backup
 
 These dotfiles are used for
 
-- my laptop
-- my desked laptop
-- my desktop
+- my laptop (fantomitechno-laptop)
+- my desked laptop (fantomitechno-msi)
+- my desktop (fantomitechno-desktop)
+- my homelab servers (conseil and fant0mib0t)
+
+# How to use
+
+## Create an iso installer
+
+```sh
+nix build --no-link --print-out-paths ".#installer"
+```
+
+## Rebuild and switch on an existing configuration
+
+```sh
+rebuild 
+# or
+cd /home/fantomitechno/dotfiles && sudo nixos-rebuild switch --flake
+```
+
+For this you'll need the hostname to be set to an already existing configuration
 
 # Wallpaper Credits
 
