@@ -3,6 +3,7 @@
   environment.systemPackages = with pkgs; [
     # network :3
     arp-scan
+    freeradius
     nmap
     openvpn
     proton-vpn
