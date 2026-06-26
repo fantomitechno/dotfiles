@@ -19,3 +19,10 @@ These dotfiles are used for
 - `red_and_yellow.jpg`: Undertale: Red And Yellow by Sinix and more ([gmjlt](https://gamejolt.com/games/undertale-red-yellow/877387))
 - `sol_rue.jpg`: (Extended Version of) OneShot by Future Cat Games ([stm](https://store.steampowered.com/app/420530/OneShot/))
 - `undertale_yellow.png`: Undertale Yellow by Team Undertale Yellow ([gmjlt](https://gamejolt.com/games/UndertaleYellow/136925))
+- `banned_and_forgotten.png`: Commission by Sayo ([crd.co](https://faudarzdsayo.carrd.co/))
+- `fantom_deloreane.gif`: Commission by cocoNOTshell (they deleted all socials :c)
+- `deltarune_chapter_5_teaser.png` by Temmie Chang ([site](https://temstuff.neocities.org/)) for Deltarune Chapter 5 reveal trailer ([stm](https://store.steampowered.com/app/1671210/DELTARUNE/) [site](https://deltarune.com/))
+
+# Fastfetch prompt Credits
+
+Picrew, a lot of them, all of them really
