@@ -28,6 +28,11 @@
       url = "github:Kljunas2/activate-linux";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    inputs.copyparty = {
+      url = "github:9001/copyparty?tag=v1.20.16";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
