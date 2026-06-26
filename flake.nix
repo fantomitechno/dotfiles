@@ -40,15 +40,13 @@
       self,
       nixpkgs,
       home-manager,
-      nix4vscode,
-      copyparty,
       ...
     }:
     let
       system = "x86_64-linux";
 
       commonSystem =
-        hostname: overlays:
+        hostname:
         nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = {
@@ -57,9 +55,6 @@
             flakes = self;
           };
           modules = [
-            {
-              nixpkgs.overlays = overlays;
-            }
             ./hosts
             ./hosts/${hostname}
             home-manager.nixosModules.home-manager
@@ -79,13 +74,13 @@
     in
     {
       nixosConfigurations = {
-        fantomitechno-laptop = commonSystem "laptop" [ nix4vscode.overlays.default ];
-        fantomitechno-desktop = commonSystem "desktop" [ nix4vscode.overlays.default ];
-        fantomitechno-msi = commonSystem "msi" [ ];
+        fantomitechno-laptop = commonSystem "laptop";
+        fantomitechno-desktop = commonSystem "desktop";
+        fantomitechno-msi = commonSystem "msi";
 
         # Servers
-        conseil = commonSystem "conseil" [ copyparty.overlays.default ];
-        fant0mib0t = commonSystem "fant0mib0t" [ ];
+        conseil = commonSystem "conseil";
+        fant0mib0t = commonSystem "fant0mib0t";
 
         # Installer
         # nix build --no-link --print-out-paths ".#installer"

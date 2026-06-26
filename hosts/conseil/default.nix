@@ -1,6 +1,7 @@
 {
   pkgs,
   dotfileFolder,
+  flakes,
   ...
 }:
 
@@ -83,6 +84,10 @@
         };
       };
     };
+  };
+
+  nixpkgs = {
+    overlays = [ flakes.inputs.copyparty.overlays.default ];
   };
 
   system.stateVersion = "26.05";

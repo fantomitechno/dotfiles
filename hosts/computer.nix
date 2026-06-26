@@ -1,4 +1,9 @@
-{ pkgs, hostname, ... }:
+{
+  pkgs,
+  hostname,
+  flakes,
+  ...
+}:
 
 {
   imports = builtins.map (i: ../modules/${i}) ([
@@ -51,5 +56,6 @@
         "electron-39.8.10"
       ];
     };
+    overlays = [ flakes.inputs.nix4vscode.overlays.default ];
   };
 }
