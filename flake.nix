@@ -29,8 +29,29 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Homelab inputs
+
     inputs.copyparty = {
       url = "github:9001/copyparty?tag=v1.20.16";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    tangled = {
+      url = "git+https://tangled.org/tangled.org/core?ref=refs/tags/v1.15.0-alpha";
+      inputs.nixpkgs.follows = "nixpkgs";
+      # Disable useless monorepo inputs
+      inputs.actor-typeahead-src.follows = "";
+      inputs.fenix.follows = "";
+      inputs.htmx-src.follows = "";
+      inputs.htmx-ws-src.follows = "";
+      inputs.ibm-plex-mono-src.follows = "";
+      inputs.inter-fonts-src.follows = "";
+      inputs.lucide-src.follows = "";
+      inputs.mermaid-src.follows = "";
+    };
+
+    inputs.tranquil = {
+      url = "git+https://tangled.org/tranquil.farm/tranquil-pds";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

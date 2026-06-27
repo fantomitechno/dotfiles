@@ -11,6 +11,7 @@
   ++ builtins.map (i: ../../modules/${i}) ([
     "caddy"
     "radius"
+    "tangled"
   ]);
 
   # Bootloader

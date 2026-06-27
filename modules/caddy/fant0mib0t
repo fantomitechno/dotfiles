@@ -1,14 +1,4 @@
-{
-  email simon@renoux.dev
-}
-
-(logging) {
-    log {
-        output file /var/log/{args[0]}.log
-        format console
-        # level error
-    }
-}
+import common
 
 fant0mib0t.renoux.dev {
   respond "Welcome!"

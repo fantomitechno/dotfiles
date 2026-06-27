@@ -1,14 +1,4 @@
-{
-  email simon@renoux.dev
-}
-
-(logging) {
-    log {
-        output file /var/log/{args[0]}.log
-        format console
-        # level error
-    }
-}
+import common
 
 conseil.renoux.dev {
   respond "Welcome!"
@@ -26,6 +16,7 @@ files.fantomitechno.dev {
 
 s3.fantom.internal {
   import logging garage
+  abort not @server_net
   reverse_proxy 127.0.0.1:3900 {
     header_up X-Forwarded-For {remote_host}
     header_up X-Forwarded-Proto {scheme}
@@ -34,6 +25,7 @@ s3.fantom.internal {
 
 s3.fantom.home {
   import logging garage
+  abort not @local_net
   reverse_proxy 127.0.0.1:3901 {
     header_up X-Forwarded-For {remote_host}
     header_up X-Forwarded-Proto {scheme}

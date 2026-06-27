@@ -1,6 +1,6 @@
-{ ... }: {
+{ lib, ... }: {
   services.openssh = {
-    enable = true;
+    enable = lib.mkDefault true;
     openFirewall = true;
     settings = {
       PasswordAuthentication = false;
@@ -10,5 +10,6 @@
       MaxAuthTries = 3;
       PerSourcePenalties = "crash:3600s authfail:3600s max:86400s";
     };
+    ports = [ 22 ];
   };
 }
