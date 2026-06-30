@@ -3,7 +3,6 @@
     "cli-apps"
     "fastfetch"
     "git"
-    "docker.nix"
     "ssh.nix"
   ]);
 

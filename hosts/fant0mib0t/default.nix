@@ -14,6 +14,7 @@
     "caddy"
     "radius"
     "tangled"
+    "docker.nix"
     "matrix.nix"
   ]);
 
