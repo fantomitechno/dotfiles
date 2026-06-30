@@ -77,3 +77,4 @@ Global DNS: `fant0mib0t.renoux.dev`
 | 4030        | Kiwix                           | `kiwix.fantomitechno.dev`, `kiwix.renoux.dev` |
 |             | (redirection to Wikipedia .zim) | `wikipedia.renoux.dev`                        |
 | 4040        | Immich                          | `photo.renoux.dev`                            |
+| 4050        | Vaultwarden                     | `vault.renoux.dev`                            |

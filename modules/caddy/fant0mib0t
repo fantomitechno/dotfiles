@@ -71,3 +71,8 @@ photo.renoux.dev {
   import logging immich
   reverse_proxy 127.0.0.1:4040
 }
+
+vault.renoux.dev {
+  import logging vaultwarden
+  reverse_proxy 127.0.0.1:4050
+}
