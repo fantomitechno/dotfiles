@@ -1,0 +1,37 @@
+services:
+  broker:
+    image: docker.io/library/redis:8
+    restart: unless-stopped
+    volumes:
+      - redisdata:/data
+
+  db:
+    image: docker.io/library/postgres:18
+    restart: unless-stopped
+    volumes:
+      - /home/fantomitechno/paperless/pg_data:/var/lib/postgresql
+    environment:
+      POSTGRES_DB: paperless
+      POSTGRES_USER: paperless
+      POSTGRES_PASSWORD: paperless
+
+  webserver:
+    image: ghcr.io/paperless-ngx/paperless-ngx:2.20.15
+    restart: unless-stopped
+    depends_on:
+      - db
+      - broker
+    ports:
+      - "127.0.0.1:4060:8000"
+    volumes:
+      - /nas/paperless/data:/usr/src/paperless/data
+      - /nas/paperless/media:/usr/src/paperless/media
+      - /home/fantomitechno/paperless/export:/usr/src/paperless/export
+      - /nas/paperless/import:/usr/src/paperless/consume
+    env_file: .env
+    environment:
+      PAPERLESS_REDIS: redis://broker:6379
+      PAPERLESS_DBHOST: db
+
+volumes:
+  redisdata:

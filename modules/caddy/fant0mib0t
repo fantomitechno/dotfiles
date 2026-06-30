@@ -76,3 +76,8 @@ vault.renoux.dev {
   import logging vaultwarden
   reverse_proxy 127.0.0.1:4050
 }
+
+pdf.renoux.dev {
+  import logging paperless
+  reverse_proxy 127.0.0.1:4060
+}

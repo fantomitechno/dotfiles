@@ -37,6 +37,13 @@
           scan = 60;
         };
       };
+      "/paperless" = {
+        path = "/data/paperless/import";
+
+        access = {
+          rw = [ "fantomitechno" ];
+        };
+      };
     };
   };
 
