@@ -23,25 +23,16 @@ conseil.renoux.dev {
 http://s3.fantom.internal {
   import logging garage
   abort not @server_net
-  reverse_proxy 127.0.0.1:4010 {
-    header_up X-Forwarded-For {remote_host}
-    header_up X-Forwarded-Proto {scheme}
-  }
+  reverse_proxy 127.0.0.1:4010
 }
 
 http://s3.fantom.home {
   import logging garage
   abort not @local_net
-  reverse_proxy 127.0.0.1:4011 {
-    header_up X-Forwarded-For {remote_host}
-    header_up X-Forwarded-Proto {scheme}
-  }
+  reverse_proxy 127.0.0.1:4011
 }
 
 files.fantomitechno.dev {
   import logging copyparty
-  reverse_proxy 127.0.0.1:4020 {
-    header_up X-Forwarded-For {remote_host}
-    header_up X-Forwarded-Proto {scheme}
-  }
+  reverse_proxy 127.0.0.1:4020
 }

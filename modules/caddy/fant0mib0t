@@ -22,43 +22,28 @@ fant0mib0t.renoux.dev {
 # Communication
 matrix.fantomitechno.dev {
   import logging matrix
-  reverse_proxy 127.0.0.1:2000 {
-    header_up X-Forwarded-For {remote_host}
-    header_up X-Forwarded-Proto {scheme}
-  }
+  reverse_proxy 127.0.0.1:2000
 }
 
 pds.fantomitechno.dev {
   import logging pds
-  reverse_proxy 127.0.0.1:2010 {
-    header_up X-Forwarded-For {remote_host}
-    header_up X-Forwarded-Proto {scheme}
-  }
+  reverse_proxy 127.0.0.1:2010
 }
 
 # Storage
 knot.fantomitechno.dev {
   import logging knot
-  reverse_proxy 127.0.0.1:4000 {
-    header_up X-Forwarded-For {remote_host}
-    header_up X-Forwarded-Proto {scheme}
-  }
+  reverse_proxy 127.0.0.1:4000
 }
 
 spindle.fantomitechno.dev {
   import logging spindle
-  reverse_proxy 127.0.0.1:4001 {
-    header_up X-Forwarded-For {remote_host}
-    header_up X-Forwarded-Proto {scheme}
-  }
+  reverse_proxy 127.0.0.1:4001
 }
 
 hold.fantomitechno.dev {
   import logging hold
-  reverse_proxy 127.0.0.1:4010 {
-    header_up X-Forwarded-For {remote_host}
-    header_up X-Forwarded-Proto {scheme}
-  }
+  reverse_proxy 127.0.0.1:4010
 }
 
 drive.renoux.dev, drive.s.renoux.dev {
@@ -69,19 +54,13 @@ drive.renoux.dev, drive.s.renoux.dev {
   }
 
   handle {
-    reverse_proxy 127.0.0.1:44020 {
-      header_up X-Real-IP {remote_host}
-      header_up X-Forwarded-For {remote_host}
-    }
+    reverse_proxy 127.0.0.1:44020
   }
 }
 
 kiwix.fantomitechno.dev, kiwix.renoux.dev {
   import logging kiwix
-  reverse_proxy 127.0.0.1:4030 {
-    header_up X-Forwarded-For {remote_host}
-    header_up X-Forwarded-Proto {scheme}
-  }
+  reverse_proxy 127.0.0.1:4030
 }
 
 wikipedia.renoux.dev {
@@ -90,8 +69,5 @@ wikipedia.renoux.dev {
 
 photo.renoux.dev {
   import logging immich
-  reverse_proxy 127.0.0.1:4040 {
-    header_up X-Forwarded-For {remote_host}
-    header_up X-Forwarded-Proto {scheme}
-  }
+  reverse_proxy 127.0.0.1:4040
 }

@@ -39,7 +39,8 @@ All public DNS entries are also registered on Cloudflare with a CNAME entry to `
 
 | Port Number | Service  | DNS entry            |
 | :---------- | :------- | :------------------- |
-| 443         | OpnSense | `router.fantom.home` |
+| 80, 443     | Caddy    |                      |
+| 1000        | OpnSense | `router.fantom.home` |
 
 ### SG500X-Argo3
 
