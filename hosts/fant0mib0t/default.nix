@@ -6,12 +6,15 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./nfs.nix
+
     ../server.nix
   ]
   ++ builtins.map (i: ../../modules/${i}) ([
     "caddy"
     "radius"
     "tangled"
+    "matrix.nix"
   ]);
 
   # Bootloader

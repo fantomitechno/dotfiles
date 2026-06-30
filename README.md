@@ -22,7 +22,7 @@ nix build --no-link --print-out-paths ".#installer"
 ## Rebuild and switch on an existing configuration
 
 ```sh
-rebuild 
+rebuild
 # or
 cd /home/fantomitechno/dotfiles && sudo nixos-rebuild switch --flake
 ```

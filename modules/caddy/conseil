@@ -1,32 +1,46 @@
-import common
+{
+  email simon@renoux.dev
+}
+
+(logging) {
+    log {
+        output file /var/log/{args[0]}.log
+        format console
+        # level error
+    }
+}
+
+@local_net client_ip 172.16.0.0/12
+@server_net client_ip 172.16.20.0/24
+@admin_net client_ip 172.16.10.0/24
+@guest_net client_ip 172.16.100.0/24
 
 conseil.renoux.dev {
   respond "Welcome!"
 }
 
+# Storage
+http://s3.fantom.internal {
+  import logging garage
+  abort not @server_net
+  reverse_proxy 127.0.0.1:4010 {
+    header_up X-Forwarded-For {remote_host}
+    header_up X-Forwarded-Proto {scheme}
+  }
+}
+
+http://s3.fantom.home {
+  import logging garage
+  abort not @local_net
+  reverse_proxy 127.0.0.1:4011 {
+    header_up X-Forwarded-For {remote_host}
+    header_up X-Forwarded-Proto {scheme}
+  }
+}
 
 files.fantomitechno.dev {
   import logging copyparty
-  reverse_proxy 127.0.0.1:3210 {
-    header_up X-Forwarded-For {remote_host}
-    header_up X-Forwarded-Proto {scheme}
-  }
-}
-
-
-s3.fantom.internal {
-  import logging garage
-  abort not @server_net
-  reverse_proxy 127.0.0.1:3900 {
-    header_up X-Forwarded-For {remote_host}
-    header_up X-Forwarded-Proto {scheme}
-  }
-}
-
-s3.fantom.home {
-  import logging garage
-  abort not @local_net
-  reverse_proxy 127.0.0.1:3901 {
+  reverse_proxy 127.0.0.1:4020 {
     header_up X-Forwarded-For {remote_host}
     header_up X-Forwarded-Proto {scheme}
   }

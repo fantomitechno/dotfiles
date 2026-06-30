@@ -9,9 +9,9 @@
     statdPort = 4000;
     lockdPort = 4001;
     mountdPort = 4002;
-    # exports = ''
-    #
-    # '';
+    exports = ''
+      /data 172.16.20.0/24(insecure,rw,sync,crossmnt,fsid=0) 172.16.10.0/24(insecure,rw,sync,crossmnt,fsid=0)
+    '';
   };
 
   networking.firewall = {

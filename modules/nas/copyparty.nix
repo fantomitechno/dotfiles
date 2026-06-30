@@ -9,14 +9,12 @@
     enable = true;
     user = "copyparty";
     group = "copyparty";
+
     settings = {
       i = "172.16.20.10";
       p = [
-        3210
-        3211
+        4020
       ];
-      no-reload = true;
-      ignored-flag = false;
     };
 
     accounts = {
@@ -27,7 +25,7 @@
 
     volumes = {
       "/public" = {
-        # path = ""
+        path = "/data/public";
 
         access = {
           r = "*";
@@ -35,6 +33,7 @@
         };
 
         flags = {
+          # scan for new files every 60sec
           scan = 60;
         };
       };
