@@ -1,0 +1,69 @@
+name: affine
+services:
+  affine:
+    image: ghcr.io/toeverything/affine:0.26.7
+    container_name: affine_server
+    ports:
+      - "127.0.0.1:4070:3010"
+    depends_on:
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      affine_migration:
+        condition: service_completed_successfully
+    volumes:
+      # custom configurations
+      - /nas/affine/storage:/root/.affine/storage
+      - /nas/affine/config:/root/.affine/config
+    env_file:
+      - .env
+    environment:
+      - REDIS_SERVER_HOST=redis
+      - AFFINE_INDEXER_ENABLED=false
+    restart: unless-stopped
+
+  affine_migration:
+    image: ghcr.io/toeverything/affine:0.26.7
+    container_name: affine_migration_job
+    volumes:
+      # custom configurations
+      - /nas/affine/storage:/root/.affine/storage
+      - /nas/affine/config:/root/.affine/config
+    command: ["sh", "-c", "node ./scripts/self-host-predeploy.js"]
+    env_file:
+      - .env
+    environment:
+      - REDIS_SERVER_HOST=redis
+      - AFFINE_INDEXER_ENABLED=false
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  redis:
+    image: redis
+    container_name: affine_redis
+    healthcheck:
+      test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: affine_postgres
+    volumes:
+      - /home/fantomitechno/affine/pg_data:/var/lib/postgresql/data
+    env_file:
+      - .env
+    environment:
+      POSTGRES_INITDB_ARGS: "--data-checksums"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "affine", "-d", "affine"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
