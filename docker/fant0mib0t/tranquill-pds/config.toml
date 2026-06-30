@@ -13,12 +13,6 @@ hostname = "pds.fantomitechno.dev"
 # Default value: "127.0.0.1"
 host = "127.0.0.1"
 
-# Port to bind the HTTP server to.
-#
-# Can also be specified via environment variable `SERVER_PORT`.
-#
-# Default value: 3000
-
 # List of domains for user handles.
 # Defaults to the PDS hostname when not set.
 #
@@ -73,16 +67,6 @@ invite_code_required = true
 #
 # Can also be specified via environment variable `PDS_BANNED_WORDS`.
 #banned_words =
-
-# URL to a privacy policy page.
-#
-# Can also be specified via environment variable `PRIVACY_POLICY_URL`.
-#privacy_policy_url =
-
-# URL to terms of service page.
-#
-# Can also be specified via environment variable `TERMS_OF_SERVICE_URL`.
-#terms_of_service_url =
 
 # Operator contact email address.
 #
@@ -143,279 +127,13 @@ contact_email = "me@fantomitechno.dev"
 # Default value: true
 enabled = true
 
-# Directory to serve as the frontend. The oauth_client_metadata.json will have any references to
-# the frontend hostname replaced by the configured frontend hostname.
-#
-# Can also be specified via environment variable `FRONTEND_DIR`.
-#
-# Default value: "/var/lib/tranquil-pds/frontend"
-#dir = "/var/lib/tranquil-pds/frontend"
-
-[database]
-# PostgreSQL connection URL.
-#
-# Can also be specified via environment variable `DATABASE_URL`.
-#
-# Required! This value must be specified.
-#url =
-
-# Maximum number of connections in the pool.
-#
-# Can also be specified via environment variable `DATABASE_MAX_CONNECTIONS`.
-#
-# Default value: 100
-#max_connections = 100
-
-# Minimum number of idle connections kept in the pool.
-#
-# Can also be specified via environment variable `DATABASE_MIN_CONNECTIONS`.
-#
-# Default value: 10
-#min_connections = 10
-
-# Timeout in seconds when acquiring a connection from the pool.
-#
-# Can also be specified via environment variable `DATABASE_ACQUIRE_TIMEOUT_SECS`.
-#
-# Default value: 10
-#acquire_timeout_secs = 10
-
-[secrets]
-# Secret used for signing JWTs. Must be at least 32 characters in
-# production.
-#
-# Can also be specified via environment variable `JWT_SECRET`.
-#jwt_secret =
-
-# Secret used for DPoP proof validation. Must be at least 32 characters
-# in production.
-#
-# Can also be specified via environment variable `DPOP_SECRET`.
-#dpop_secret =
-
-# Master key used for key-encryption and HKDF derivation. Must be at
-# least 32 characters in production.
-#
-# Can also be specified via environment variable `MASTER_KEY`.
-#master_key =
-
-# Optional operator-held PLC recovery key, as a public `did:key`. The PDS
-# continues to sign PLC operations with the per-account signing key, which
-# always remains in `rotationKeys`.
-#
-# Can also be specified via environment variable `PLC_ROTATION_KEY`.
-#plc_rotation_key =
-
-# Allow insecure/test secrets. NEVER enable in production.
-#
-# Can also be specified via environment variable `TRANQUIL_PDS_ALLOW_INSECURE_SECRETS`.
-#
-# Default value: false
-#allow_insecure = false
-
-[storage]
-# Storage backend: `filesystem` or `s3`.
-#
-# Can also be specified via environment variable `BLOB_STORAGE_BACKEND`.
-#
-# Default value: "filesystem"
-#backend = "filesystem"
-
-# Path on disk for the filesystem blob backend.
-#
-# Can also be specified via environment variable `BLOB_STORAGE_PATH`.
-#
-# Default value: "/var/lib/tranquil-pds/blobs"
-#path = "/var/lib/tranquil-pds/blobs"
-
-# S3 bucket name for blob storage.
-#
-# Can also be specified via environment variable `S3_BUCKET`.
-#s3_bucket =
-
-# Custom S3 endpoint URL.
-#
-# Can also be specified via environment variable `S3_ENDPOINT`.
-#s3_endpoint =
-
-# Repository backend: `postgres` by default, or `tranquil-store`, our embedded db.
-# tranquil-store is EXPERIMENTAL!!!! RISK OF TOTAL DATA LOSS.
-#
-# Can also be specified via environment variable `REPO_BACKEND`.
-#
-# Default value: "postgres"
-#repo_backend = "postgres"
-
-[tranquil_store]
-# Directory for tranquil-store data: the metastore, eventlog, and blockstore.
-#
-# Can also be specified via environment variable `TRANQUIL_STORE_DATA_DIR`.
-#
-# Default value: "/var/lib/tranquil-pds/store"
-#data_dir = "/var/lib/tranquil-pds/store"
-
-# Fjall block cache size in megabytes. Defaults to 20% of system RAM when unset.
-#
-# Can also be specified via environment variable `TRANQUIL_STORE_MEMORY_BUDGET_MB`.
-#memory_budget_mb =
-
-# Number of handler threads. Defaults to available_parallelism / 2.
-#
-# Can also be specified via environment variable `TRANQUIL_STORE_HANDLER_THREADS`.
-#handler_threads =
-
-# Maximum total bytes of pending (unsynced) eventlog payloads. Appenders block
-# once this budget is exhausted until in-flight events drain via fsync. Set to
-# 0 to disable backpressure. Default: 1 GiB.
-#
-# Can also be specified via environment variable `TRANQUIL_STORE_EVENTLOG_PENDING_BYTES_BUDGET`.
-#
-# Default value: 1073741824
-#eventlog_pending_bytes_budget = 1073741824
-
-# Maximum size of an individual eventlog payload in bytes. Single events
-# larger than this are rejected at append time. Default: 256 MiB.
-#
-# Can also be specified via environment variable `TRANQUIL_STORE_EVENTLOG_MAX_EVENT_PAYLOAD`.
-#
-# Default value: 268435456
-#eventlog_max_event_payload = 268435456
-
-# Maximum size of an individual blockstore data file in bytes. When the
-# active data file reaches this size it is rolled over and becomes
-# eligible for compaction. Default: 256 MiB.
-#
-# Can also be specified via environment variable `TRANQUIL_STORE_MAX_BLOCKSTORE_FILE_SIZE`.
-#
-# Default value: 268435456
-#max_blockstore_file_size = 268435456
-
-# Maximum size of an individual eventlog segment file in bytes. When the
-# active segment reaches this size it is sealed and a new one is created.
-# Safe to change on a running instance. Default: 256 MiB.
-#
-# Can also be specified via environment variable `TRANQUIL_STORE_MAX_EVENTLOG_SEGMENT_SIZE`.
-#
-# Default value: 268435456
-#max_eventlog_segment_size = 268435456
-
-[cache]
-# Cache backend: `ripple` by default, or `valkey`.
-#
-# Can also be specified via environment variable `CACHE_BACKEND`.
-#
-# Default value: "ripple"
-#backend = "ripple"
-
-# Valkey / Redis connection URL.  Required when `backend = "valkey"`.
-#
-# Can also be specified via environment variable `VALKEY_URL`.
-#valkey_url =
-
-[cache.ripple]
-# Address to bind the Ripple gossip protocol listener. With the default
-# value and no cluster_key or peers configured, the listener binds
-# loopback instead and runs as a single node.
-#
-# Can also be specified via environment variable `RIPPLE_BIND`.
-#
-# Default value: "0.0.0.0:0"
-#bind_addr = "0.0.0.0:0"
-
-# List of seed peer addresses.
-#
-# Can also be specified via environment variable `RIPPLE_PEERS`.
-#peers =
-
-# Unique machine identifier. Auto-derived from hostname when not set.
-#
-# Can also be specified via environment variable `RIPPLE_MACHINE_ID`.
-#machine_id =
-
-# Gossip protocol interval in milliseconds.
-#
-# Can also be specified via environment variable `RIPPLE_GOSSIP_INTERVAL_MS`.
-#
-# Default value: 200
-#gossip_interval_ms = 200
-
-# Maximum cache size in megabytes.
-#
-# Can also be specified via environment variable `RIPPLE_CACHE_MAX_MB`.
-#
-# Default value: 256
-#cache_max_mb = 256
-
-# Pre-shared cluster key authenticating ripple peers. Every node in the
-# cluster must set the same value. When unset, peers are unauthenticated.
-#
-# Can also be specified via environment variable `RIPPLE_CLUSTER_KEY`.
-#cluster_key =
-
-# Allow ripple to bind a non-loopback address without a cluster key.
-# Peers will be unauthenticated. Intended for trusted private networks.
-#
-# Can also be specified via environment variable `RIPPLE_ALLOW_INSECURE`.
-#
-# Default value: false
-#allow_insecure = false
-
 [plc]
 # Base URL of the PLC directory.
 #
 # Can also be specified via environment variable `PLC_DIRECTORY_URL`.
 #
 # Default value: "https://plc.directory"
-#directory_url = "https://plc.directory"
-
-# HTTP request timeout in seconds.
-#
-# Can also be specified via environment variable `PLC_TIMEOUT_SECS`.
-#
-# Default value: 10
-#timeout_secs = 10
-
-# TCP connect timeout in seconds.
-#
-# Can also be specified via environment variable `PLC_CONNECT_TIMEOUT_SECS`.
-#
-# Default value: 5
-#connect_timeout_secs = 5
-
-# Seconds to cache DID documents in memory.
-#
-# Can also be specified via environment variable `DID_CACHE_TTL_SECS`.
-#
-# Default value: 300
-#did_cache_ttl_secs = 300
-
-[firehose]
-# Size of the in-memory broadcast buffer for firehose events.
-#
-# Can also be specified via environment variable `FIREHOSE_BUFFER_SIZE`.
-#
-# Default value: 10000
-#buffer_size = 10000
-
-# How many hours of historical events to replay for cursor-based
-# firehose connections.
-#
-# Can also be specified via environment variable `FIREHOSE_BACKFILL_HOURS`.
-#
-# Default value: 72
-#backfill_hours = 72
-
-# Maximum concurrent full-repo exports, eg. getRepo without `since`.
-#
-# Can also be specified via environment variable `MAX_CONCURRENT_REPO_EXPORTS`.
-#
-# Default value: 4
-#max_concurrent_repo_exports = 4
-
-# List of relay / crawler notification URLs.
-#
-# Can also be specified via environment variable `CRAWLERS`.
-#crawlers =
+directory_url = "https://plc.directory"
 
 [email]
 # Sender email address. When unset, email sending is disabled.
@@ -536,60 +254,20 @@ from_address = "me@no-reply.fantomitechno.dev"
 # Can also be specified via environment variable `MAIL_DKIM_KEY_PATH`.
 #private_key_path =
 
-[notifications]
-# Polling interval in milliseconds for the comms queue.
-#
-# Can also be specified via environment variable `NOTIFICATION_POLL_INTERVAL_MS`.
-#
-# Default value: 1000
-#poll_interval_ms = 1000
-
-# Number of notifications to process per batch.
-#
-# Can also be specified via environment variable `NOTIFICATION_BATCH_SIZE`.
-#
-# Default value: 100
-#batch_size = 100
-
-[moderation]
-# External report-handling service URL.
-#
-# Can also be specified via environment variable `REPORT_SERVICE_URL`.
-#report_service_url =
-
-# DID of the external report-handling service.
-#
-# Can also be specified via environment variable `REPORT_SERVICE_DID`.
-#report_service_did =
-
 [import]
 # Whether the PDS accepts repo imports.
 #
 # Can also be specified via environment variable `ACCEPTING_REPO_IMPORTS`.
 #
 # Default value: true
-#accepting = true
-
-# Maximum allowed import archive size in bytes (default 1 GiB).
-#
-# Can also be specified via environment variable `MAX_IMPORT_SIZE`.
-#
-# Default value: 1073741824
-#max_size = 1073741824
-
-# Maximum number of blocks allowed in an import.
-#
-# Can also be specified via environment variable `MAX_IMPORT_BLOCKS`.
-#
-# Default value: 500000
-#max_blocks = 500000
+accepting = true
 
 # Skip CAR verification during import. Only for development/debugging.
 #
 # Can also be specified via environment variable `SKIP_IMPORT_VERIFICATION`.
 #
 # Default value: false
-#skip_verification = false
+skip_verification = false
 
 [scheduled]
 # Interval in seconds between scheduled delete checks.
