@@ -71,6 +71,7 @@ Global DNS: `fant0mib0t.renoux.dev`
 | 80, 443     | Caddy                           |                                               |
 | 2000        | Matrix                          | `matrix.fantomitechno.dev`                    |
 | 2010        | Tranquill PDS                   | `pds.fantomitechno.dev`                       |
+| 2020,2021   | Mastodon                        | `mastodon.fantomitechno.dev`                  |
 | 4000        | Tangled Knot                    | `knot.fantomitechno.dev`                      |
 | 4010        | Tangled Spindle                 | `spindle.fantomitechno.dev`                   |
 | 4020, 4021  | Cryptpad                        | `drive.renoux.dev`, `drive.s.renoux.dev`      |
