@@ -77,7 +77,7 @@ vault.renoux.dev {
   reverse_proxy 127.0.0.1:4050
 }
 
-pdf.renoux.dev {
+http://pdf.fantom.home {
   import logging paperless
   reverse_proxy 127.0.0.1:4060
 }

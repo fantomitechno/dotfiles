@@ -2,8 +2,6 @@ services:
   broker:
     image: docker.io/library/redis:8
     restart: unless-stopped
-    volumes:
-      - redisdata:/data
 
   db:
     image: docker.io/library/postgres:18
@@ -32,6 +30,3 @@ services:
     environment:
       PAPERLESS_REDIS: redis://broker:6379
       PAPERLESS_DBHOST: db
-
-volumes:
-  redisdata:

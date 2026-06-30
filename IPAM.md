@@ -78,3 +78,5 @@ Global DNS: `fant0mib0t.renoux.dev`
 |             | (redirection to Wikipedia .zim) | `wikipedia.renoux.dev`                        |
 | 4040        | Immich                          | `photo.renoux.dev`                            |
 | 4050        | Vaultwarden                     | `vault.renoux.dev`                            |
+| 4060        | Paperless                       | `pdf.fantom.home`                             |
+| 4070        | Affine                          | `notes.fantomitechno.dev`                     |
