@@ -65,19 +65,21 @@ Global DNS: `conseil.renoux.dev`
 
 Global DNS: `fant0mib0t.renoux.dev`
 
-| Port Number | Service                         | DNS entry                                     |
-| :---------- | :------------------------------ | :-------------------------------------------- |
-| 22          | OpenSSH                         |                                               |
-| 80, 443     | Caddy                           |                                               |
-| 2000        | Matrix                          | `matrix.fantomitechno.dev`                    |
-| 2010        | Tranquill PDS                   | `pds.fantomitechno.dev`                       |
-| 2020,2021   | Mastodon                        | `mastodon.fantomitechno.dev`                  |
-| 4000        | Tangled Knot                    | `knot.fantomitechno.dev`                      |
-| 4010        | Tangled Spindle                 | `spindle.fantomitechno.dev`                   |
-| 4020, 4021  | Cryptpad                        | `drive.renoux.dev`, `drive.s.renoux.dev`      |
-| 4030        | Kiwix                           | `kiwix.fantomitechno.dev`, `kiwix.renoux.dev` |
-|             | (redirection to Wikipedia .zim) | `wikipedia.renoux.dev`                        |
-| 4040        | Immich                          | `photo.renoux.dev`                            |
-| 4050        | Vaultwarden                     | `vault.renoux.dev`                            |
-| 4060        | Paperless                       | `pdf.fantom.home`                             |
-| 4070        | Affine                          | `notes.fantomitechno.dev`                     |
+| Port Number | Service                                 | DNS entry                                     |
+| :---------- | :-------------------------------------- | :-------------------------------------------- |
+| 22          | OpenSSH (used for SSH and Tangled Knot) |                                               |
+| 80, 443     | Caddy                                   |                                               |
+| 222         | Gitea SSH                               |                                               |
+| 2000        | Matrix                                  | `matrix.fantomitechno.dev`                    |
+| 2010        | Tranquill PDS                           | `pds.fantomitechno.dev`                       |
+| 2020,2021   | Mastodon                                | `mastodon.fantomitechno.dev`                  |
+| 4000        | Tangled Knot                            | `knot.fantomitechno.dev`                      |
+| 4005        | Gitea                                   | `git.fantomitechno.dev`                       |
+| 4010        | Tangled Spindle                         | `spindle.fantomitechno.dev`                   |
+| 4020, 4021  | Cryptpad                                | `drive.renoux.dev`, `drive.s.renoux.dev`      |
+| 4030        | Kiwix                                   | `kiwix.fantomitechno.dev`, `kiwix.renoux.dev` |
+|             | (redirection to Wikipedia .zim)         | `wikipedia.renoux.dev`                        |
+| 4040        | Immich                                  | `photo.renoux.dev`                            |
+| 4050        | Vaultwarden                             | `vault.renoux.dev`                            |
+| 4060        | Paperless                               | `pdf.fantom.home`                             |
+| 4070        | Affine                                  | `notes.fantomitechno.dev`                     |
