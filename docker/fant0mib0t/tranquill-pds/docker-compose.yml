@@ -1,0 +1,52 @@
+services:
+  tranquil-pds:
+    image: atcr.io/tranquil.farm/tranquil-pds:91999819c616afbb26586dce4e1ab70f767684de
+    # tag: 0.6.5
+    restart: unless-stopped
+    environment:
+      SERVER_HOST: "[::]"
+    ports:
+      - "127.0.0.1:6166:3000"
+    volumes:
+      - ./config.toml:/etc/tranquil-pds/config.toml:ro
+      # In memory of @olaren.dev's blobs when lewis forgot to update /tranquil to /tranquil-pds :(
+      - /nas/tranquil-pds/blob:/var/lib/tranquil-pds/blobs
+      - /nas/tranquil-pds/store:/var/lib/tranquil-pds/store
+    env_file:
+      - .env
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "/usr/local/bin/tranquil-pds", "healthcheck"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 256M
+
+  db:
+    image: postgres:18-alpine
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      # In memory of @mrrp.lol when Lewis had "/data" here and the account got nuked on restart including rotation key :(
+      - /nas/tranquil-pds/pg_data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tranquil_pds -d pds"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 128M

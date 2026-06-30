@@ -1,0 +1,20 @@
+services:
+  tranquil-pds:
+    image: atcr.io/seamark.cr/appview:v0.1.2-arm64
+    restart: unless-stopped
+    command: ["serve", "--config", "/config.yaml"]
+    environment:
+      SERVER_HOST: "[::]"
+    ports:
+      - "127.0.0.1:4010:8080"
+    volumes:
+      - ./config.yaml:/config.yaml:ro
+      - /nas/atcr/hold:/var/lib/atcr-hold
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD", "/healthcheck", "http://localhost:8080/xrpc/_health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s

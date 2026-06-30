@@ -1,0 +1,32 @@
+services:
+  cryptpad:
+    image: "cryptpad/cryptpad:version-2026.5.1"
+    hostname: cryptpad
+
+    environment:
+      - CPAD_MAIN_DOMAIN=https://drive.renoux.dev
+      - CPAD_SANDBOX_DOMAIN=https://drive.s.renoux.dev
+      - CPAD_CONF=/cryptpad/config/config.js
+
+      # Read and accept the license before uncommenting the following line:
+      # https://github.com/ONLYOFFICE/web-apps/blob/master/LICENSE.txt
+      - CPAD_INSTALL_ONLYOFFICE=yes
+
+    volumes:
+      - /nas/cryptpad/blob:/cryptpad/blob
+      - /nas/cryptpad/block:/cryptpad/block
+      - /nas/cryptpad/customize:/cryptpad/customize
+      - /nas/cryptpad/data:/cryptpad/data
+      - /nas/cryptpad/files:/cryptpad/datastore
+      - /nas/cryptpad/onlyoffice-dist:/cryptpad/www/common/onlyoffice/dist
+      - /nas/cryptpad/onlyoffice-conf:/cryptpad/onlyoffice-conf
+      - ./config.js:/cryptpad/config/config.js
+
+    ports:
+      - "127.0.0.1:3000:3000"
+      - "127.0.0.1:3003:3003"
+
+    ulimits:
+      nofile:
+        soft: 1000000
+        hard: 1000000

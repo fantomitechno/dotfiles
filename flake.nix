@@ -49,11 +49,6 @@
       inputs.lucide-src.follows = "";
       inputs.mermaid-src.follows = "";
     };
-
-    inputs.tranquil = {
-      url = "git+https://tangled.org/tranquil.farm/tranquil-pds";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -100,7 +95,7 @@
         fantomitechno-msi = commonSystem "msi";
 
         # Servers
-        conseil = commonSystem "conseil";
+        Conseil = commonSystem "conseil";
         fant0mib0t = commonSystem "fant0mib0t";
 
         # Installer

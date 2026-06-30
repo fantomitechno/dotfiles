@@ -1,0 +1,9 @@
+storage:
+  bucket: "garage"
+  endpoint: "http://s3.fantom.internal"
+
+server:
+    public_url: "https://hold.fantomitechno.dev"
+
+registration:
+  owner_did: "did:plc:q2leouakch2kg4ruldreunip"

@@ -49,5 +49,8 @@
     "https://github.com": true
   },
   "editor.fontFamily": "'JetBrainsMono Nerd Font Propo', monospace",
-  "clangd.path": "/home/fantomitechno/.config/VSCodium/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/22.1.0/clangd_22.1.0/bin/clangd"
+  "clangd.path": "/home/fantomitechno/.config/VSCodium/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/22.1.0/clangd_22.1.0/bin/clangd",
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

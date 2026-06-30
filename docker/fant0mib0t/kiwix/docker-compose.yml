@@ -1,0 +1,10 @@
+services:
+  kiwix-serve:
+    container_name: kiwix
+    image: ghcr.io/kiwix/kiwix-serve:latest
+    volumes:
+      - /nas/kiwix:/data
+    command:
+      - "*.zim"
+    ports:
+      - "127.0.0.1:4030:8080"
