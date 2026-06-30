@@ -53,7 +53,7 @@ services:
       # Uncomment the DB_STORAGE_TYPE: 'HDD' var if your database isn't stored on SSDs
       DB_STORAGE_TYPE: "HDD"
     volumes:
-      - /nas/immich/pg_data:/var/lib/postgresql/data
+      - /home/fantomitechno/immich/pg_data:/var/lib/postgresql/data
     shm_size: 128mb
     restart: always
     healthcheck:
