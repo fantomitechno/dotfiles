@@ -40,7 +40,7 @@ services:
       - .env
     volumes:
       # In memory of @mrrp.lol when Lewis had "/data" here and the account got nuked on restart including rotation key :(
-      - /home/fantomitechno/tranquil-pds/pg_data:/var/lib/postgresql
+      - pg_data::/var/lib/postgresql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U tranquil_pds -d pds"]
       interval: 10s
@@ -53,3 +53,6 @@ services:
           memory: 512M
         reservations:
           memory: 128M
+
+volumes:
+  pg_data:

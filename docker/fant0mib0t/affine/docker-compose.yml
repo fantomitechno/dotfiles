@@ -56,7 +56,7 @@ services:
     image: pgvector/pgvector:pg16
     container_name: affine_postgres
     volumes:
-      - /home/fantomitechno/affine/pg_data:/var/lib/postgresql/data
+      - pg_data::/var/lib/postgresql/data
     env_file:
       - .env
     environment:
@@ -67,3 +67,6 @@ services:
       timeout: 5s
       retries: 5
     restart: unless-stopped
+
+volumes:
+  pg_data:

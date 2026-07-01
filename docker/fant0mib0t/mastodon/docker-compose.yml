@@ -8,7 +8,7 @@ services:
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "postgres"]
     volumes:
-      - /home/fantomitechno/mastodon/pg_data:/var/lib/postgresql/data
+      - pg_data::/var/lib/postgresql/data
     environment:
       POSTGRES_DB: ${DB_USER}
       POSTGRES_USER: ${DB_NAME}
@@ -73,3 +73,6 @@ services:
       - /nas/mastodon/system:/mastodon/public/system
     healthcheck:
       test: ["CMD-SHELL", "ps aux | grep '[s]idekiq\ 8' || false"]
+
+volumes:
+  pg_data:

@@ -10,7 +10,7 @@ services:
     container_name: paperless_postgres
     restart: unless-stopped
     volumes:
-      - /home/fantomitechno/paperless/pg_data:/var/lib/postgresql
+      - pg_data::/var/lib/postgresql
     environment:
       POSTGRES_DB: paperless
       POSTGRES_USER: paperless
@@ -34,3 +34,6 @@ services:
     environment:
       PAPERLESS_REDIS: redis://broker:6379
       PAPERLESS_DBHOST: db
+
+volumes:
+  pg_data:
