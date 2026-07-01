@@ -2,11 +2,12 @@
 
 ## VLANs
 
-| VID | NAME    | PREFIX            | ACESS                   | PERMISSIONS                                   |
-| --- | ------- | ----------------- | ----------------------- | --------------------------------------------- |
-| 10  | ADMIN   | `172.16.10.0/24`  | Ethernet with 802.1X    | Internet without restrictions, SSH to servers |
-| 20  | SERVERS | `172.16.20.0/24`  | specific ethernet ports | Internet without restrictions                 |
-| 100 | GUEST   | `172.16.100.0/24` | Ethernet and WiFi       | Restricted to HTTP and HTTPS                  |
+| VID | NAME      | PREFIX            | ACESS                   | PERMISSIONS                                   |
+| --- | --------- | ----------------- | ----------------------- | --------------------------------------------- |
+| 10  | ADMIN     | `172.16.10.0/24`  | Ethernet with 802.1X    | Internet without restrictions, SSH to servers |
+| 20  | SERVERS   | `172.16.20.0/24`  | specific ethernet ports | Internet without restrictions                 |
+| 30  | ADMIN VPN | `172.16.30.0/24`  | WireGuard               | Internet without restrictions, SSH to servers |
+| 100 | GUEST     | `172.16.100.0/24` | Ethernet and WiFi       | Restricted to HTTP and HTTPS                  |
 
 ## IPs
 
