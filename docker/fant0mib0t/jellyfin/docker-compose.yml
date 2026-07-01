@@ -1,7 +1,7 @@
 name: jellyfin
 services:
   jellyfin:
-    image: lscr.io/linuxserver/jellyfin:latest
+    image: ghcr.io/linuxserver/jellyfin:10.11.11
     container_name: jellyfin
     environment:
       - PUID=0
@@ -13,7 +13,7 @@ services:
     volumes:
       - /home/fantomitechno/jellyfin/config:/config
       - /home/fantomitechno/jellyfin/cache:/cache
-      - /nas/tv:/data/tvshows
-      - /nas/movies:/data/movies
-      - /nas:/data/media_downloads
+      - /nas/media/tv:/data/tvshows
+      - /nas/media/movies:/data/movies
+      - /nas/downloads:/data/media_downloads
     restart: unless-stopped
