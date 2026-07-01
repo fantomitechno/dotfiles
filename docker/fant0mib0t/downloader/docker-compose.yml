@@ -1,0 +1,109 @@
+name: downloader
+
+services:
+  # General download
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    ports:
+      - 127.0.0.1:4090:8080
+    environment:
+      - WEBUI_PORT=8080
+      - PUID=0
+      - PGID=0
+      - TZ=${TZ}
+      #- DOCKER_MODS=ghcr.io/gabe565/linuxserver-mod-vuetorrent
+    volumes:
+      - /home/fantomitechno/qbittorent:/config
+      - /nas:/nas
+    restart: unless-stopped
+
+  # Solving cloudflare
+  flaresolverr:
+    image: ghcr.io/flaresolverr/flaresolverr:latest
+    container_name: flaresolverr
+    environment:
+      - LOG_LEVEL=info
+      - LOG_HTML=false
+      - CAPTCHA_SOLVER=none
+      - TZ=Europe/Paris
+      - LANG=fr_FR
+    ports:
+      - 127.0.0.1:4081:8191
+    restart: unless-stopped
+
+  # Indexers
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=Europe/Paris
+    volumes:
+      - /home/fantomitechno/prowlarr:/config
+    ports:
+      - 127.0.0.1:4082:9696
+    restart: unless-stopped
+
+  # Indexers too???
+  jackett:
+    image: lscr.io/linuxserver/jackett:latest
+    container_name: jackett
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=Europe/Paris
+    volumes:
+      - /home/fantomitechno/jackett:/config
+    ports:
+      - 127.0.0.1:4083:9117
+    restart: unless-stopped
+
+  # TV Shows
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=Europe/Paris
+    volumes:
+      - /home/fantomitechno/sonarr:/config
+      - /nas/tv:/tv
+      - /nas:/downloads
+    ports:
+      - 127.0.0.1:4084:8989
+    restart: unless-stopped
+
+  # Movies
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=Europe/Paris
+    volumes:
+      - /home/fantomitechno/radarr:/config
+      - /nas/movies:/movies
+      - /nas:/downloads
+    ports:
+      - 127.0.0.1:4085:7878
+    restart: unless-stopped
+
+  # Subtitles
+  bazarr:
+    image: lscr.io/linuxserver/bazarr:latest
+    container_name: bazarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Paris
+    volumes:
+      - /home/fantomitechno/bazarr:/config
+      - /nas/movies:/movies
+      - /nas/tv:/tv
+    ports:
+      - 127.0.0.1:4086:6767
+    restart: unless-stopped

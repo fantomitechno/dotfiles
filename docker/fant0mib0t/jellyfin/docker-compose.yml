@@ -1,0 +1,19 @@
+name: jellyfin
+services:
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=Europe/Paris
+      - NVIDIA_VISIBLE_DEVICES=all
+    ports:
+      - 127.0.0.1:4080:8096
+    volumes:
+      - /home/fantomitechno/jellyfin/config:/config
+      - /home/fantomitechno/jellyfin/cache:/cache
+      - /nas/tv:/data/tvshows
+      - /nas/movies:/data/movies
+      - /nas:/data/media_downloads
+    restart: unless-stopped

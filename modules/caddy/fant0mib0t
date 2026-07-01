@@ -129,3 +129,43 @@ mastodon.fantomitechno.dev {
     file_server
   }
 }
+
+jellyfin.fantom.home {
+  import logging jellyfin
+  reverse_proxy 127.0.0.1:4080
+}
+
+flaresolver.fantom.home {
+  import logging flaresolver
+  reverse_proxy 127.0.0.1:4081
+}
+
+prowlarr.fantom.home {
+  import logging prowlarr
+  reverse_proxy 127.0.0.1:4082
+}
+
+jackett.fantom.home {
+  import logging jackett
+  reverse_proxy 127.0.0.1:4083
+}
+
+sonarr.fantom.home {
+  import logging sonarr
+  reverse_proxy 127.0.0.1:4084
+}
+
+radarr.fantom.home {
+  import logging radarr
+  reverse_proxy 127.0.0.1:4085
+}
+
+bazarr.fantom.home {
+  import logging bazarr
+  reverse_proxy 127.0.0.1:4086
+}
+
+torrent.fantom.home {
+  import logging qbittorrent
+  reverse_proxy 127.0.0.1:4090
+}
