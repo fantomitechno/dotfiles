@@ -1,5 +1,6 @@
+name: kiwix
 services:
-  kiwix-serve:
+  kiwix:
     container_name: kiwix
     image: ghcr.io/kiwix/kiwix-serve:latest
     volumes:

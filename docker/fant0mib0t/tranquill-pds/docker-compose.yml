@@ -1,5 +1,7 @@
+name: tranquil-pds
 services:
   tranquil-pds:
+    container_name: tranquil-pds
     image: atcr.io/tranquil.farm/tranquil-pds:91999819c616afbb26586dce4e1ab70f767684de
     # tag: 0.6.5
     restart: unless-stopped
@@ -31,6 +33,7 @@ services:
           memory: 256M
 
   db:
+    container_name: tranquil-postgress
     image: postgres:18-alpine
     restart: unless-stopped
     env_file:

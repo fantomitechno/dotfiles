@@ -1,6 +1,8 @@
+name: atcr
 services:
   atcr:
     image: atcr.io/seamark.cr/appview:v0.1.2-arm64
+    container_name: atcr
     restart: unless-stopped
     command: ["serve", "--config", "/config.yaml"]
     environment:

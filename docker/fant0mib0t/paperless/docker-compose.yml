@@ -1,10 +1,13 @@
+name: paperless
 services:
   broker:
     image: docker.io/library/redis:8
+    container_name: paperless_redis
     restart: unless-stopped
 
   db:
     image: docker.io/library/postgres:18
+    container_name: paperless_postgres
     restart: unless-stopped
     volumes:
       - /home/fantomitechno/paperless/pg_data:/var/lib/postgresql
@@ -15,6 +18,7 @@ services:
 
   webserver:
     image: ghcr.io/paperless-ngx/paperless-ngx:2.20.15
+    container_name: paperless
     restart: unless-stopped
     depends_on:
       - db

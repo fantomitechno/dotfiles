@@ -1,7 +1,9 @@
+name: mastodon
 services:
   db:
     restart: always
     image: postgres:14-alpine
+    container_name: mastodon_postgres
     shm_size: 256mb
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "postgres"]
@@ -15,11 +17,13 @@ services:
   redis:
     restart: always
     image: redis:7-alpine
+    container_name: mastodon_redis
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
 
   web:
     image: ghcr.io/mastodon/mastodon:v4.6.2
+    container_name: mastodon_web
     restart: always
     env_file: .env
     command: bundle exec puma -C config/puma.rb
@@ -40,6 +44,7 @@ services:
 
   streaming:
     image: ghcr.io/mastodon/mastodon-streaming:v4.6.2
+    container_name: mastodon_streaming
     restart: always
     env_file: .env
     command: node ./streaming/index.js
@@ -57,6 +62,7 @@ services:
 
   sidekiq:
     image: ghcr.io/mastodon/mastodon:v4.6.2
+    container_name: mastodon_sidekiq
     restart: always
     env_file: .env
     command: bundle exec sidekiq
