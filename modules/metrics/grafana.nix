@@ -36,14 +36,14 @@
       exporters.opnsense = {
         enable = true;
         opnsenseServerAddress = "https://routeur.fantom.home";
-        port = 9001;
+        port = 3003;
       };
       scrapeConfigs = [
         {
           job_name = "opnsense";
           static_configs = [
             {
-              targets = [ "127.0.0.1:9001" ];
+              targets = [ "127.0.0.1:3003" ];
             }
           ];
         }

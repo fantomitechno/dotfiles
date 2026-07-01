@@ -6,7 +6,7 @@
   services.prometheus = {
     exporters.node = {
       enable = true;
-      port = 9000;
+      port = 3002;
       enabledCollectors = [
         "cpu"
         "diskstats"
@@ -31,7 +31,7 @@
         job_name = hostname;
         static_configs = [
           {
-            targets = [ "127.0.0.1:9000" ];
+            targets = [ "127.0.0.1:3002" ];
           }
         ];
       }
