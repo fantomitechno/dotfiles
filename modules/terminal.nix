@@ -12,7 +12,7 @@
         };
         zsh = {
           shellAliases = {
-            ssh = "TERM=xterm-256color kitten ssh";
+            kssh = "TERM=xterm-256color kitten ssh";
           };
         };
       };
