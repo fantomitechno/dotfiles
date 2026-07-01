@@ -33,6 +33,7 @@ All public DNS entries are also registered on Cloudflare with a CNAME entry to `
 | :----- | :------------- |
 | 10XX   | Websites       |
 | 20XX   | Communications |
+| 30XX   | Metrics        |
 | 40XX   | Storages       |
 
 ### OpnSense-DeLoreane
@@ -56,6 +57,7 @@ Global DNS: `conseil.renoux.dev`
 | :--------------- | :--------------- | :------------------------ |
 | 22               | OpenSSH          |                           |
 | 80, 443          | Caddy            |                           |
+| 3001             | Prometheus       |                           |
 | 4000, 4001, 4002 | NFS              |                           |
 | 4010             | Garage S3 API    | `s3.fantom.internal`      |
 | 4011             | Garage S3 Web UI | `s3.fantom.home`          |
@@ -73,6 +75,8 @@ Global DNS: `fant0mib0t.renoux.dev`
 | 2000        | Matrix                                  | `matrix.fantomitechno.dev`                    |
 | 2010        | Tranquill PDS                           | `pds.fantomitechno.dev`                       |
 | 2020,2021   | Mastodon                                | `mastodon.fantomitechno.dev`                  |
+| 3000        | Graphana                                | `graph.fantom.home`                           |
+| 3001        | Prometheus                              |                                               |
 | 4000        | Tangled Knot                            | `knot.fantomitechno.dev`                      |
 | 4005        | Gitea                                   | `git.fantomitechno.dev`                       |
 | 4010        | Tangled Spindle                         | `spindle.fantomitechno.dev`                   |

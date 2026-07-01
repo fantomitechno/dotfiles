@@ -10,6 +10,7 @@
   ]
   ++ builtins.map (i: ../../modules/${i}) ([
     "caddy"
+    "metrix/prometheus.nix"
     "nas"
   ]);
 

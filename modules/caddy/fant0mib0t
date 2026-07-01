@@ -87,6 +87,11 @@ notes.fantomitechno.dev {
   reverse_proxy 127.0.0.1:4070
 }
 
+http://graph.fantom.home {
+  import logging grafana
+  reverse_proxy 127.0.0.1:3000
+}
+
 mastodon.fantomitechno.dev {
   import logging mastodon
   

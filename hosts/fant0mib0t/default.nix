@@ -12,6 +12,8 @@
   ]
   ++ builtins.map (i: ../../modules/${i}) ([
     "caddy"
+    "metrix/grafana.nix"
+    "metrix/prometheus.nix"
     "radius"
     "tangled"
     "docker.nix"
