@@ -37,7 +37,6 @@
     nil
     nixfmt
     python3
-    texliveFull
   ];
 
   home-manager.users."fantomitechno" =
