@@ -41,6 +41,13 @@ spindle.fantomitechno.dev {
   reverse_proxy 127.0.0.1:4001
 }
 
+git.fantomitechno.dev {
+  import logging gitea
+  reverse_proxy 127.0.0.1:4005 {
+    header_up X-Real-Ip {remote_host}
+  }
+}
+
 hold.fantomitechno.dev {
   import logging hold
   reverse_proxy 127.0.0.1:4010

@@ -1,6 +1,29 @@
 name: gitea
 services:
-  server:
+  anubis:
+    image: ghcr.io/techarohq/anubis:latest
+    container_name: anubis
+    environment:
+      BIND: ":8080"
+      DIFFICULTY: "4"
+      METRICS_BIND: ":9090"
+      SERVE_ROBOTS_TXT: "true"
+      TARGET: "http://gitea:30000"
+      POLICY_FNAME: "/data/cfg/botPolicy.yaml"
+      OG_PASSTHROUGH: "true"
+      OG_EXPIRY_TIME: "24h"
+    healthcheck:
+      test: ["CMD", "anubis", "--healthcheck"]
+      interval: 5s
+      timeout: 30s
+      retries: 5
+      start_period: 500ms
+    ports:
+      - 127.0.0.1:4005:8080
+    volumes:
+      - "./botPolicy.yaml:/data/cfg/botPolicy.yaml:ro"
+
+  gitea:
     image: docker.gitea.com/gitea:1.26.4
     container_name: gitea
     env_file: .env
@@ -10,7 +33,6 @@ services:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
-      - "127.0.0.1:4005:3000"
       - "222:22"
     depends_on:
       - db

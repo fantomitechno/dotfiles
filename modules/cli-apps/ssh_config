@@ -1,4 +1,9 @@
 Host knot.fantomitechno.dev
     User git
-    Hostname 100.116.20.78
-    Port 2222
+    Hostname 172.16.20.10
+    Port 22
+
+Host git.fantomitechno.dev
+    User git
+    Hostname 172.16.20.20
+    Port 222
