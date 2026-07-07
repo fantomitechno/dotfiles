@@ -1,5 +1,9 @@
-{ ... }:
+{ pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
+    texliveFull
+  ];
+
   home-manager.users."fantomitechno" =
     {
       config,
