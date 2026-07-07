@@ -6,6 +6,7 @@ binds {
     Mod+Ctrl+Left  { move-column-left; }
 
     Mod+O     { focus-monitor-left; }
+    Mod+WheelScrollLeft     { focus-monitor-left; }
 
     Mod+Alt+Left  { consume-or-expel-window-left; }
 
@@ -16,6 +17,7 @@ binds {
     Mod+Ctrl+Right { move-column-right; }
 
     Mod+P     { focus-monitor-right; }
+    Mod+WheelScrollRight     { focus-monitor-right; }
 
     Mod+Alt+Right { consume-or-expel-window-right; }
 
