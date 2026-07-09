@@ -28,6 +28,11 @@
       url = "github:Kljunas2/activate-linux";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    winapps = {
+      url = "github:winapps-org/winapps";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

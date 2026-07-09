@@ -13,6 +13,7 @@
     "codium"
     "kde"
     "niri-de"
+    "winapps"
     "battery-notify.nix"
     "docker.nix"
     "editing.nix"
