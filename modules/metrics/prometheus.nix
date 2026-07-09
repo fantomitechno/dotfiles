@@ -1,5 +1,4 @@
 {
-  hostname,
   ...
 }:
 {
@@ -28,10 +27,18 @@
 
     scrapeConfigs = [
       {
-        job_name = hostname;
+        job_name = "exporter";
         static_configs = [
           {
             targets = [ "127.0.0.1:3002" ];
+          }
+        ];
+      }
+      {
+        job_name = "caddy";
+        static_configs = [
+          {
+            targets = [ "127.0.0.1:2019" ];
           }
         ];
       }

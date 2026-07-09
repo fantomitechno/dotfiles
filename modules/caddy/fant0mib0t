@@ -1,5 +1,9 @@
 {
   email simon@renoux.dev
+
+	metrics {
+		per_host
+	}
 }
 
 (logging) {
