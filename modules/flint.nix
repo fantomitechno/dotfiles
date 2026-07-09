@@ -5,5 +5,7 @@
     # Internship
     firefox
     teams-for-linux
+
+    kdePackages.krdc
   ];
 }

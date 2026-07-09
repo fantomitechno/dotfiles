@@ -12,6 +12,7 @@
   ++ builtins.map (i: ../../modules/${i}) ([
     "codium"
     "niri-de"
+    "winapps"
     "customisation.nix"
     "docker.nix"
     "editing.nix"
