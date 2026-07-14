@@ -20,6 +20,11 @@ window-rule {
 }
 
 window-rule {
+    match app-id=r#"gale"#
+    open-on-workspace "stm"
+}
+
+window-rule {
     match app-id=r#"[Cc]eleste"#
     open-on-workspace "stm"
     open-maximized true
@@ -60,6 +65,12 @@ window-rule {
 window-rule {
     match app-id="ArchipelagoLauncher"
     open-on-workspace "stm"
+}
+
+window-rule {
+    match app-id="steam_app_3527290"
+    open-on-workspace "stm"
+    open-maximized true
 }
 
 window-rule {
