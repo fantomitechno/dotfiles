@@ -11,8 +11,8 @@ services:
     ports:
       - 127.0.0.1:4080:8096
     volumes:
-      - /home/fantomitechno/jellyfin/config:/config
-      - /home/fantomitechno/jellyfin/cache:/cache
+      - /var/jellyfin/config:/config
+      - /var/jellyfin/cache:/cache
       - /nas/media/tv:/data/tvshows
       - /nas/media/movies:/data/movies
       - /nas/downloads:/data/media_downloads

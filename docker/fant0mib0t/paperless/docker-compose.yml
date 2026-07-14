@@ -28,7 +28,7 @@ services:
     volumes:
       - /nas/paperless/data:/usr/src/paperless/data
       - /nas/paperless/media:/usr/src/paperless/media
-      - /home/fantomitechno/paperless/export:/usr/src/paperless/export
+      - /var/paperless/export:/usr/src/paperless/export
       - /nas/paperless/import:/usr/src/paperless/consume
     env_file: .env
     environment:

@@ -106,7 +106,7 @@ http://graph.fantom.home {
 mastodon.fantomitechno.dev {
   import logging mastodon
   
-  root * /home/fantomitechno/mastodon/public
+  root * /var/mastodon/public
 
 	encode gzip
 

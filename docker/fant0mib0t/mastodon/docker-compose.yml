@@ -39,7 +39,7 @@ services:
       - db
       - redis
     volumes:
-      - /home/fantomitechno/mastodon/public:/mastodon/public
+      - /var/mastodon/public:/mastodon/public
       - /nas/mastodon/system:/mastodon/public/system
 
   streaming:

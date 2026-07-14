@@ -14,7 +14,7 @@ services:
       - TZ=${TZ}
       #- DOCKER_MODS=ghcr.io/gabe565/linuxserver-mod-vuetorrent
     volumes:
-      - /home/fantomitechno/qbittorent:/config
+      - /var/qbittorent:/config
       - /nas/downloads:/downloads
     restart: unless-stopped
 
@@ -41,7 +41,7 @@ services:
       - PGID=0
       - TZ=Europe/Paris
     volumes:
-      - /home/fantomitechno/prowlarr:/config
+      - /var/prowlarr:/config
     ports:
       - 127.0.0.1:4082:9696
     restart: unless-stopped
@@ -55,7 +55,7 @@ services:
       - PGID=0
       - TZ=Europe/Paris
     volumes:
-      - /home/fantomitechno/jackett:/config
+      - /var/jackett:/config
     ports:
       - 127.0.0.1:4083:9117
     restart: unless-stopped
@@ -69,7 +69,7 @@ services:
       - PGID=0
       - TZ=Europe/Paris
     volumes:
-      - /home/fantomitechno/sonarr:/config
+      - /var/sonarr:/config
       - /nas/media/tv:/tv
       - /nas/downloads:/downloads
     ports:
@@ -85,7 +85,7 @@ services:
       - PGID=0
       - TZ=Europe/Paris
     volumes:
-      - /home/fantomitechno/radarr:/config
+      - /var/radarr:/config
       - /nas/media/movies:/movies
       - /nas/downloads:/downloads
     ports:
@@ -101,7 +101,7 @@ services:
       - PGID=1000
       - TZ=Europe/Paris
     volumes:
-      - /home/fantomitechno/bazarr:/config
+      - /var/bazarr:/config
       - /nas/media/movies:/movies
       - /nas/media/tv:/tv
     ports:
