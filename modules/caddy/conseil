@@ -15,8 +15,9 @@
 }
 
 @local_net client_ip 172.16.0.0/12
-@server_net client_ip 172.16.20.0/24
 @admin_net client_ip 172.16.10.0/24
+@server_net client_ip 172.16.20.0/24
+@admin_vpn_net client_ip 172.16.30.0/24
 @guest_net client_ip 172.16.100.0/24
 
 conseil.renoux.dev {
@@ -30,10 +31,11 @@ http://s3.fantom.internal {
   reverse_proxy 127.0.0.1:4010
 }
 
-http://s3.fantom.home {
+s3.fantom.home {
   import logging garage
   abort not @local_net
   reverse_proxy 127.0.0.1:4011
+  tls internal
 }
 
 files.fantomitechno.dev {

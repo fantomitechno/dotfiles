@@ -15,8 +15,9 @@
 }
 
 @local_net client_ip 172.16.0.0/12
-@server_net client_ip 172.16.20.0/24
 @admin_net client_ip 172.16.10.0/24
+@server_net client_ip 172.16.20.0/24
+@admin_vpn_net client_ip 172.16.30.0/24
 @guest_net client_ip 172.16.100.0/24
 
 fant0mib0t.renoux.dev {
@@ -88,9 +89,11 @@ vault.renoux.dev {
   reverse_proxy 127.0.0.1:4050
 }
 
-http://pdf.fantom.home {
+pdf.fantom.home {
   import logging paperless
+  abort not @local_net
   reverse_proxy 127.0.0.1:4060
+  tls internal
 }
 
 notes.fantomitechno.dev {
@@ -98,9 +101,11 @@ notes.fantomitechno.dev {
   reverse_proxy 127.0.0.1:4070
 }
 
-http://graph.fantom.home {
+graph.fantom.home {
   import logging grafana
+  abort not @local_net
   reverse_proxy 127.0.0.1:3000
+  tls internal
 }
 
 mastodon.fantomitechno.dev {
@@ -143,40 +148,63 @@ mastodon.fantomitechno.dev {
 
 jellyfin.fantom.home {
   import logging jellyfin
+  abort not @local_net
   reverse_proxy 127.0.0.1:4080
+  tls internal
 }
 
-flaresolver.fantom.home {
-  import logging flaresolver
-  reverse_proxy 127.0.0.1:4081
-}
-
-prowlarr.fantom.home {
-  import logging prowlarr
-  reverse_proxy 127.0.0.1:4082
-}
-
-jackett.fantom.home {
-  import logging jackett
-  reverse_proxy 127.0.0.1:4083
-}
-
-sonarr.fantom.home {
-  import logging sonarr
-  reverse_proxy 127.0.0.1:4084
-}
-
-radarr.fantom.home {
-  import logging radarr
+music.fantom.home {
+  import logging jellyfin
+  abort not @local_net
   reverse_proxy 127.0.0.1:4085
-}
-
-bazarr.fantom.home {
-  import logging bazarr
-  reverse_proxy 127.0.0.1:4086
+  tls internal
 }
 
 torrent.fantom.home {
   import logging qbittorrent
+  abort not @local_net
   reverse_proxy 127.0.0.1:4090
+  tls internal
+}
+
+flaresolver.fantom.home {
+  import logging flaresolver
+  abort not @local_net
+  reverse_proxy 127.0.0.1:4091
+  tls internal
+}
+
+prowlarr.fantom.home {
+  import logging prowlarr
+  abort not @local_net
+  reverse_proxy 127.0.0.1:4092
+  tls internal
+}
+
+jackett.fantom.home {
+  import logging jackett
+  abort not @local_net
+  reverse_proxy 127.0.0.1:4093
+  tls internal
+}
+
+sonarr.fantom.home {
+  import logging sonarr
+  abort not @local_net
+  reverse_proxy 127.0.0.1:4094
+  tls internal
+}
+
+radarr.fantom.home {
+  import logging radarr
+  abort not @local_net
+  reverse_proxy 127.0.0.1:4095
+  tls internal
+}
+
+bazarr.fantom.home {
+  import logging bazarr
+  abort not @local_net
+  reverse_proxy 127.0.0.1:4096
+  tls internal
 }

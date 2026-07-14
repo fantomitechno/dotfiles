@@ -29,7 +29,7 @@ services:
       - TZ=Europe/Paris
       - LANG=fr_FR
     ports:
-      - 127.0.0.1:4081:8191
+      - 127.0.0.1:4091:8191
     restart: unless-stopped
 
   # Indexers
@@ -43,7 +43,7 @@ services:
     volumes:
       - /var/prowlarr:/config
     ports:
-      - 127.0.0.1:4082:9696
+      - 127.0.0.1:4092:9696
     restart: unless-stopped
 
   # Indexers too???
@@ -57,7 +57,7 @@ services:
     volumes:
       - /var/jackett:/config
     ports:
-      - 127.0.0.1:4083:9117
+      - 127.0.0.1:4093:9117
     restart: unless-stopped
 
   # TV Shows
@@ -73,7 +73,7 @@ services:
       - /nas/media/tv:/tv
       - /nas/downloads:/downloads
     ports:
-      - 127.0.0.1:4084:8989
+      - 127.0.0.1:4094:8989
     restart: unless-stopped
 
   # Movies
@@ -89,7 +89,7 @@ services:
       - /nas/media/movies:/movies
       - /nas/downloads:/downloads
     ports:
-      - 127.0.0.1:4085:7878
+      - 127.0.0.1:4095:7878
     restart: unless-stopped
 
   # Subtitles
@@ -105,5 +105,5 @@ services:
       - /nas/media/movies:/movies
       - /nas/media/tv:/tv
     ports:
-      - 127.0.0.1:4086:6767
+      - 127.0.0.1:4096:6767
     restart: unless-stopped

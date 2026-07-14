@@ -1,0 +1,17 @@
+name: navidrome
+services:
+  navidrome:
+    image: deluan/navidrome:0.63.2
+    container_name: navidrome
+    ports:
+      - "127.0.0.1:4085:4533"
+    restart: unless-stopped
+    environment:
+      # Optional: put your config options customization here. Examples:
+      # ND_LOGLEVEL: debug
+    volumes:
+      - "navidrome_data:/data"
+      - "/nas/media/music:/music:ro"
+
+volumes:
+  navidrome_data:
