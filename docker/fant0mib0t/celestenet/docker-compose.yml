@@ -1,0 +1,20 @@
+name: celestenet
+services:
+  celestenet:
+    # Use my own custom CelesteNet image
+    image: ghcr.io/fantomitechno/celestenet:latest
+    container_name: celestenet
+    ports:
+      - "127.0.0.1:17230:17230/tcp"
+      - "127.0.0.1:17230:17230/udp"
+      - "127.0.0.1:1099:17232/tcp"
+      - "127.0.0.1:1099:17232/udp"
+    volumes:
+      # custom configurations
+      - /var/celestenet/ModuleConfigs:/app/ModuleConfigs
+      - /var/celestenet/Content:/app/Content
+      - cnet_data:/app/UserData
+    restart: unless-stopped
+
+volumes:
+  cnet_data:

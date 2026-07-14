@@ -73,6 +73,7 @@ Global DNS: `fant0mib0t.renoux.dev`
 | 22               | OpenSSH (used for SSH and Tangled Knot) |                                                |
 | 80, 443, 2019    | Caddy                                   | Port 2019 is the admin API used for Prometheus |
 | 222              | Gitea SSH                               |                                                |
+| 1099             | CelesteNet Admin                        | `cneta.fantomitechno.dev`                      |
 | 2000             | Matrix                                  | `matrix.fantomitechno.dev`                     |
 | 2010             | Tranquill PDS                           | `pds.fantomitechno.dev`                        |
 | 2020, 2021       | Mastodon                                | `mastodon.fantomitechno.dev`                   |
@@ -96,3 +97,4 @@ Global DNS: `fant0mib0t.renoux.dev`
 | 4085             | Radarr                                  | `radarr.fantom.home`                           |
 | 4086             | Bazarr                                  | `bazarr.fantom.home`                           |
 | 4090             | qBittorrent                             | `torrent.fantom.home`                          |
+| 17230            | CelesteNet                              | `cnet.fantomitechno.dev`                       |
