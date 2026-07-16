@@ -28,6 +28,7 @@
     # utilities
     gnome-calculator
     gnome-calendar
+    valent
 
     # browser
     brave
