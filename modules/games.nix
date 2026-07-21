@@ -1,4 +1,7 @@
 { pkgs, ... }:
+let
+  celesteFolder = "/home/fantomitechno/Games/Celeste2";
+in
 {
   programs = {
     # Gayming
@@ -14,10 +17,15 @@
   environment.systemPackages = with pkgs; [
     antimicrox
     archipelago
+    (celestegame.override {
+      withEverest = true;
+      writableDir = "${celesteFolder}/writable";
+      gameDir = "${celesteFolder}/game";
+    })
     gale
     lumafly
     mumble
-    olympus
+    (olympus.override { finderHints = "${celesteFolder}/game"; })
     osu-lazer-bin
     pandora-launcher
     parsec-bin
