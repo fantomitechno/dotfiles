@@ -1,6 +1,5 @@
 { ... }: {
   imports = [
-    ./copyparty.nix
     ./s3.nix
   ];
 

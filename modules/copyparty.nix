@@ -13,7 +13,7 @@
     settings = {
       i = "127.0.0.1";
       p = [
-        4020
+        4025
       ];
     };
 
@@ -25,7 +25,7 @@
 
     volumes = {
       "/public" = {
-        path = "/data/public";
+        path = "/nas/public";
 
         access = {
           r = "*";
@@ -38,7 +38,7 @@
         };
       };
       "/paperless" = {
-        path = "/data/paperless/import";
+        path = "/nas/paperless/import";
 
         access = {
           rw = [ "fantomitechno" ];

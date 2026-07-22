@@ -5,9 +5,9 @@
 | VID | NAME      | PREFIX            | ACESS                   | PERMISSIONS                                   |
 | --- | --------- | ----------------- | ----------------------- | --------------------------------------------- |
 | 10  | ADMIN     | `172.16.10.0/24`  | Ethernet with 802.1X    | Internet without restrictions, SSH to servers |
-| 20  | SERVERS   | `172.16.20.0/24`  | specific ethernet ports | Internet without restrictions                 |
+| 20  | SERVERS   | `172.16.20.0/24`  | specific Ethernet ports | Internet without restrictions                 |
 | 30  | ADMIN VPN | `172.16.30.0/24`  | WireGuard               | Internet without restrictions, SSH to servers |
-| 100 | GUEST     | `172.16.100.0/24` | Ethernet and WiFi       | Restricted to HTTP and HTTPS                  |
+| 100 | GUEST     | `172.16.100.0/24` | Ethernet and Wi-Fi      | Restricted to HTTP and HTTPS                  |
 
 ## IPs
 
@@ -20,15 +20,17 @@
 
 ## Ports & DNS
 
-There is 4 domains that are in use:
+There are 4 domains that are in use:
 
 - `fantomitechno.dev` and `renoux.dev` that are domains used for public services and are available over the internet
 - `fantom.home` which is not a real domain (it only exists via my router), this one is used for local services I, as a user, uses
 - `fantom.internal` another local domain, this one used only for communication between different devices
 
-All DNS entries are registered by OpnSense-DeLoreane to point to each machines (using their 172.16.20.0/24 IP if they are on multiple networks).
+All DNS entries are registered by OpnSense-DeLoreane to point to each machine (using their 172.16.20.0/24 IP if they are on multiple networks).
 
 All public DNS entries are also registered on Cloudflare with a CNAME entry to `rack.fantomitechno.dev` which points to my public IP.
+
+There is a Port forward for all traffic from the Internet to ports 80, 443 and 17230 of OpnSense-DeLoreane to fant0mib0t.
 
 | Ranges | Description    |
 | :----- | :------------- |
@@ -62,7 +64,6 @@ Global DNS: `conseil.renoux.dev`
 | 4000, 4001, 4002 | NFS              |                                                |
 | 4010             | Garage S3 API    | `s3.fantom.internal`                           |
 | 4011             | Garage S3 Web UI | `s3.fantom.home`                               |
-| 4020             | Copyparty        | `files.fantomitechno.dev`                      |
 
 ### fant0mib0t
 
@@ -83,6 +84,7 @@ Global DNS: `fant0mib0t.renoux.dev`
 | 4005             | Gitea (Behind Anubis)                   | `git.fantomitechno.dev`                        |
 | 4010             | Tangled Spindle                         | `spindle.fantomitechno.dev`                    |
 | 4020, 4021       | Cryptpad                                | `drive.renoux.dev`, `drive.s.renoux.dev`       |
+| 4025             | Copyparty                               | `files.fantomitechno.dev`                      |
 | 4030             | Kiwix                                   | `kiwix.fantomitechno.dev`, `kiwix.renoux.dev`  |
 |                  | (redirection to Wikipedia .zim)         | `wikipedia.renoux.dev`                         |
 | 4040             | Immich                                  | `photo.renoux.dev`                             |

@@ -20,10 +20,6 @@
 @admin_vpn_net client_ip 172.16.30.0/24
 @guest_net client_ip 172.16.100.0/24
 
-conseil.renoux.dev {
-  respond "Welcome!"
-}
-
 # Storage
 http://s3.fantom.internal {
   import logging garage
@@ -36,9 +32,4 @@ s3.fantom.home {
   abort not @local_net
   reverse_proxy 127.0.0.1:4011
   tls internal
-}
-
-files.fantomitechno.dev {
-  import logging copyparty
-  reverse_proxy 127.0.0.1:4020
 }

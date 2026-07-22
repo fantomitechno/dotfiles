@@ -20,8 +20,8 @@
 @admin_vpn_net client_ip 172.16.30.0/24
 @guest_net client_ip 172.16.100.0/24
 
-fant0mib0t.renoux.dev {
-  respond "Welcome!"
+rack.renoux.dev {
+  respond "yup, this is a rack!"
 }
 
 # Communication
@@ -68,6 +68,11 @@ drive.renoux.dev, drive.s.renoux.dev {
   handle {
     reverse_proxy 127.0.0.1:44020
   }
+}
+
+files.fantomitechno.dev {
+  import logging copyparty
+  reverse_proxy 127.0.0.1:4020
 }
 
 kiwix.fantomitechno.dev, kiwix.renoux.dev {

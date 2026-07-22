@@ -16,6 +16,7 @@
     "metrix/prometheus.nix"
     "radius"
     "tangled"
+    "copyparty.nix"
     "docker.nix"
     "matrix.nix"
   ]);
