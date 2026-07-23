@@ -36,7 +36,7 @@
 
     # Homelab inputs
 
-    inputs.copyparty = {
+    copyparty = {
       url = "github:9001/copyparty?tag=v1.20.16";
       inputs.nixpkgs.follows = "nixpkgs";
     };
