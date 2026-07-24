@@ -30,7 +30,7 @@ All DNS entries are registered by OpnSense-DeLoreane to point to each machine (u
 
 All public DNS entries are also registered on Cloudflare with a CNAME entry to `rack.fantomitechno.dev` which points to my public IP.
 
-There is a Port forward for all traffic from the Internet to ports 80, 443 and 17230 of OpnSense-DeLoreane to fant0mib0t.
+There is a Port forward for all traffic from the Internet to ports 80, 443, 7881, 17230 and the range from 50100 to 50200 of OpnSense-DeLoreane to fant0mib0t.
 
 | Ranges | Description    |
 | :----- | :------------- |
@@ -76,6 +76,7 @@ Global DNS: `fant0mib0t.renoux.dev`
 | 222              | Gitea SSH                               |                                                |
 | 1099             | CelesteNet Admin                        | `cneta.fantomitechno.dev`                      |
 | 2000             | Matrix                                  | `matrix.fantomitechno.dev`                     |
+| 2001, 2002       | Livekit (Call for Matrix)               | `livekit.fantomitechno.dev`                    |
 | 2010             | Tranquill PDS                           | `pds.fantomitechno.dev`                        |
 | 2020, 2021       | Mastodon                                | `mastodon.fantomitechno.dev`                   |
 | 3000             | Graphana                                | `graph.fantom.home`                            |
@@ -100,4 +101,6 @@ Global DNS: `fant0mib0t.renoux.dev`
 | 4094             | Sonarr                                  | `sonarr.fantom.home`                           |
 | 4095             | Radarr                                  | `radarr.fantom.home`                           |
 | 4096             | Bazarr                                  | `bazarr.fantom.home`                           |
+| 7881             | Livekit                                 |                                                |
 | 17230            | CelesteNet                              | `cnet.fantomitechno.dev`                       |
+| 50100-50200      | Livekit Voice ports                     |                                                |

@@ -30,6 +30,18 @@ matrix.fantomitechno.dev {
   reverse_proxy 127.0.0.1:2000
 }
 
+livekit.fantomitechno.dev {
+  import logging livekit
+  # for lk-jwt-service
+  @lk-jwt-service path /sfu/get* /healthz* /get_token*
+  route @lk-jwt-service {
+    reverse_proxy 127.0.0.1:2001
+  }
+
+  # for livekit
+  reverse_proxy 127.0.0.1:2002
+}
+
 pds.fantomitechno.dev {
   import logging pds
   reverse_proxy 127.0.0.1:2010

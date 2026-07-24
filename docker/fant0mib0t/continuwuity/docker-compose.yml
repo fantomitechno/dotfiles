@@ -1,0 +1,49 @@
+name: continuwuity
+services:
+  homeserver:
+    image: "forgejo.ellis.link/continuwuation/continuwuity:v26-maxperf"
+    restart: unless-stopped
+    command: /sbin/conduwuit
+    ports:
+      - 127.0.0.1:2000:8008
+
+    volumes:
+      - rockdb:/var/lib/continuwuity
+      - ./continuwuity-resolv.conf:/etc/resolv.conf
+      #- ./continuwuity.toml:/etc/continuwuity.toml
+    environment:
+      CONTINUWUITY_SERVER_NAME: matrix.fantomitechno.dev
+      CONTINUWUITY_DATABASE_PATH: /var/lib/continuwuity
+      CONTINUWUITY_ADDRESS: 0.0.0.0
+      CONTINUWUITY_PORT: 8008
+      CONTINUWUITY_MATRIX_RTC__foci: '[{ type = "livekit", livekit_service_url = "https://livekit.fantomitechno.dev" }]''
+
+  lk-jwt-service:
+    image: ghcr.io/element-hq/lk-jwt-service:0.5.0
+    container_name: lk-jwt-service
+    environment:
+      - LIVEKIT_JWT_BIND=:8081
+      - LIVEKIT_URL=wss://livekit.fantomitechno.dev
+      - LIVEKIT_FULL_ACCESS_HOMESERVERS=matrix.fantomitechno.dev
+      - LIVEKIT_KEY=${LK_MATRIX_KEY}
+      - LIVEKIT_SECRET=${LK_MATRIX_SECRET}
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:2001:8081"
+
+  livekit:
+    image: livekit/livekit-server:v1.13.4
+    container_name: livekit
+    command: --config /etc/livekit.yaml
+    restart: unless-stopped
+    volumes:
+      - ./livekit.yaml:/etc/livekit.yaml:ro
+    ports:
+      - "127.0.0.1:2002:7880/tcp"
+      - "7881:7881/tcp"
+      - "50100-50200:50100-50200/udp"
+    environment:
+      LIVEKIT_KEYS: "${LK_MATRIX_KEY}: ${LK_MATRIX_SECRET}"
+
+volumes:
+  rockdb:

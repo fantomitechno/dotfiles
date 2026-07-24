@@ -18,7 +18,6 @@
     "tangled"
     "copyparty.nix"
     "docker.nix"
-    "matrix.nix"
   ]);
 
   # Bootloader
