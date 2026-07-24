@@ -3,6 +3,7 @@ services:
   anubis:
     image: ghcr.io/techarohq/anubis:v1.26.0-pre1
     container_name: anubis
+    restart: unless-stopped
     environment:
       BIND: ":8080"
       DIFFICULTY: "4"
@@ -27,7 +28,7 @@ services:
     image: docker.gitea.com/gitea:1.26.4
     container_name: gitea
     env_file: .env
-    restart: always
+    restart: unless-stopped
     volumes:
       - /nas/gitea/data:/data
       - /etc/timezone:/etc/timezone:ro
@@ -40,7 +41,7 @@ services:
   db:
     image: docker.io/library/postgres:14
     container_name: gitea_postgres
-    restart: always
+    restart: unless-stopped
     env_file: .env
     networks:
       - gitea

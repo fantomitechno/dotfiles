@@ -3,6 +3,7 @@ services:
   kiwix:
     container_name: kiwix
     image: ghcr.io/kiwix/kiwix-serve:latest
+    restart: unless-stopped
     volumes:
       - /nas/kiwix:/data
     command:

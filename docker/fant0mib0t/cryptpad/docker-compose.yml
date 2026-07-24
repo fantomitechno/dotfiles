@@ -3,6 +3,7 @@ services:
   cryptpad:
     image: "cryptpad/cryptpad:version-2026.5.1"
     container_name: cryptpad
+    restart: unless-stopped
 
     environment:
       - CPAD_MAIN_DOMAIN=https://drive.renoux.dev
