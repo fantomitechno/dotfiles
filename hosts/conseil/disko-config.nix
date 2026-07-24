@@ -62,6 +62,9 @@
         };
       };
     };
+
+    # To add new drives... for what to put in here, glhf idk
+    # https://openzfs.github.io/openzfs-docs/man/master/8/zpool-attach.8.html#Example_2_:_Expanding_a_RAID-Z_vdev_with_an_additional_disk
     zpool = {
       storage = {
         type = "zpool";
