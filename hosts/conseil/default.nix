@@ -6,12 +6,14 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./zfs.nix
+
     ../server.nix
   ]
   ++ builtins.map (i: ../../modules/${i}) ([
     "caddy"
-    "metrix/prometheus.nix"
     "nas"
+    "metrix/prometheus.nix"
   ]);
 
   # Bootloader

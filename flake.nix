@@ -54,6 +54,11 @@
       inputs.lucide-src.follows = "";
       inputs.mermaid-src.follows = "";
     };
+
+    disko = {
+      url = "github:nix-community/disko?tag=v1.20.16";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
