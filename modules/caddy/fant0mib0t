@@ -60,7 +60,11 @@ spindle.fantomitechno.dev {
 
 git.fantomitechno.dev {
   import logging gitea
-  reverse_proxy 127.0.0.1:4005 {
+  reverse_proxy not @local_net 127.0.0.1:4006 {
+    header_up X-Real-Ip {remote_host}
+  }
+
+  reverse_proxy @local_net 127.0.0.1:4005 {
     header_up X-Real-Ip {remote_host}
   }
 }

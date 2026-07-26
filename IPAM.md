@@ -82,7 +82,8 @@ Global DNS: `fant0mib0t.renoux.dev`
 | 3000             | Graphana                                | `graph.fantom.home`                            |
 | 3001, 3002, 3003 | Prometheus                              |                                                |
 | 4000             | Tangled Knot                            | `knot.fantomitechno.dev`                       |
-| 4005             | Gitea (Behind Anubis)                   | `git.fantomitechno.dev`                        |
+| 4005             | Anubis (for Forgejo)                    | `git.fantomitechno.dev`                        |
+| 4006             | Forgejo (Behind Anubis)                 |                                                |
 | 4010             | Tangled Spindle                         | `spindle.fantomitechno.dev`                    |
 | 4020, 4021       | Cryptpad                                | `drive.renoux.dev`, `drive.s.renoux.dev`       |
 | 4025             | Copyparty                               | `files.fantomitechno.dev`                      |

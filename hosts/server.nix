@@ -3,6 +3,7 @@
     "cli-apps"
     "fastfetch"
     "git"
+    "fail2ban.nix"
     "ssh.nix"
   ]);
 

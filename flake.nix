@@ -70,6 +70,8 @@
     }:
     let
       system = "x86_64-linux";
+      dotfileFolder = "/home/fantomitechno/dotfiles";
+      flakes = self;
 
       commonSystem =
         hostname:
@@ -77,8 +79,8 @@
           inherit system;
           specialArgs = {
             inherit hostname;
-            dotfileFolder = "/home/fantomitechno/dotfiles";
-            flakes = self;
+            inherit dotfileFolder;
+            inherit flakes;
           };
           modules = [
             ./hosts
@@ -90,8 +92,8 @@
                 useUserPackages = true;
                 extraSpecialArgs = {
                   inherit hostname;
-                  dotfileFolder = "/home/fantomitechno/dotfiles";
-                  flakes = self;
+                  inherit dotfileFolder;
+                  inherit flakes;
                 };
               };
             }
