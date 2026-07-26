@@ -8,7 +8,7 @@
 
 (logging) {
     log {
-        output file /var/log/{args[0]}.log
+        output file /var/log/caddy/{args[0]}.log
         format console
         # level error
     }
