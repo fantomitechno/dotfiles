@@ -6,6 +6,7 @@ services:
     restart: unless-stopped
     environment:
       DOMAIN: "https://vault.renoux.dev"
+      SIGNUPS_ALLOWED: false
     volumes:
       - /nas/vaultwarden/vw-data/:/data/
     ports:
