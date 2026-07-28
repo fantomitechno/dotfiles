@@ -6,12 +6,24 @@
   ...
 }:
 {
+  systemd.tmpfiles.rules = [
+    "d '${config.service.forgejo.customDir}/public' - forgejo forgejo - -"
+    "d '${config.service.forgejo.customDir}/public/assets' - forgejo forgejo - -"
+    "d '${config.service.forgejo.customDir}/public/assets/img' - forgejo forgejo - -"
+    "d '${config.service.forgejo.customDir}/public/assets/css' - forgejo forgejo - -"
+    "C+ '${config.service.forgejo.customDir}/public/assets/css/theme-custom.css' - forgejo forgejo - ${./theme-custom.css}"
+    "L+ '${config.service.forgejo.customDir}/public/assets/img/logo.svg' - forgejo forgejo - ${./logo.svg}"
+  ];
+
   services = {
     forgejo = {
       enable = true;
-      database.type = "postgres";
+      database.type = "sqlite3";
       lfs.enable = true;
       settings = {
+        DEFAULT = {
+          APP_NAME = "git.fantomitechno.dev";
+        };
         server = {
           DOMAIN = "git.fantomitechno.dev";
           ROOT_URL = "https://git.fantomitechno.dev";
@@ -33,6 +45,16 @@
           FROM = "me@no-reply.fantomitechno.dev";
           USER = "resend";
         };
+
+        "ui.meta" = {
+          AUTHOR = "git.fantomitechno.dev";
+          DESCRIPTION = "Selfhosted, running Forgejo on NixOS";
+          KEYWORDS = "fantomitechno,git,forge,forgejo";
+        };
+        ui = {
+          DEFAULT_THEME = "custom";
+          THEMES = "forgejo-auto,forgejo-light,forgejo-dark,custom";
+        };
       };
       secrets = {
         mailer.PASSWD = "${dotfileFolder}/pswd/forgejo-mailer";
@@ -53,15 +75,13 @@
           "ubuntu-22.04:docker://node:16-bullseye"
           "ubuntu-20.04:docker://node:16-bullseye"
           "ubuntu-18.04:docker://node:16-buster"
-          ## optionally provide native execution on the host:
-          # "native:host"
         ];
       };
     };
 
     openssh = {
-      settings.AllowUsers = [ "git" ];
-      settings.AllowGroups = [ "git" ];
+      settings.AllowUsers = [ config.service.forgejo.user ];
+      settings.AllowGroups = [ config.service.forgejo.group ];
     };
 
     anubis.instances."forgejo" = {
