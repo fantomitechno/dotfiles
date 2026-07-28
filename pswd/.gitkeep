@@ -1,0 +1,5 @@
+copyparty-fantom
+forgejo-mailer
+forgejo-runner
+forgejo-security/internal-token
+forgejo-security/secret-key
