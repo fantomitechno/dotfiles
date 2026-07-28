@@ -157,6 +157,9 @@ Sort reversed=false
 Speedbar Width=154
 View Style=DetailTree
 
+[KShortcutsDialog Settings]
+Dialog Size=600,480
+
 [Shortcuts]
 Copy=Ctrl+C
 Cut=Ctrl+X
