@@ -56,5 +56,10 @@
   "dotnet.server.useServerGC": false,
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
-  }
+  },
+  "redhat.telemetry.enabled": false,
+  "[ansible]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "omnisharp.enableDecompilationSupport": true
 }
