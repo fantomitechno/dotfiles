@@ -25,6 +25,7 @@ in
     gale
     lumafly
     mumble
+    mangohud
     (olympus.override { finderHints = "${celesteFolder}/game"; })
     osu-lazer-bin
     pandora-launcher
