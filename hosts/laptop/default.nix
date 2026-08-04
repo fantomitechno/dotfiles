@@ -22,6 +22,7 @@
     "games.nix"
     "graphene.nix"
     "jetbrain.nix"
+    "modding.nix"
     "network.nix"
     "nantarena.nix"
     "raspberry.nix"
