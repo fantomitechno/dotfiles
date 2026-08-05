@@ -15,5 +15,14 @@
     {
       xdg.configFile."winapps/winapps.conf".source =
         config.lib.file.mkOutOfStoreSymlink "${dotfileFolder}/modules/winapps/winapps.conf";
+
+      programs = {
+        zsh = {
+          shellAliases = {
+            windup = "docker compose -f ${dotfileFolder}/modules/winapps/windows.yaml up -d";
+            winddown = "docker compose -f ${dotfileFolder}/modules/winapps/windows.yaml down";
+          };
+        };
+      };
     };
 }
