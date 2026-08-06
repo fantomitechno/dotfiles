@@ -32,6 +32,10 @@ in
     parsec-bin
     prismlauncher
     protonup-rs
+
+    # Sandboxing for Pandora launcher
+    bubblewrap
+    xdg-dbus-proxy
   ];
 
   home-manager.users."fantomitechno" =
