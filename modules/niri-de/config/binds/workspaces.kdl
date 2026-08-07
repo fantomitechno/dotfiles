@@ -3,6 +3,8 @@ binds {
     Mod+Left { focus-column-or-monitor-left; }
     Mod+Shift+WheelScrollUp cooldown-ms=150 { focus-column-or-monitor-left; }
 
+    Mod+Shift+Left { focus-monitor-left; }
+
     Mod+Ctrl+Left { move-column-left; }
 
     Mod+Alt+Left { consume-or-expel-window-left; }
@@ -10,6 +12,8 @@ binds {
     // RIGHT
     Mod+Right { focus-column-or-monitor-right; }
     Mod+Shift+WheelScrollDown cooldown-ms=150 { focus-column-or-monitor-right; }
+
+    Mod+Shift+Right { focus-monitor-right; }
 
     Mod+Ctrl+Right { move-column-right; }
 
