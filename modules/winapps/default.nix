@@ -3,8 +3,15 @@
 {
   environment.systemPackages = with pkgs; [
     flakes.inputs.winapps.packages."${system}".winapps
-    flakes.inputs.winapps.packages."${system}".winapps-launcher # optional
+    flakes.inputs.winapps.packages."${system}".winapps-launcher
   ];
+  
+  # set up binary cache
+  nix.settings = {
+    substituters = [ "https://winapps.cachix.org/" ];
+    trusted-public-keys = [ "winapps.cachix.org-1:HI82jWrXZsQRar/PChgIx1unmuEsiQMQq+zt05CD36g=" ];
+    trusted-users = [ "fantomitechno" ];
+  };
 
   home-manager.users."fantomitechno" =
     {
