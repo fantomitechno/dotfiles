@@ -7,9 +7,9 @@ services:
     volumes:
       # custom configurations
       - ./config.yml:/app/update_checker_config.yaml
-      - /nas/celeste/mods:/mods
-      - /nas/celeste/images:/images
-      - /nas/celeste/rich_presence:/rich_presences
+      - /data/celeste/mods:/mods
+      - /data/celeste/images:/images
+      - /data/celeste/rich_presence:/rich_presences
     restart: unless-stopped
 
 volumes:
