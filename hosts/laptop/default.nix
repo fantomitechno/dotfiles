@@ -37,7 +37,7 @@
         configurationLimit = 10;
       };
       efi.canTouchEfiVariables = true;
-      timeout = 0;
+      timeout = 2;
     };
     kernelPackages = pkgs.linuxPackages;
   };

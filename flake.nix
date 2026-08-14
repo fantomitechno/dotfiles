@@ -44,12 +44,9 @@
       ...
     }:
     let
-      system = "x86_64-linux";
-
       commonSystem =
         hostname:
         nixpkgs.lib.nixosSystem {
-          inherit system;
           specialArgs = {
             inherit hostname;
             dotfileFolder = "/home/fantomitechno/dotfiles";
