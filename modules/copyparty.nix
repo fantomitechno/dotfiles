@@ -24,6 +24,14 @@
     };
 
     volumes = {
+      "/celeste" = {
+        path = "/nas/celeste";
+
+        access = {
+          r = "*";
+          rw = [ "fantomitechno" ];
+        };
+      };
       "/public" = {
         path = "/nas/public";
 

@@ -1,0 +1,16 @@
+name: update-checker
+services:
+  update-checker:
+    # Use my own custom update-checker image
+    image: ghcr.io/fantomitechno/update-checker:latest
+    container_name: update-checker
+    volumes:
+      # custom configurations
+      - ./config.yml:/app/update_checker_config.yaml
+      - /nas/celeste/mods:/mods
+      - /nas/celeste/images:/images
+      - /nas/celeste/rich_presence:/rich_presences
+    restart: unless-stopped
+
+volumes:
+  cnet_data:
