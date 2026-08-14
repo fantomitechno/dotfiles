@@ -61,5 +61,8 @@
   "[ansible]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-  "omnisharp.enableDecompilationSupport": true
+  "omnisharp.enableDecompilationSupport": true,
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

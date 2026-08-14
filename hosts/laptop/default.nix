@@ -11,7 +11,6 @@
   ]
   ++ builtins.map (i: ../../modules/${i}) ([
     "codium"
-    "kde"
     "niri-de"
     "winapps"
     "battery-notify.nix"
