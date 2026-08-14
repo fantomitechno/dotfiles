@@ -6,6 +6,6 @@
     arp-scan
     nmap
     # Intranet Database
-    mongodb-compass
+    # mongodb-compass
   ];
 }
