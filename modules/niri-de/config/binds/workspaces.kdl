@@ -1,50 +1,48 @@
 binds {
     // LEFT
-    Mod+Left  { focus-column-left; }
-    Mod+Shift+WheelScrollUp cooldown-ms=150    { focus-column-left; }
+    Mod+Left { focus-column-or-monitor-left; }
+    Mod+Shift+WheelScrollUp cooldown-ms=150 { focus-column-or-monitor-left; }
 
-    Mod+Ctrl+Left  { move-column-left; }
+    Mod+Shift+Left { focus-monitor-left; }
 
-    Mod+O     { focus-monitor-left; }
-    Mod+WheelScrollLeft     { focus-monitor-left; }
+    Mod+Ctrl+Left { move-column-left; }
 
-    Mod+Alt+Left  { consume-or-expel-window-left; }
+    Mod+Alt+Left { consume-or-expel-window-left; }
 
     // RIGHT
-    Mod+Right { focus-column-right; }
-    Mod+Shift+WheelScrollDown cooldown-ms=150  { focus-column-right; }
+    Mod+Right { focus-column-or-monitor-right; }
+    Mod+Shift+WheelScrollDown cooldown-ms=150 { focus-column-or-monitor-right; }
+
+    Mod+Shift+Right { focus-monitor-right; }
 
     Mod+Ctrl+Right { move-column-right; }
-
-    Mod+P     { focus-monitor-right; }
-    Mod+WheelScrollRight     { focus-monitor-right; }
 
     Mod+Alt+Right { consume-or-expel-window-right; }
 
     // DOWN
-    Mod+Page_Down      { focus-workspace-down; }
+    Mod+Page_Down { focus-workspace-down; }
+    Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
 
-    Mod+Down  { focus-window-or-workspace-down; }
-    Mod+WheelScrollDown cooldown-ms=150  { focus-window-or-workspace-down; }
+    Mod+Down { focus-window-or-workspace-down; }
 
-    Mod+Ctrl+Down  { move-window-down-or-to-workspace-down; }
-    Mod+Ctrl+WheelScrollDown  { move-window-down-or-to-workspace-down; }
+    Mod+Ctrl+Down { move-window-down-or-to-workspace-down; }
+    Mod+Ctrl+WheelScrollDown { move-window-down-or-to-workspace-down; }
 
     Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
     
     // UP
-    Mod+Page_Up        { focus-workspace-up; }
+    Mod+Page_Up { focus-workspace-up; }
+    Mod+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
 
-    Mod+Up    { focus-window-or-workspace-up; }
-    Mod+WheelScrollUp cooldown-ms=150    { focus-window-or-workspace-up; }
+    Mod+Up { focus-window-or-workspace-up; }
 
-    Mod+Ctrl+Up    { move-window-up-or-to-workspace-up; }
-    Mod+Ctrl+WheelScrollUp    { move-window-up-or-to-workspace-up; }
+    Mod+Ctrl+Up { move-window-up-or-to-workspace-up; }
+    Mod+Ctrl+WheelScrollUp { move-window-up-or-to-workspace-up; }
 
-    Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
+    Mod+Ctrl+Page_Up { move-column-to-workspace-up; }
 
 
-    Mod+Alt+Down  { consume-window-into-column; }
+    Mod+Alt+Down { consume-window-into-column; }
     Mod+Alt+Up { expel-window-from-column; }
 
     Mod+R { switch-preset-column-width; }
@@ -60,5 +58,5 @@ binds {
     Mod+Ctrl+Shift+Equal { set-column-width "-5%"; }
     Mod+Ctrl+Equal { set-column-width "+5%"; }
 
-    Mod+Shift+V       { toggle-window-floating; }
+    Mod+Shift+V { toggle-window-floating; }
 }

@@ -9,7 +9,7 @@
         insensitive = true;
         allow_images = true;
         image_size = 30;
-        allow_markup = true;
+        allow_markup = false;
         width = 400;
         term = "kitty";
         dmenu-parse_action = true;

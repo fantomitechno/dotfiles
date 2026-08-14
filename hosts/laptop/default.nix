@@ -22,6 +22,7 @@
     "games.nix"
     "graphene.nix"
     "jetbrain.nix"
+    "modding.nix"
     "network.nix"
     "nantarena.nix"
     "raspberry.nix"
@@ -36,7 +37,7 @@
         configurationLimit = 10;
       };
       efi.canTouchEfiVariables = true;
-      timeout = 0;
+      timeout = 2;
     };
     kernelPackages = pkgs.linuxPackages;
   };

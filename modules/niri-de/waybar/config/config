@@ -130,7 +130,15 @@
       "Audacity - Audacity": " audcty",
       "Audacity is starting up... - Audacity": " audcty boot",
       "(?!Audacity)(.*) - Audacity": " $1",
-      ".* - osu!": " osu!"
+      ".* - osu!": " osu!",
+      "KRDC - org.kde.krdc": "󰢹 krdc",
+      "(.*) — KRDC - org.kde.krdc": "󰢹 $1",
+      "ILSpy - ilspy": "󱡴 ilspy",
+      "Valent - valent": "󱘖 kde cnct",
+      "(.*) - Word - .*": " $1",
+      ".* Microsoft Windows": " wnds",
+      ".*\\cmd.exe - .*": " cmd.exe",
+      ".* Windows Powershell - .*": "󰨊 pwrshl"
     }
   },
 

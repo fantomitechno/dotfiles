@@ -64,7 +64,7 @@
             cat = "bat";
             df = "duf";
             lt = "tree --gitignore";
-            rebuild = "cd /home/fantomitechno/dotfiles && sudo nixos-rebuild switch --flake";
+            rebuild = "cd ${dotfileFolder} && sudo nixos-rebuild switch --flake";
           };
 
           initContent = ''

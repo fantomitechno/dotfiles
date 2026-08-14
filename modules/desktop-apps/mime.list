@@ -18,6 +18,7 @@ inode/directory=org.gnome.Nautilus.desktop;codium.desktop
 application/zip=org.gnome.FileRoller.desktop
 x-scheme-handler/mailto=brave-browser.desktop
 x-scheme-handler/discord-1216669957799018608=discord-1216669957799018608.desktop
+video/mpeg=codium.desktop
 
 [Added Associations]
 image/png=org.gnome.Loupe.desktop;
@@ -27,3 +28,4 @@ application/xml=codium.desktop;
 application/zip=org.gnome.FileRoller.desktop;
 application/yaml=codium.desktop;
 application/octet-stream=codium.desktop;
+video/mpeg=codium.desktop;

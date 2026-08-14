@@ -69,14 +69,12 @@
       ...
     }:
     let
-      system = "x86_64-linux";
       dotfileFolder = "/home/fantomitechno/dotfiles";
       flakes = self;
 
       commonSystem =
         hostname:
         nixpkgs.lib.nixosSystem {
-          inherit system;
           specialArgs = {
             inherit hostname;
             inherit dotfileFolder;
@@ -113,7 +111,7 @@
         # Installer
         # nix build --no-link --print-out-paths ".#installer"
         installer = nixpkgs.lib.nixosSystem {
-          inherit system;
+          system = "x86_64-linux";
           modules = [
             ./modules/installer.nix
           ];

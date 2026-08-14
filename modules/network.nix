@@ -7,6 +7,7 @@
     nmap
     openvpn
     proton-vpn
+    python314Packages.shodan
     tailscale
     wireguard-tools
     wireshark

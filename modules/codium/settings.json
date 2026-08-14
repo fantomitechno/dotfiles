@@ -50,7 +50,16 @@
   },
   "editor.fontFamily": "'JetBrainsMono Nerd Font Propo', monospace",
   "clangd.path": "/home/fantomitechno/.config/VSCodium/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/22.1.0/clangd_22.1.0/bin/clangd",
-  "[markdown]": {
+  "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "dotnet.server.useServerGC": false,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "redhat.telemetry.enabled": false,
+  "[ansible]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "omnisharp.enableDecompilationSupport": true
 }
