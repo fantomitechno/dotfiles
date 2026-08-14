@@ -45,8 +45,15 @@
           scan = 60;
         };
       };
-      "/paperless" = {
+      "/paperless-import" = {
         path = "/nas/paperless/import";
+
+        access = {
+          rw = [ "fantomitechno" ];
+        };
+      };
+      "/media" = {
+        path = "/nas/media";
 
         access = {
           rw = [ "fantomitechno" ];
