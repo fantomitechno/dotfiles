@@ -1,6 +1,7 @@
 {
   hostname,
   pkgs,
+  lib,
   ...
 }:
 {
@@ -70,6 +71,16 @@
         flakes.inputs.niri-float-sticky.packages.${pkgs.system}.default
         flakes.inputs.activate-linux.defaultPackage.${pkgs.system}
       ];
+
+      home = {
+        pointerCursor = lib.mkDefault {
+          enable = true;
+          gtk.enable = true;
+          package = pkgs.bibata-cursors;
+          name = "Bibata-Modern-Amber";
+          size = 12;
+        };
+      };
 
       services = {
         awww.enable = true;
