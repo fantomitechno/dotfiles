@@ -1,0 +1,3 @@
+[submodule "docker/fant0mib0t/akkoma/git"]
+	path = docker/fant0mib0t/akkoma/git
+	url = https://akkoma.dev/AkkomaGang/akkoma.git

@@ -129,43 +129,27 @@ graph.fantom.home {
   tls internal
 }
 
-mastodon.fantomitechno.dev {
-  import logging mastodon
-  
-  root * /var/mastodon/public
+fedi.fantomitechno.dev  {
+  import logging akkoma
 
-	encode gzip
+  reverse_proxy 127.0.0.1:2020
 
-  @static file
-
-  handle @static {
-    file_server
-  }
-
-  handle /api/v1/streaming* {
-    reverse_proxy mastodon-streaming:4000
-  }
-
-  handle {
-    reverse_proxy mastodon-web:3000
-  }
-
-  header {
-    Strict-Transport-Security "max-age=31536000;"
-  }
-
-  header /sw.js  Cache-Control "public, max-age=0";
-  header /emoji* Cache-Control "public, max-age=31536000, immutable"
-  header /packs* Cache-Control "public, max-age=31536000, immutable"
-  header /system/accounts/avatars* Cache-Control "public, max-age=31536000, immutable"
-  header /system/media_attachments/files* Cache-Control "public, max-age=31536000, immutable"
-
-  handle_errors {
-    @5xx expression `{http.error.status_code} >= 500 && {http.error.status_code} < 600`
-    rewrite @5xx /500.html
-    file_server
+  @mediaproxy path /media/* /proxy/*
+  handle @mediaproxy {
+    redir https://fedi.m.fantomitechno.dev{uri} permanent
   }
 }
+
+fedi.m.fantomitechno.dev {
+  @mediaproxy path /media/* /proxy/*
+  reverse_proxy @mediaproxy 127.0.0.1:2020 {
+    transport http {
+      response_header_timeout 10s
+      read_timeout 15s
+    }
+  }
+}
+
 
 jellyfin.fantom.home {
   import logging jellyfin

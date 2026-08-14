@@ -69,39 +69,39 @@ Global DNS: `conseil.renoux.dev`
 
 Global DNS: `fant0mib0t.renoux.dev`
 
-| Port Number      | Service                                 | DNS entry                                      |
-| :--------------- | :-------------------------------------- | :--------------------------------------------- |
-| 22               | OpenSSH (used for SSH and Tangled Knot) |                                                |
-| 80, 443, 2019    | Caddy                                   | Port 2019 is the admin API used for Prometheus |
-| 222              | Gitea SSH                               |                                                |
-| 1099             | CelesteNet Admin                        | `cneta.fantomitechno.dev`                      |
-| 2000             | Matrix                                  | `matrix.fantomitechno.dev`                     |
-| 2001, 2002       | Livekit (Call for Matrix)               | `livekit.fantomitechno.dev`                    |
-| 2010             | Tranquill PDS                           | `pds.fantomitechno.dev`                        |
-| 2020, 2021       | Mastodon                                | `mastodon.fantomitechno.dev`                   |
-| 3000             | Graphana                                | `graph.fantom.home`                            |
-| 3001, 3002, 3003 | Prometheus                              |                                                |
-| 4000             | Tangled Knot                            | `knot.fantomitechno.dev`                       |
-| 4005             | Anubis (for Forgejo)                    | `git.fantomitechno.dev`                        |
-| 4006             | Forgejo (Behind Anubis)                 |                                                |
-| 4010             | Tangled Spindle                         | `spindle.fantomitechno.dev`                    |
-| 4020, 4021       | Cryptpad                                | `drive.renoux.dev`, `drive.s.renoux.dev`       |
-| 4025             | Copyparty                               | `files.fantomitechno.dev`                      |
-| 4030             | Kiwix                                   | `kiwix.fantomitechno.dev`, `kiwix.renoux.dev`  |
-|                  | (redirection to Wikipedia .zim)         | `wikipedia.renoux.dev`                         |
-| 4040             | Immich                                  | `photo.renoux.dev`                             |
-| 4050             | Vaultwarden                             | `vault.renoux.dev`                             |
-| 4060             | Paperless                               | `pdf.fantom.home`                              |
-| 4070             | Affine                                  | `notes.fantomitechno.dev`                      |
-| 4080             | Jellyfin                                | `jellyfin.fantom.home`                         |
-| 4085             | Navidrome                               | `music.fantom.home`                            |
-| 4090             | qBittorrent                             | `torrent.fantom.home`                          |
-| 4091             | FlareSolver                             | `flaresolver.fantom.home`                      |
-| 4092             | Prowlarr                                | `prowlarr.fantom.home`                         |
-| 4093             | Jackett                                 | `jackett.fantom.home`                          |
-| 4094             | Sonarr                                  | `sonarr.fantom.home`                           |
-| 4095             | Radarr                                  | `radarr.fantom.home`                           |
-| 4096             | Bazarr                                  | `bazarr.fantom.home`                           |
-| 7881             | Livekit                                 |                                                |
-| 17230            | CelesteNet                              | `cnet.fantomitechno.dev`                       |
-| 50100-50200      | Livekit Voice ports                     |                                                |
+| Port Number      | Service                                 | DNS entry                                            |
+| :--------------- | :-------------------------------------- | :--------------------------------------------------- |
+| 22               | OpenSSH (used for SSH and Tangled Knot) |                                                      |
+| 80, 443, 2019    | Caddy                                   | Port 2019 is the admin API used for Prometheus       |
+| 222              | Gitea SSH                               |                                                      |
+| 1099             | CelesteNet Admin                        | `cneta.fantomitechno.dev`                            |
+| 2000             | Matrix                                  | `matrix.fantomitechno.dev`                           |
+| 2001, 2002       | Livekit (Call for Matrix)               | `livekit.fantomitechno.dev`                          |
+| 2010             | Tranquill PDS                           | `pds.fantomitechno.dev`                              |
+| 2020             | Akkoma                                  | `fedi.fantomitechno.dev`, `fedi.m.fantomitechno.dev` |
+| 3000             | Graphana                                | `graph.fantom.home`                                  |
+| 3001, 3002, 3003 | Prometheus                              |                                                      |
+| 4000             | Tangled Knot                            | `knot.fantomitechno.dev`                             |
+| 4005             | Anubis (for Forgejo)                    | `git.fantomitechno.dev`                              |
+| 4006             | Forgejo (Behind Anubis)                 |                                                      |
+| 4010             | Tangled Spindle                         | `spindle.fantomitechno.dev`                          |
+| 4020, 4021       | Cryptpad                                | `drive.renoux.dev`, `drive.s.renoux.dev`             |
+| 4025             | Copyparty                               | `files.fantomitechno.dev`                            |
+| 4030             | Kiwix                                   | `kiwix.fantomitechno.dev`, `kiwix.renoux.dev`        |
+|                  | (redirection to Wikipedia .zim)         | `wikipedia.renoux.dev`                               |
+| 4040             | Immich                                  | `photo.renoux.dev`                                   |
+| 4050             | Vaultwarden                             | `vault.renoux.dev`                                   |
+| 4060             | Paperless                               | `pdf.fantom.home`                                    |
+| 4070             | Affine                                  | `notes.fantomitechno.dev`                            |
+| 4080             | Jellyfin                                | `jellyfin.fantom.home`                               |
+| 4085             | Navidrome                               | `music.fantom.home`                                  |
+| 4090             | qBittorrent                             | `torrent.fantom.home`                                |
+| 4091             | FlareSolver                             | `flaresolver.fantom.home`                            |
+| 4092             | Prowlarr                                | `prowlarr.fantom.home`                               |
+| 4093             | Jackett                                 | `jackett.fantom.home`                                |
+| 4094             | Sonarr                                  | `sonarr.fantom.home`                                 |
+| 4095             | Radarr                                  | `radarr.fantom.home`                                 |
+| 4096             | Bazarr                                  | `bazarr.fantom.home`                                 |
+| 7881             | Livekit                                 |                                                      |
+| 17230            | CelesteNet                              | `cnet.fantomitechno.dev`                             |
+| 50100-50200      | Livekit Voice ports                     |                                                      |

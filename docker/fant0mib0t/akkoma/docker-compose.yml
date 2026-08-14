@@ -1,0 +1,43 @@
+services:
+  db:
+    image: akkoma-db:latest
+    build: ./git/docker-resources/database
+    shm_size: 4gb
+    restart: unless-stopped
+    user: ${DOCKER_USER}
+    environment: 
+      # This might seem insecure but is usually not a problem.
+      # You should leave this at the "akkoma" default.
+      # The DB is only reachable by containers in the same docker network,
+      # and is not exposed to the open internet.
+      #
+      # If you do change this, remember to update "config.exs".
+      POSTGRES_DB: akkoma
+      POSTGRES_USER: akkoma
+      POSTGRES_PASSWORD: akkoma
+
+    env_file:
+      - .env 
+    volumes:
+      - pg_data:/var/lib/postgresql
+
+  akkoma:
+    image: akkoma:latest
+    build: ./git
+    restart: unless-stopped
+    env_file:
+      - .env
+    links:
+      - db
+    ports: 
+      - "127.0.0.1:2020:4000"
+
+    volumes:
+      - ./git:/opt/akkoma
+    ulimits:
+      # Maximum number of open file descriptors. The default should work well for most,
+      # but can be bumped for very large instances or if seeing FD-related errors.
+      nofile: 524288
+
+volumes:
+  pg_data:
