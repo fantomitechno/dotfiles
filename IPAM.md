@@ -43,8 +43,7 @@ There is a Port forward for all traffic from the Internet to ports 80, 443, 7881
 
 | Port Number | Service  | DNS entry            |
 | :---------- | :------- | :------------------- |
-| 80, 443     | Caddy    |                      |
-| 1000        | OpnSense | `router.fantom.home` |
+| 443         | OpnSense | `router.fantom.home` |
 
 ### SG500X-Argo3
 
@@ -54,7 +53,7 @@ There is a Port forward for all traffic from the Internet to ports 80, 443, 7881
 
 ### Conseil
 
-Global DNS: `conseil.renoux.dev`
+Global DNS: `conseil.fantom.home`
 
 | Port Number      | Service          | DNS entry                                      |
 | :--------------- | :--------------- | :--------------------------------------------- |
@@ -67,7 +66,7 @@ Global DNS: `conseil.renoux.dev`
 
 ### fant0mib0t
 
-Global DNS: `fant0mib0t.renoux.dev`
+Global DNS: `fant0mib0t.fantom.home`
 
 | Port Number      | Service                                 | DNS entry                                            |
 | :--------------- | :-------------------------------------- | :--------------------------------------------------- |

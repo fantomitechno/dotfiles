@@ -26,11 +26,33 @@
       ];
     };
     hosts = {
-      "100.116.20.78" = [
-        "knot.fantomitechno.dev"
-        "irc"
+      "172.16.10.1" = [
+        "router.fantom.home"
       ];
-      "192.168.1.1" = [ "mabbox.bytel.fr" ];
+      "172.16.10.2" = [
+        "switch.fantom.home"
+      ];
+
+      "172.16.20.10" = [
+        "conseil.fantom.home"
+
+        "s3.fantom.home"
+      ];
+
+      "172.16.20.20" = [
+        "fant0mib0t.fantom.home"
+
+        "graph.fantom.home"
+        "pdf.fantom.home"
+        "jellyfim.fantom.home"
+        "music.fantom.home"
+        "torrent.fantom.home"
+        "flaresolver.fantom.home"
+        "jackett.fantom.home"
+        "sonarr.fantom.home"
+        "radarr.fantom.home"
+        "bazarr.fantom.home"
+      ];
     };
 
     hostName = "fantomitechno-${hostname}";

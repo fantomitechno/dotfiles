@@ -7,7 +7,15 @@
     "ssh.nix"
   ]);
 
-  networking.hostName = "${hostname}";
+  networking = {
+    hosts = {
+      "172.16.20.10" = [
+        "s3.fantom.internal"
+      ];
+    };
+
+    hostName = "${hostname}";
+  };
 
   services.xserver.xkb = {
     layout = "fr";
