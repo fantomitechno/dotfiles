@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, flakes, ... }:
 {
   programs = {
     # PDF Viewer
@@ -32,6 +32,7 @@
 
     # browser
     brave
+    flakes.inputs.helium.packages.${system}.default
   ];
 
   fonts = {

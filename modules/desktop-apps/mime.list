@@ -1,10 +1,10 @@
 [Default Applications]
 image/png=org.gnome.Loupe.desktop
-text/html=brave-browser.desktop
-x-scheme-handler/http=brave-browser.desktop
-x-scheme-handler/https=brave-browser.desktop
-x-scheme-handler/about=brave-browser.desktop
-x-scheme-handler/unknown=brave-browser.desktop
+text/html=helium.desktop
+x-scheme-handler/http=helium.desktop
+x-scheme-handler/https=helium.desktop
+x-scheme-handler/about=helium.desktop
+x-scheme-handler/unknown=helium.desktop
 x-scheme-handler/discord=vesktop.desktop
 x-scheme-handler/sgnl=signal.desktop
 x-scheme-handler/signalcaptcha=signal.desktop
@@ -16,7 +16,7 @@ image/gif=org.gnome.Loupe.desktop
 application/xml=codium.desktop
 inode/directory=org.gnome.Nautilus.desktop;codium.desktop
 application/zip=org.gnome.FileRoller.desktop
-x-scheme-handler/mailto=brave-browser.desktop
+x-scheme-handler/mailto=helium.desktop
 x-scheme-handler/discord-1216669957799018608=discord-1216669957799018608.desktop
 video/mpeg=codium.desktop
 
