@@ -5,7 +5,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"firefox"#
+    match app-id=r#"helium"#
     open-maximized true
     open-on-workspace "brow"
 }

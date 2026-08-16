@@ -34,6 +34,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    helium = {
+      url = "github:AlvaroParker/helium-nix";
+      inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    };
+
     # Homelab inputs
 
     copyparty = {
