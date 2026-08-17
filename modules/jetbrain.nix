@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    jetbrains.idea-oss
+    jetbrains.idea
   ];
 
   programs = {

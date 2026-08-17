@@ -44,13 +44,4 @@
       "wireshark"
     ];
   };
-
-  nixpkgs = {
-    config = {
-      permittedInsecurePackages = [
-        "electron-39.8.10"
-        "idea-oss-2025.3.4"
-      ];
-    };
-  };
 }
