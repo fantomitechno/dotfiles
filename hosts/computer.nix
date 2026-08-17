@@ -68,8 +68,4 @@
       "wireshark"
     ];
   };
-
-  nixpkgs = {
-    overlays = [ flakes.inputs.nix4vscode.overlays.default ];
-  };
 }
