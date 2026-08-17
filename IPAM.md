@@ -14,7 +14,8 @@
 | hostname           | address(es)                                           |
 | :----------------- | ----------------------------------------------------- |
 | OpnSense-DeLoreane | `172.16.10.1/24`, `172.16.20.1/24`, `172.16.100.1/24` |
-| SG500X-Argo3       | `172.16.10.2/24`, `172.16.20.2/24`, `172.16.100.2/24` |
+| CRS309-PortalGun   | `172.16.10.2/24`, `172.16.20.2/24`, `172.16.100.2/24` |
+| SG500X-Argo3       | `172.16.10.3/24`, `172.16.100.2/24`                   |
 | Conseil            | `172.16.20.10/24`                                     |
 | fant0mib0t         | `172.16.20.20/24`                                     |
 
@@ -47,9 +48,15 @@ There is a Port forward for all traffic from the Internet to ports 80, 443, 7881
 
 ### SG500X-Argo3
 
-| Port Number | Service      | DNS entry            |
-| :---------- | :----------- | :------------------- |
-| 443         | Cisco Web UI | `switch.fantom.home` |
+| Port Number | Service      | DNS entry          |
+| :---------- | :----------- | :----------------- |
+| 443         | Cisco Web UI | `leaf.fantom.home` |
+
+### CRS309-PortalGun
+
+| Port Number | Service      | DNS entry          |
+| :---------- | :----------- | :----------------- |
+| 443         | Cisco Web UI | `core.fantom.home` |
 
 ### Conseil
 

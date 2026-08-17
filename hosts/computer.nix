@@ -30,7 +30,10 @@
         "router.fantom.home"
       ];
       "172.16.10.2" = [
-        "switch.fantom.home"
+        "core.fantom.home"
+      ];
+      "172.16.10.3" = [
+        "leaf.fantom.home"
       ];
 
       "172.16.20.10" = [
