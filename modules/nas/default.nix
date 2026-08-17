@@ -1,4 +1,8 @@
 { ... }: {
+  imports = [
+    ./s3.nix
+  ];
+
   services = {
     nfs.server = {
       enable = true;
