@@ -26,15 +26,9 @@
       ];
     };
     hosts = {
-      "172.16.10.1" = [
-        "router.fantom.home"
-      ];
-      "172.16.10.2" = [
-        "core.fantom.home"
-      ];
-      "172.16.10.3" = [
-        "leaf.fantom.home"
-      ];
+      "172.16.20.1" = [ "router.fantom.home" ];
+      "172.16.20.2" = [ "core.fantom.home" ];
+      "172.16.20.3" = [ "leaf.fantom.home" ];
 
       "172.16.20.10" = [
         "conseil.fantom.home"
