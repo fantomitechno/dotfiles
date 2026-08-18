@@ -9,4 +9,4 @@ spawn-sh-at-startup "while true; do sleep 1800; waypaper --random; cd /home/fant
 spawn-sh-at-startup "swayidle -w timeout 900 'swaylock -f' timeout 900 'niri msg output power off' resume 'niri msg output power on' before-sleep 'swaylock -f'"
 spawn-at-startup "niri-float-sticky"
 
-spawn-at-startup "vesktop"
+spawn-sh-at-startup "vesktop --enable-blink-features=MiddleClickAutoscroll"
