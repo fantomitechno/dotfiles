@@ -9,7 +9,7 @@
   "security.workspace.trust.untrustedFiles": "open",
   "git.confirmSync": false,
   "[typescript]": {
-    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
