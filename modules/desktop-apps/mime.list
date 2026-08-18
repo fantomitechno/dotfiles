@@ -19,6 +19,7 @@ application/zip=org.gnome.FileRoller.desktop
 x-scheme-handler/mailto=helium.desktop
 x-scheme-handler/discord-1216669957799018608=discord-1216669957799018608.desktop
 video/mpeg=codium.desktop
+x-scheme-handler/jetbrains=jetbrainsd.desktop
 
 [Added Associations]
 image/png=org.gnome.Loupe.desktop;
