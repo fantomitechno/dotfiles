@@ -1,5 +1,0 @@
-MainServerIsMirror: false
-BananaMirrorConfig:
-  Directory: /mods
-  ImagesDirectory: /images
-  RichPresenceIconsDirectory: /rich_presences

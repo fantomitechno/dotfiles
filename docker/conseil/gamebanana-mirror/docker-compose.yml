@@ -1,12 +1,12 @@
-name: update-checker
+name: celeste-mirror
 services:
-  update-checker:
-    # Use my own custom update-checker image
-    image: ghcr.io/fantomitechno/update-checker:latest
-    container_name: update-checker
+  celeste-mirror:
+    # Use my own custom celeste-mirror image
+    image: ghcr.io/fantomitechno/celeste-mirror:latest
+    container_name: celeste-mirror
     volumes:
       # custom configurations
-      - ./config.yml:/app/update_checker_config.yaml
+      - ./config.toml:/app/config.toml
       - /data/celeste/mods:/mods
       - /data/celeste/images:/images
       - /data/celeste/rich_presence:/rich_presences
