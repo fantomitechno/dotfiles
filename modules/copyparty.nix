@@ -29,15 +29,7 @@
 
         access = {
           r = "*";
-          rw = [ "fantomitechno" ];
-        };
-      };
-      "/public" = {
-        path = "/nas/public";
-
-        access = {
-          r = "*";
-          rw = [ "fantomitechno" ];
+          A = [ "fantomitechno" ];
         };
 
         flags = {
@@ -45,18 +37,31 @@
           scan = 60;
         };
       };
+      "/public" = {
+        path = "/nas/public";
+
+        access = {
+          r = "*";
+          A = [ "fantomitechno" ];
+        };
+      };
       "/paperless-import" = {
         path = "/nas/paperless/import";
 
         access = {
-          rw = [ "fantomitechno" ];
+          A = [ "fantomitechno" ];
         };
       };
       "/media" = {
         path = "/nas/media";
 
         access = {
-          rw = [ "fantomitechno" ];
+          A = [ "fantomitechno" ];
+        };
+
+        flags = {
+          # scan for new files every 60sec
+          scan = 60;
         };
       };
     };
