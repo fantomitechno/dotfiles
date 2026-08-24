@@ -275,7 +275,6 @@
       "paused": "⏸"
     },
     "interval": 2,
-    "ignored-players": [ "chromium" ],
     "max-length": 30
   }
 }
