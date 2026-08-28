@@ -75,6 +75,7 @@
             export PATH="$PATH:$HOME/go/bin"
             eval "$(starship init zsh)"
             eval "fastfetch"
+            eval "$(niri completions zsh)"
           '';
 
           oh-my-zsh = {
