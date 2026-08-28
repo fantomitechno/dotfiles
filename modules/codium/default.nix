@@ -28,6 +28,7 @@
             "esbenp.prettier-vscode"
             "jeanp413.open-remote-ssh"
             "jnoortheen.nix-ide"
+            "blipk.csharp"
             "leonardssh.vscord"
             "minecraftcommands.syntax-mcfunction"
             "misodee.vscode-nbt"
@@ -41,7 +42,6 @@
           ]
           ++ pkgs.nix4vscode.forVscode [
             "ms-dotnettools.vscode-dotnet-runtime"
-            "ms-dotnettools.csharp"
             "ms-dotnettools.csdevkit"
             "ms-python.python"
             "ms-python.debugpy"
