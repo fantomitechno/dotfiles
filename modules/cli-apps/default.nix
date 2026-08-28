@@ -30,8 +30,6 @@
 
     # programing
     cmake
-    dotnet-sdk_9
-    dotnet-runtime_9
     gcc
     go
     gopls
