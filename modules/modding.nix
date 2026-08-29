@@ -9,7 +9,6 @@
     dotnet-sdk_9
     dotnet-runtime_8
     dotnet-runtime_9
-    fna3d
     mono
   ];
 
