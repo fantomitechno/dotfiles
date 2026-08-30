@@ -18,16 +18,11 @@ in
   environment.systemPackages = with pkgs; [
     antimicrox # Controller mapping
     archipelago # Randomizer
-    (celestegame.override {
-      withEverest = true;
-      writableDir = "${celesteFolder}/writable";
-      gameDir = "${celesteFolder}/game";
-    })
     gale # Peak modding
     lumafly # HK Modding
     mumble # Voice Chat
     mangohud # Steam HUD
-    (olympus.override { finderHints = "${celesteFolder}/game"; }) # Celeste Modding
+    olympus # Celeste Modding
     osu-lazer-bin
     pandora-launcher # Minecraft launcher
     parsec-bin # Remote play
@@ -38,8 +33,6 @@ in
     bubblewrap
     xdg-dbus-proxy
   ];
-
-  systemd.services.nix-daemon.serviceConfig.EnvironmentFile = "${dotfileFolder}/.env";
 
   home-manager.users."fantomitechno" =
     {
