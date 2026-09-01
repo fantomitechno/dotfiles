@@ -1,3 +1,6 @@
 ModDirectory = "/mods"
 ImagesDirectory = "/images"
 RichPresenceDirectory = "/rich_presences"
+ModsArchiveDirectory = "/mods/archives"
+
+DownloadArchived = true
