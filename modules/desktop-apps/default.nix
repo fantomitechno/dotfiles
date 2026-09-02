@@ -1,4 +1,7 @@
 { pkgs, flakes, ... }:
+let
+  renogare = pkgs.callPackage ../../packages/renogare-font.nix { inherit pkgs; };
+in
 {
   programs = {
     # PDF Viewer
@@ -41,6 +44,7 @@
       nerd-fonts.jetbrains-mono
       noto-fonts-cjk-sans
       minecraftia
+      renogare
     ];
   };
 
