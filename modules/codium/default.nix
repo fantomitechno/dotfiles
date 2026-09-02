@@ -1,8 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, flakes, ... }:
 {
   environment.systemPackages = with pkgs; [
     texliveFull
   ];
+
+  nixpkgs = {
+    overlays = [ flakes.inputs.nix4vscode.overlays.default ];
+  };
 
   home-manager.users."fantomitechno" =
     {
