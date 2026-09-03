@@ -1,4 +1,3 @@
-# make a  derivation for berkeley-mono font installation
 { pkgs, fetchurl }:
 
 pkgs.stdenv.mkDerivation {

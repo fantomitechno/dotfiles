@@ -1,4 +1,7 @@
 { pkgs, ... }:
+let
+  subfaster = pkgs.callPackage ../packages/subfaster.nix { inherit pkgs; };
+in
 {
   environment.systemPackages = with pkgs; [
     # network :3
@@ -9,6 +12,7 @@
     proton-vpn
     python314Packages.shodan
     tailscale
+    # subfaster
     wireguard-tools
     wireshark
   ];
