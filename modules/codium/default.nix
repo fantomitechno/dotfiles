@@ -36,6 +36,7 @@
             "leonardssh.vscord"
             "minecraftcommands.syntax-mcfunction"
             "misodee.vscode-nbt"
+            "nromanov.dotrush"
             "prisma.prisma"
             "qwtel.sqlite-viewer"
             "rvest.vs-code-prettier-eslint"
@@ -46,7 +47,6 @@
           ]
           ++ pkgs.nix4vscode.forVscode [
             "ms-dotnettools.vscode-dotnet-runtime"
-            "ms-dotnettools.csdevkit"
             "ms-python.python"
             "ms-python.debugpy"
           ];

@@ -5,9 +5,14 @@
     # Celeste modding
     avalonia-ilspy
 
-    dotnet-sdk_9
-    dotnet-runtime_8
-    dotnet-runtime_9
+    (
+      with dotnetCorePackages;
+      combinePackages [
+        sdk_8_0
+        sdk_9_0
+        sdk_10_0
+      ]
+    )
     mono
   ];
 
