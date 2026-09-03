@@ -178,7 +178,7 @@
     ],
     "format": "{ifname}",
     "format-wifi": "{essid} ({signalStrength}%) {icon}",
-    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+    "format-ethernet": "{ipaddr}/{cidr} 󰈀",
     "format-disconnected": "", //An empty format will hide the module.
     "tooltip-format": "{ifname} {ipaddr}/{cidr} gtw {gwaddr} ",
     "tooltip-format-disconnected": "Disconnected",
