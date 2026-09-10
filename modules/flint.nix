@@ -3,9 +3,9 @@
 {
   environment.systemPackages = with pkgs; [
     # Internship
-    firefox
+    # firefox
     teams-for-linux
 
-    kdePackages.krdc
+    # kdePackages.krdc
   ];
 }
