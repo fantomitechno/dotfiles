@@ -17,7 +17,9 @@
     "docker.nix"
     "editing.nix"
     "games.nix"
+    "flint.nix"
     "jetbrain.nix"
+    "modding.nix"
     "network.nix"
     "obs.nix"
     "nantarena.nix"
@@ -69,5 +71,21 @@
 
   home-manager.users."fantomitechno" = { lib, ... }: {
     home.stateVersion = "26.05";
+
+    programs.git = {
+      settings = {
+        user = {
+          name = "Simon R. - fantomitechno";
+          email = "me@fantomitechno.dev";
+        };
+        init.defaultBranch = "main";
+        pull.rebase = true;
+        color.ui = "auto";
+        push.autoSetupRemote = true;
+        safe.directory = [
+          "*"
+        ];
+      };
+    };
   };
 }

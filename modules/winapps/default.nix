@@ -13,6 +13,8 @@
     trusted-users = [ "fantomitechno" ];
   };
 
+  virtualisation.libvirtd.enable = true;
+
   home-manager.users."fantomitechno" =
     {
       config,
