@@ -1,7 +1,4 @@
-{ pkgs, dotfileFolder, ... }:
-let
-  celesteFolder = "/home/fantomitechno/Games/Celeste2";
-in
+{ pkgs, ... }:
 {
   programs = {
     # Gayming
