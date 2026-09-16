@@ -32,6 +32,10 @@ in
     # Sandboxing for Pandora launcher
     bubblewrap
     xdg-dbus-proxy
+
+    # stream
+    sunshine
+    moonlight-qt
   ];
 
   home-manager.users."fantomitechno" =
