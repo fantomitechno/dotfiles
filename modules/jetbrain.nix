@@ -1,7 +1,15 @@
 { pkgs, ... }:
+let
+  idea = pkgs.jetbrains.idea.overrideAttrs (old: {
+    postFixup = (old.postFixup or "") + ''
+      wrapProgram $out/bin/idea \
+        --suffix LD_LIBRARY_PATH : "${pkgs.libglvnd}/lib"
+    '';
+  });
+in
 {
-  environment.systemPackages = with pkgs; [
-    jetbrains.idea
+  environment.systemPackages = [
+    idea
   ];
 
   programs = {
