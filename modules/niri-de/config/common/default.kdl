@@ -4,7 +4,7 @@ include "startup.kdl"
 
 
 overview {
-    zoom 0.25
+    zoom 0.45
 }
 
 hotkey-overlay {
