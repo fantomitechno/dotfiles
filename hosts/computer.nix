@@ -49,6 +49,8 @@
         "radarr.fantom.home"
         "bazarr.fantom.home"
       ];
+
+      "192.168.1.1" = [ "mabbox.bytel.fr" ];
     };
 
     hostName = "fantomitechno-${hostname}";
