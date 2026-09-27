@@ -35,7 +35,7 @@
   };
 
   services.xserver.xkb = {
-    layout = "fr";
+    layout = "us";
     variant = "";
   };
 
@@ -58,7 +58,7 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  console.keyMap = "fr";
+  console.keyMap = "us";
 
   environment.variables = {
     LD_LIBRARY_PATH = "/run/opengl-driver/lib";
