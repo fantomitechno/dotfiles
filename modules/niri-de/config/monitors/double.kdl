@@ -13,14 +13,14 @@ output "HDMI-A-1" {
 workspace "dsc" {
     open-on-output "HDMI-A-1"
 }
-workspace "brow" {
+workspace "term" {
     open-on-output "HDMI-A-1"
 }
 workspace "obs" {
     open-on-output "HDMI-A-1"
 }
 
-workspace "term" {
+workspace "brow" {
     open-on-output "DP-1"
 }
 workspace "stm" {
