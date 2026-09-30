@@ -26,4 +26,5 @@ in
     # Network
     wireshark.enable = true;
   };
+  networking.wireguard.enable = true;
 }
