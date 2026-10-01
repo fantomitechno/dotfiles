@@ -1,4 +1,9 @@
-{ pkgs, flakes, ... }:
+{
+  pkgs,
+  flakes,
+  lib,
+  ...
+}:
 let
   renogare = pkgs.callPackage ../../packages/renogare-font.nix { inherit pkgs; };
 in
@@ -37,6 +42,17 @@ in
     brave
     flakes.inputs.helium.packages.${system}.default
   ];
+
+  networking.firewall = {
+    # 1714-1764
+    enable = lib.mkDefault true;
+    allowedTCPPortRanges = [
+      {
+        from = 1714;
+        to = 1764;
+      }
+    ];
+  };
 
   fonts = {
     fontconfig.enable = true;

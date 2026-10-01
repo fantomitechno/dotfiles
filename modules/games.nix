@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   programs = {
     # Gayming
@@ -34,6 +34,28 @@
     sunshine
     moonlight-qt
   ];
+
+  networking.firewall = {
+    enable = lib.mkDefault true;
+    allowedTCPPorts = [
+      47984
+      47989
+      47990
+      47998
+      47999
+      48000
+      48010
+    ];
+    allowedUDPPorts = [
+      47984
+      47989
+      47990
+      47998
+      47999
+      48000
+      48010
+    ];
+  };
 
   home-manager.users."fantomitechno" =
     {
