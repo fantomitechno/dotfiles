@@ -6,18 +6,18 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./nfs.nix
+    # ./nfs.nix
 
     ../server.nix
   ]
   ++ builtins.map (i: ../../modules/${i}) ([
-    "caddy"
-    "forgejo"
-    "metrix/grafana.nix"
-    "metrix/prometheus.nix"
+    # "caddy"
+    # "forgejo"
+    # "metrix/grafana.nix"
+    # "metrix/prometheus.nix"
     "radius"
-    "tangled"
-    "copyparty.nix"
+    # "tangled"
+    # "copyparty.nix"
     "docker.nix"
   ]);
 

@@ -16,10 +16,10 @@
   };
 
   services.xserver.xkb = {
-    layout = "fr";
+    layout = "us";
     variant = "";
   };
 
   # Configure console keymap
-  console.keyMap = "fr";
+  console.keyMap = "us";
 }
