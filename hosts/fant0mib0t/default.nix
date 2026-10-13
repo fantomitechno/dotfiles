@@ -11,14 +11,14 @@
     ../server.nix
   ]
   ++ builtins.map (i: ../../modules/${i}) ([
-    # "caddy"
+    "caddy"
     # "forgejo"
     # "metrix/grafana.nix"
     # "metrix/prometheus.nix"
-    "radius"
     # "tangled"
     # "copyparty.nix"
     "docker.nix"
+    "ipmi-fan-control.nix"
   ]);
 
   # Bootloader

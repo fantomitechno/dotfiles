@@ -16,7 +16,7 @@ services:
       CONTINUWUITY_DATABASE_PATH: /var/lib/continuwuity
       CONTINUWUITY_ADDRESS: 0.0.0.0
       CONTINUWUITY_PORT: 8008
-      CONTINUWUITY_MATRIX_RTC__foci: '[{ type = "livekit", livekit_service_url = "https://livekit.fantomitechno.dev" }]''
+      CONTINUWUITY_MATRIX_RTC__foci: '[{ type = "livekit", livekit_service_url = "https://livekit.fantomitechno.dev" }]'
 
   lk-jwt-service:
     image: ghcr.io/element-hq/lk-jwt-service:0.5.0

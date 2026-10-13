@@ -1,8 +1,7 @@
-{ hostname, dotfileFolder, ... }: {
+{ hostname, ... }: {
   services.caddy = {
     enable = true;
-    enableReload = true;
-    configFile = "${dotfileFolder}/modules/caddy/${hostname}";
+    configFile = ./${hostname};
     openFirewall = true;
 
     httpPort = 80;

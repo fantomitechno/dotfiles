@@ -14,22 +14,22 @@
     }
 }
 
-@local_net client_ip 172.16.0.0/12
-@admin_net client_ip 172.16.10.0/24
-@server_net client_ip 172.16.20.0/24
-@admin_vpn_net client_ip 172.16.30.0/24
-@guest_net client_ip 172.16.100.0/24
-
 # Storage
 http://s3.fantom.internal {
   import logging garage
+
+  @not_server_net not client_ip 172.16.20.0/24
   abort not @server_net
+
   reverse_proxy 127.0.0.1:4010
 }
 
 s3.fantom.home {
   import logging garage
-  abort not @local_net
+
+  @not_local_net not client_ip 172.16.0.0/12
+  abort @not_local_net
+
   reverse_proxy 127.0.0.1:4011
   tls internal
 }
