@@ -14,6 +14,7 @@
     "niri-de"
     "winapps"
     "battery-notify.nix"
+    "cours.nix"
     "docker.nix"
     "editing.nix"
     "flint.nix"
