@@ -6,7 +6,7 @@ pkgs.stdenv.mkDerivation {
 
   src = fetchurl {
     url = "https://dl.dafont.com/dl/?f=renogare";
-    hash = "sha256-ZfEaStBFDt13pOBltfcFTyf90e4LomO6mUnrvLinS2A=";
+    hash = "sha256-ZH3VFmZ+0+GZGBaQd0Xyq54lrwMnJamAKvYdT3mONVA";
   };
 
   unpackPhase = ''
