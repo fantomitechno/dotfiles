@@ -141,27 +141,56 @@ graph.fantom.home {
   tls internal
 }
 
-fedi.fantomitechno.dev  {
-  import logging akkoma
+fedi.fantomitechno.dev {
+	root * /var/mastodon/public
 
-  reverse_proxy 127.0.0.1:2020
+	# gzip + zstd compression (replaces the gzip_* block)
+	encode zstd gzip
 
-  @mediaproxy path /media/* /proxy/*
-  handle @mediaproxy {
-    redir https://fedi.m.fantomitechno.dev{uri} permanent
-  }
+	# HSTS on every response (nginx repeated this per location)
+	header Strict-Transport-Security "max-age=63072000; includeSubDomains"
+
+	# client_max_body_size 80m
+	request_body {
+		max_size 80MB
+	}
+
+	# --- Cache-Control headers ---
+	@cache_week path /sw.js
+	header @cache_week Cache-Control "public, max-age=604800, must-revalidate"
+
+	@cache_month path /assets/* /avatars/* /emoji/* /headers/* /packs/* /shortcuts/* /sounds/*
+	header @cache_month Cache-Control "public, max-age=2419200, must-revalidate"
+
+	@cache_system path /system/*
+	header @cache_system Cache-Control "public, max-age=2419200, immutable"
+
+	# --- Streaming API (WebSockets are handled automatically) ---
+	handle /api/v1/streaming* {
+		reverse_proxy 127.0.0.1:2021 {
+			flush_interval -1          # proxy_buffering off
+			header_up X-Real-IP {remote_host}
+			header_up -Proxy
+		}
+	}
+
+	# --- Everything else: try static file, fall back to Rails ---
+	handle {
+		file_server {
+			pass_thru                  # try_files $uri @proxy
+		}
+		reverse_proxy 127.0.0.1:2020 {
+			header_up X-Real-IP {remote_host}
+			header_up -Proxy
+		}
+	}
+
+	# error_page 404 500 501 502 503 504 /500.html
+	handle_errors {
+		rewrite * /500.html
+		file_server
+	}
 }
-
-fedi.m.fantomitechno.dev {
-  @mediaproxy path /media/* /proxy/*
-  reverse_proxy @mediaproxy 127.0.0.1:2020 {
-    transport http {
-      response_header_timeout 10s
-      read_timeout 15s
-    }
-  }
-}
-
 
 jellyfin.fantom.home {
   import logging jellyfin
