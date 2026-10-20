@@ -45,4 +45,9 @@
   home-manager.users."fantomitechno" = { lib, ... }: {
     home.homeDirectory = "/home/fantomitechno";
   };
+
+  security.pki.caCertificateBlacklist = [
+    "Comodo AAA Services root"
+    "emSign ECC Root CA - G3"
+  ];
 }
