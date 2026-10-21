@@ -16,6 +16,7 @@
     extraGroups = [
       "wheel"
       "docker"
+      "dialout"
     ];
     shell = pkgs.zsh;
   };
