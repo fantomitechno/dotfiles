@@ -281,3 +281,21 @@ bazarr.fantom.home {
   reverse_proxy 127.0.0.1:4096
   tls internal
 }
+
+fantomitechno.dev {
+  redir https://simon.renoux.dev{uri}
+}
+
+simon.renoux.dev {
+  import logging site
+  root /var/www/simon.renoux.dev
+  encode gzip
+  handle_errors {
+    rewrite /404.html
+    file_server
+  }
+  file_server {
+    hide .git .gitignore shell.nix
+  }
+  try_files {path}.html
+}
