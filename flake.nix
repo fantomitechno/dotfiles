@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
 
+    unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -71,11 +73,17 @@
       self,
       nixpkgs,
       home-manager,
+      unstable,
       ...
     }:
     let
       dotfileFolder = "/home/fantomitechno/dotfiles";
       flakes = self;
+
+      pkg-unstable = import unstable {
+        system = "x86_64-linux";
+        config.allowUnfree = true;
+      };
 
       commonSystem =
         hostname:
@@ -84,6 +92,7 @@
             inherit hostname;
             inherit dotfileFolder;
             inherit flakes;
+            inherit pkg-unstable;
           };
           modules = [
             ./hosts
@@ -97,6 +106,7 @@
                   inherit hostname;
                   inherit dotfileFolder;
                   inherit flakes;
+                  inherit pkg-unstable;
                 };
               };
             }
@@ -108,6 +118,7 @@
         fantomitechno-laptop = commonSystem "laptop";
         fantomitechno-desktop = commonSystem "desktop";
         fantomitechno-msi = commonSystem "msi";
+        fantomitechno-box = commonSystem "box";
 
         # Servers
         Conseil = commonSystem "conseil";

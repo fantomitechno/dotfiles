@@ -372,6 +372,7 @@
         "nix4vscode": "nix4vscode",
         "nixpkgs": "nixpkgs_2",
         "tangled": "tangled",
+        "unstable": "unstable",
         "winapps": "winapps"
       }
     },
@@ -495,6 +496,22 @@
         "ref": "refs/tags/v1.15.0-alpha",
         "type": "git",
         "url": "https://tangled.org/tangled.org/core"
+      }
+    },
+    "unstable": {
+      "locked": {
+        "lastModified": 1792502884,
+        "narHash": "sha256-IoNisKcGbUjdd45qCqywGMCYmZ5EnkxezvLII0FWwNA=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "02c087f3fe673c9e317f206a627cb6b910336dbe",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "utils": {
