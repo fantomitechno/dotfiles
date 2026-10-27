@@ -1,0 +1,7 @@
+services:
+  english-blog:
+    restart: "always"
+    container_name: english-blog
+    image: ghcr.io/fantomitechno/english-blog:latest
+    ports:
+      - 127.0.0.1:1098:4321

@@ -299,3 +299,8 @@ simon.renoux.dev {
   }
   try_files {path}.html
 }
+
+english-blog.renoux.dev {
+  import logging blog
+  reverse_proxy 127.0.0.1:1098
+}
