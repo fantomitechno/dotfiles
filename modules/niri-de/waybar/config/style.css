@@ -39,6 +39,7 @@ window#waybar {
 #tray,
 #pulseaudio,
 #custom-notification,
+#power-profiles-daemon,
 #custom-startmenu,
 #custom-exit,
 #group-tray-expander,
@@ -74,7 +75,8 @@ window#waybar.empty #window {
 #custom-expand-icon { color: #59C2FF; }
 #mpris { color: #FF8F40; }
 #idle_inhibitor { color: #FF8F40; }
-#battery { color: #F07178; }
+#battery, #power-profiles-daemon
+ { color: #F07178; }
 #custom-exit { color: #D2A6FF; }
 
 /* === Tray === */
