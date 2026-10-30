@@ -12,4 +12,10 @@
     trim.enable = true;
     autoScrub.enable = true;
   };
+
+  fileSystems."/data" = {
+    device = "storage";
+    fsType = "zfs";
+    options = [ "nofail" ];
+  };
 }
