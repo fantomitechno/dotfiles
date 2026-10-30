@@ -121,7 +121,7 @@
         fantomitechno-box = commonSystem "box";
 
         # Servers
-        Conseil = commonSystem "conseil";
+        Conseil = commonSystem "Conseil";
         fant0mib0t = commonSystem "fant0mib0t";
 
         # Installer

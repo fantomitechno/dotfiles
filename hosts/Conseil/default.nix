@@ -25,6 +25,8 @@
     kernelPackages = pkgs.linuxPackages;
   };
 
+  networking.hostId = "71c505d9";
+
   system.stateVersion = "26.05";
   home-manager.users."fantomitechno" = { lib, ... }: {
     home.stateVersion = "26.05";
