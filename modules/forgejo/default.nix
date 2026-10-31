@@ -5,6 +5,10 @@
   pkgs,
   ...
 }:
+let
+  stateDir = "/var/lib/forgejo";
+  nas = "/nas/forgejo/data";
+in
 {
   systemd.tmpfiles.rules = [
     "d '${config.services.forgejo.customDir}/public' - forgejo forgejo - -"
@@ -13,13 +17,26 @@
     "d '${config.services.forgejo.customDir}/public/assets/css' - forgejo forgejo - -"
     "C+ '${config.services.forgejo.customDir}/public/assets/css/theme-custom.css' - forgejo forgejo - ${./theme-custom.css}"
     "L+ '${config.services.forgejo.customDir}/public/assets/img/logo.svg' - forgejo forgejo - ${./logo.svg}"
+    "d ${nas}/repositories     0750 forgejo forgejo - -"
+    "d ${nas}/lfs              0750 forgejo forgejo - -"
   ];
+
+  systemd.services.forgejo = {
+    serviceConfig.ReadWritePaths = [ "/nas/forgejo/data" ];
+    # make sure the NAS is mounted before Forgejo starts
+    unitConfig.RequiresMountsFor = [ "/nas/forgejo/data" ];
+  };
 
   services = {
     forgejo = {
       enable = true;
       database.type = "sqlite3";
       lfs.enable = true;
+
+      inherit stateDir;
+      repositoryRoot = "${nas}/repositories";
+      lfs.contentDir = "${nas}/lfs";
+
       settings = {
         DEFAULT = {
           APP_NAME = "git.fantomitechno.dev";
@@ -29,7 +46,6 @@
           ROOT_URL = "https://git.fantomitechno.dev";
           HTTP_ADDR = "127.0.0.1";
           HTTP_PORT = 4005;
-          APP_DATA_PATH = "/nas/gitea/data";
           SSH_PORT = lib.head config.services.openssh.ports;
         };
         service.DISABLE_REGISTRATION = true;
@@ -58,26 +74,31 @@
       };
       secrets = {
         mailer.PASSWD = lib.mkForce "${dotfileFolder}/pswd/forgejo-mailer";
-        security.SECRET_KEY = lib.mkForce "${dotfileFolder}/pswd/forgejo-security/secret-key";
-        security.INTERNAL_TOKEN = lib.mkForce "${dotfileFolder}/pswd/forgejo-security/internal-token";
       };
     };
 
-    gitea-actions-runner = {
-      package = pkgs.forgejo-runner;
-      instances.default = {
-        enable = true;
-        name = "monolith";
-        url = "https://git.fantomitechno.dev";
-        tokenFile = "${dotfileFolder}/pswd/forgejo-runner";
-        labels = [
-          "ubuntu-latest:docker://node:16-bullseye"
-          "ubuntu-22.04:docker://node:16-bullseye"
-          "ubuntu-20.04:docker://node:16-bullseye"
-          "ubuntu-18.04:docker://node:16-buster"
-        ];
-      };
-    };
+    # forgejo-runner = {
+    #   package = pkgs.forgejo-runner;
+    #   instances.default = {
+    #     enable = true;
+    #     runtimes.host = true;
+    #     settings.runner.labels = [
+    #       # Native Execution on the Host
+    #       "native:host"
+
+    #       # Assuming Docker has been setup on the host machine
+    #       "ubuntu-latest:docker://node:16-bullseye"
+    #       "ubuntu-22.04:docker://node:16-bullseye"
+    #       "ubuntu-20.04:docker://node:16-bullseye"
+    #       "ubuntu-18.04:docker://node:16-buster"
+    #     ];
+    #     secrets.server.connections."forgejo".token_url = "${dotfileFolder}/pswd/forgejo-runner"; # Path to forgejo runner key file provided by forgejo.
+    #     settings.server.connections.forgejo = {
+    #       url = "https://git.fantomitechno.dev"; # Forgejo Instance URL
+    #       uuid = "387b9b3a-81be-4a51-8f87-abe7381e71a7"; # UUID of forgejo runner instance
+    #     };
+    #   };
+    # };
 
     openssh = {
       settings.AllowUsers = [ config.services.forgejo.user ];

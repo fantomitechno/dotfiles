@@ -66,13 +66,9 @@ git.fantomitechno.dev {
 
   @local_net client_ip 172.16.0.0/12
   @not_local_net not client_ip 172.16.0.0/12
-  reverse_proxy @not_local_net 127.0.0.1:4006 {
-    header_up X-Real-Ip {remote_host}
-  }
-
-  reverse_proxy @local_net 127.0.0.1:4005 {
-    header_up X-Real-Ip {remote_host}
-  }
+  
+  reverse_proxy @not_local_net 127.0.0.1:4006
+  reverse_proxy @local_net 127.0.0.1:4005
 }
 
 hold.fantomitechno.dev {
