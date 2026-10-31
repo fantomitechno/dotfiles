@@ -6,7 +6,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    # ./nfs.nix
+    ./nfs.nix
 
     ../server.nix
   ]
