@@ -19,11 +19,15 @@
     enable = true;
     # for NFSv3; view with `rpcinfo -p`
     allowedTCPPorts = [
+      111
+      2049
       4000
       4001
       4002
     ];
     allowedUDPPorts = [
+      111
+      2049
       4000
       4001
       4002
