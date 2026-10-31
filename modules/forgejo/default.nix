@@ -7,12 +7,12 @@
 }:
 {
   systemd.tmpfiles.rules = [
-    "d '${config.service.forgejo.customDir}/public' - forgejo forgejo - -"
-    "d '${config.service.forgejo.customDir}/public/assets' - forgejo forgejo - -"
-    "d '${config.service.forgejo.customDir}/public/assets/img' - forgejo forgejo - -"
-    "d '${config.service.forgejo.customDir}/public/assets/css' - forgejo forgejo - -"
-    "C+ '${config.service.forgejo.customDir}/public/assets/css/theme-custom.css' - forgejo forgejo - ${./theme-custom.css}"
-    "L+ '${config.service.forgejo.customDir}/public/assets/img/logo.svg' - forgejo forgejo - ${./logo.svg}"
+    "d '${config.services.forgejo.customDir}/public' - forgejo forgejo - -"
+    "d '${config.services.forgejo.customDir}/public/assets' - forgejo forgejo - -"
+    "d '${config.services.forgejo.customDir}/public/assets/img' - forgejo forgejo - -"
+    "d '${config.services.forgejo.customDir}/public/assets/css' - forgejo forgejo - -"
+    "C+ '${config.services.forgejo.customDir}/public/assets/css/theme-custom.css' - forgejo forgejo - ${./theme-custom.css}"
+    "L+ '${config.services.forgejo.customDir}/public/assets/img/logo.svg' - forgejo forgejo - ${./logo.svg}"
   ];
 
   services = {
@@ -80,8 +80,8 @@
     };
 
     openssh = {
-      settings.AllowUsers = [ config.service.forgejo.user ];
-      settings.AllowGroups = [ config.service.forgejo.group ];
+      settings.AllowUsers = [ config.services.forgejo.user ];
+      settings.AllowGroups = [ config.services.forgejo.group ];
     };
 
     anubis.instances."forgejo" = {

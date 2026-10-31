@@ -13,7 +13,8 @@
   ++ builtins.map (i: ../../modules/${i}) ([
     "caddy"
     "nas"
-    # "metrics/prometheus.nix"
+    "docker.nix"
+    "metrics/prometheus.nix"
   ]);
 
   # Bootloader
