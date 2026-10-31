@@ -30,6 +30,7 @@ in
   services = {
     forgejo = {
       enable = true;
+      user = "fantomitechno";
       database.type = "sqlite3";
       lfs.enable = true;
 
