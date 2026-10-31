@@ -16,7 +16,7 @@
     # "metrix/grafana.nix"
     # "metrix/prometheus.nix"
     # "tangled"
-    # "copyparty.nix"
+    "copyparty.nix"
     "docker.nix"
     "ipmi-fan-control.nix"
   ]);

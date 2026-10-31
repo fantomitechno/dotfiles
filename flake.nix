@@ -73,6 +73,7 @@
       self,
       nixpkgs,
       home-manager,
+      copyparty,
       unstable,
       ...
     }:
@@ -98,6 +99,7 @@
             ./hosts
             ./hosts/${hostname}
             home-manager.nixosModules.home-manager
+            copyparty.nixosModules.default
             {
               home-manager = {
                 useGlobalPkgs = true;

@@ -15,6 +15,9 @@
       p = [
         4025
       ];
+      xf-host = "files.fantomitechno.dev";
+      xf-proto-fb = "https";
+      rproxy = -1;
     };
 
     accounts = {
