@@ -13,9 +13,5 @@
     autoScrub.enable = true;
   };
 
-  fileSystems."/data" = {
-    device = "storage";
-    fsType = "zfs";
-    options = [ "nofail" ];
-  };
+  boot.zfs.forceImportRoot = false;
 }
