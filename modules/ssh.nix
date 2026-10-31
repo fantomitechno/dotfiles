@@ -33,4 +33,9 @@
       banaction = "iptables-ipset-proto6-allports"; # ban on all port; v4 and v6
     };
   };
+
+  users.users.fantomitechno.openssh.authorizedKeys.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPMQ86fzfBFLW8kWQGtZJYP8XzSwT3uGKn3nCBd0W+Qb fantomitechno@nixos"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILJmxKaX8Eouh4hPmOrrMmQ5W+NnidDnrIlzgwjIoedq fantomitechno@fantomitechno-nixos"
+  ];
 }
