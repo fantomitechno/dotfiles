@@ -57,9 +57,9 @@
         };
       };
       secrets = {
-        mailer.PASSWD = "${dotfileFolder}/pswd/forgejo-mailer";
-        security.SECRET_KEY = "${dotfileFolder}/pswd/forgejo-security/secret-key";
-        security.INTERNAL_TOKEN = "${dotfileFolder}/pswd/forgejo-security/internal-token";
+        mailer.PASSWD = lib.mkForce "${dotfileFolder}/pswd/forgejo-mailer";
+        security.SECRET_KEY = lib.mkForce "${dotfileFolder}/pswd/forgejo-security/secret-key";
+        security.INTERNAL_TOKEN = lib.mkForce "${dotfileFolder}/pswd/forgejo-security/internal-token";
       };
     };
 
@@ -86,7 +86,8 @@
 
     anubis.instances."forgejo" = {
       settings = {
-        BIND = "127.0.0.1:4006";
+        BIND = ":4006";
+        BIND_NETWORK = "tcp";
         TARGET = "http://127.0.0.1:4005";
       };
     };
