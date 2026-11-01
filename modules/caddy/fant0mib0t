@@ -108,14 +108,13 @@ vault.renoux.dev {
   reverse_proxy 127.0.0.1:4050
 }
 
-pdf.fantom.home {
+http://pdf.fantom.home {
   import logging paperless
 
   @not_local_net not client_ip 172.16.0.0/12
   abort @not_local_net
 
   reverse_proxy 127.0.0.1:4060
-  tls internal
 }
 
 notes.fantomitechno.dev {
@@ -174,94 +173,85 @@ fedi.fantomitechno.dev {
 	}
 }
 
-jellyfin.fantom.home {
+http://jellyfin.fantom.home {
   import logging jellyfin
   
   @not_local_net not client_ip 172.16.0.0/12
   abort @not_local_net
 
   reverse_proxy 127.0.0.1:4080
-  tls internal
 }
 
-music.fantom.home {
+http://music.fantom.home {
   import logging jellyfin
   
   @not_local_net not client_ip 172.16.0.0/12
   abort @not_local_net
 
   reverse_proxy 127.0.0.1:4085
-  tls internal
 }
 
-torrent.fantom.home {
+http://torrent.fantom.home {
   import logging qbittorrent
   
   @not_local_net not client_ip 172.16.0.0/12
   abort @not_local_net
 
   reverse_proxy 127.0.0.1:4090
-  tls internal
 }
 
-flaresolver.fantom.home {
+http://flaresolver.fantom.home {
   import logging flaresolver
   
   @not_local_net not client_ip 172.16.0.0/12
   abort @not_local_net
 
   reverse_proxy 127.0.0.1:4091
-  tls internal
 }
 
-prowlarr.fantom.home {
+http://prowlarr.fantom.home {
   import logging prowlarr
   
   @not_local_net not client_ip 172.16.0.0/12
   abort @not_local_net
 
   reverse_proxy 127.0.0.1:4092
-  tls internal
 }
 
-jackett.fantom.home {
+http://jackett.fantom.home {
   import logging jackett
   
   @not_local_net not client_ip 172.16.0.0/12
   abort @not_local_net
 
   reverse_proxy 127.0.0.1:4093
-  tls internal
 }
 
-sonarr.fantom.home {
+http://sonarr.fantom.home {
   import logging sonarr
   
   @not_local_net not client_ip 172.16.0.0/12
   abort @not_local_net
 
   reverse_proxy 127.0.0.1:4094
-  tls internal
 }
 
-radarr.fantom.home {
+http://radarr.fantom.home {
   import logging radarr
   
   @not_local_net not client_ip 172.16.0.0/12
   abort @not_local_net
 
   reverse_proxy 127.0.0.1:4095
-  tls internal
 }
 
-bazarr.fantom.home {
+http://bazarr.fantom.home {
   import logging bazarr
   
   @not_local_net not client_ip 172.16.0.0/12
   abort @not_local_net
 
   reverse_proxy 127.0.0.1:4096
-  tls internal
 }
 
 fantomitechno.dev {
