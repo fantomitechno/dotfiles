@@ -7,8 +7,8 @@
 {
   services.copyparty = {
     enable = true;
-    user = "copyparty";
-    group = "copyparty";
+    user = "fantomitechno";
+    group = "users";
 
     settings = {
       i = "127.0.0.1";

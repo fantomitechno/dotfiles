@@ -33,4 +33,17 @@
       4002
     ];
   };
+
+  users.users = {
+    "forgejo" = {
+      isSystemUser = true;
+      uid = 990;
+      group = "forgejo";
+    };
+  };
+  users.groups = {
+    forgejo = {
+      gid = 990;
+    };
+  };
 }

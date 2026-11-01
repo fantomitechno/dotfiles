@@ -27,10 +27,18 @@ in
     unitConfig.RequiresMountsFor = [ "/nas/forgejo/data" ];
   };
 
+  users.users.forgejo = {
+    isSystemUser = true;
+    uid = 990;
+    group = "forgejo";
+  };
+  users.groups.forgejo = {
+    gid = 990;
+  };
+
   services = {
     forgejo = {
       enable = true;
-      user = "fantomitechno";
       database.type = "sqlite3";
       lfs.enable = true;
 
