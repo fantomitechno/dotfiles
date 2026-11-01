@@ -13,8 +13,6 @@
   ++ builtins.map (i: ../../modules/${i}) ([
     "caddy"
     "forgejo"
-    "metrics/grafana.nix"
-    "metrics/prometheus.nix"
     # "tangled"
     "copyparty.nix"
     "docker.nix"

@@ -123,16 +123,6 @@ notes.fantomitechno.dev {
   reverse_proxy 127.0.0.1:4070
 }
 
-graph.fantom.home {
-  import logging grafana
-  
-  @not_local_net not client_ip 172.16.0.0/12
-  abort @not_local_net
-
-  reverse_proxy 127.0.0.1:3000
-  tls internal
-}
-
 fedi.fantomitechno.dev {
 	root * /var/mastodon/public
 

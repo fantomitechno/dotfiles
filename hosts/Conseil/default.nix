@@ -14,7 +14,6 @@
     "caddy"
     "nas"
     "docker.nix"
-    "metrics/prometheus.nix"
   ]);
 
   # Bootloader
