@@ -79,12 +79,8 @@ hold.fantomitechno.dev {
 drive.renoux.dev, drive.s.renoux.dev {
   import logging cryptpad
 
-  handle /cryptpad_websocket* {
-    reverse_proxy 127.0.0.1:4021
-  }
-
   handle {
-    reverse_proxy 127.0.0.1:44020
+    reverse_proxy 127.0.0.1:4020
   }
 }
 
