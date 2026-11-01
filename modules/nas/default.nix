@@ -40,10 +40,18 @@
       uid = 990;
       group = "forgejo";
     };
+    "cryptpad" = {
+      isSystemUser = true;
+      uid = 4001;
+      group = "cryptpad";
+    };
   };
   users.groups = {
-    forgejo = {
+    "forgejo" = {
       gid = 990;
+    };
+    "cryptpad" = {
+      gid = 4001;
     };
   };
 }
