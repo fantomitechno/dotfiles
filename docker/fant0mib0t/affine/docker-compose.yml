@@ -1,7 +1,7 @@
 name: affine
 services:
   affine:
-    image: ghcr.io/toeverything/affine:0.26.7
+    image: ghcr.io/toeverything/affine:0.27.4
     container_name: affine_server
     ports:
       - "127.0.0.1:4070:3010"
@@ -15,7 +15,7 @@ services:
     volumes:
       # custom configurations
       - /nas/affine/storage:/root/.affine/storage
-      - /nas/affine/config:/root/.affine/config
+      - /var/affine/config:/root/.affine/config
     env_file:
       - .env
     environment:
@@ -24,12 +24,12 @@ services:
     restart: unless-stopped
 
   affine_migration:
-    image: ghcr.io/toeverything/affine:0.26.7
+    image: ghcr.io/toeverything/affine:0.27.4
     container_name: affine_migration_job
     volumes:
       # custom configurations
       - /nas/affine/storage:/root/.affine/storage
-      - /nas/affine/config:/root/.affine/config
+      - /var/affine/config:/root/.affine/config
     command: ["sh", "-c", "node ./scripts/self-host-predeploy.js"]
     env_file:
       - .env
