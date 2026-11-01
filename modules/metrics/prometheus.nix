@@ -44,4 +44,14 @@
       }
     ];
   };
+
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [
+      3001
+    ];
+    allowedUDPPorts = [
+      3001
+    ];
+  };
 }
