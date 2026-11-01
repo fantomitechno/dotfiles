@@ -26,6 +26,10 @@ in
     # make sure the NAS is mounted before Forgejo starts
     unitConfig.RequiresMountsFor = [ "/nas/forgejo/data" ];
   };
+  systemd.services.gitea-runner-default.serviceConfig = {
+    LoadCredential = "runner-token:${dotfileFolder}/pswd/forgejo-runner";
+    ExecStartPre = lib.mkForce [ ];
+  };
 
   users.users.forgejo = {
     isSystemUser = true;
@@ -92,7 +96,7 @@ in
         enable = true;
         name = "monolith";
         url = "https://git.fantomitechno.dev";
-        tokenFile = "${dotfileFolder}/pswd/forgejo-runner";
+        tokenFile = "$CREDENTIALS_DIRECTORY/runner-token";
         labels = [
           "ubuntu-latest:docker://node:16-bullseye"
           "ubuntu-22.04:docker://node:16-bullseye"
@@ -104,6 +108,7 @@ in
             connections = {
               forgejo = {
                 url = "https://git.fantomitechno.dev/";
+                token_url = "file://$CREDENTIALS_DIRECTORY/runner-token";
                 uuid = "387b9b3a-81be-4a51-8f87-abe7381e71a7";
               };
             };
