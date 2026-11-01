@@ -86,28 +86,31 @@ in
       };
     };
 
-    # forgejo-runner = {
-    #   package = pkgs.forgejo-runner;
-    #   instances.default = {
-    #     enable = true;
-    #     runtimes.host = true;
-    #     settings.runner.labels = [
-    #       # Native Execution on the Host
-    #       "native:host"
-
-    #       # Assuming Docker has been setup on the host machine
-    #       "ubuntu-latest:docker://node:16-bullseye"
-    #       "ubuntu-22.04:docker://node:16-bullseye"
-    #       "ubuntu-20.04:docker://node:16-bullseye"
-    #       "ubuntu-18.04:docker://node:16-buster"
-    #     ];
-    #     secrets.server.connections."forgejo".token_url = "${dotfileFolder}/pswd/forgejo-runner"; # Path to forgejo runner key file provided by forgejo.
-    #     settings.server.connections.forgejo = {
-    #       url = "https://git.fantomitechno.dev"; # Forgejo Instance URL
-    #       uuid = "387b9b3a-81be-4a51-8f87-abe7381e71a7"; # UUID of forgejo runner instance
-    #     };
-    #   };
-    # };
+    gitea-actions-runner = {
+      package = pkgs.forgejo-runner;
+      instances.default = {
+        enable = true;
+        name = "monolith";
+        url = "https://git.fantomitechno.dev";
+        tokenFile = "${dotfileFolder}/pswd/forgejo-runner";
+        labels = [
+          "ubuntu-latest:docker://node:16-bullseye"
+          "ubuntu-22.04:docker://node:16-bullseye"
+          "ubuntu-20.04:docker://node:16-bullseye"
+          "ubuntu-18.04:docker://node:16-buster"
+        ];
+        settings = {
+          server = {
+            connections = {
+              forgejo = {
+                url = "https://git.fantomitechno.dev/";
+                uuid = "387b9b3a-81be-4a51-8f87-abe7381e71a7";
+              };
+            };
+          };
+        };
+      };
+    };
 
     openssh = {
       settings.AllowUsers = [ config.services.forgejo.user ];
