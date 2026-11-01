@@ -95,7 +95,7 @@ kiwix.fantomitechno.dev, kiwix.renoux.dev {
 }
 
 wikipedia.renoux.dev {
-  redir https://kiwix.renoux.dev/viewer#wikipedia_en_all_maxi_2026-02{uri}
+  redir https://kiwix.renoux.dev/viewer#wikipedia_en_all_maxi_2026-08{uri}
 }
 
 photo.renoux.dev {
