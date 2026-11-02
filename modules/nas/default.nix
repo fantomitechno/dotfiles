@@ -1,6 +1,6 @@
 { ... }: {
   imports = [
-    # ./s3.nix
+    ./s3.nix
   ];
 
   services = {
