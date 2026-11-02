@@ -1,7 +1,7 @@
 name: atcr
 services:
   atcr:
-    image: atcr.io/seamark.cr/appview:v0.1.2-arm64
+    image: atcr.io/seamark.cr/hold:2a58cce
     container_name: atcr
     restart: unless-stopped
     command: ["serve", "--config", "/config.yaml"]
