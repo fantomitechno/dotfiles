@@ -63,7 +63,7 @@ module.exports = {
   disableIntegratedEviction: undefined, // default: false
 
   /* Max upload size in bytes */
-  maxUploadSize: undefined, // default: 20 * 1024 * 1024
+  maxUploadSize: 1000 * 1024 * 1024,
 
   /* Max upload size for premium accounts (requires accounts plugin) */
   premiumUploadSize: undefined, // default: same as maxUploadSize, in Bytes
