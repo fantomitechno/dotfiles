@@ -2,13 +2,13 @@ name: tranquil-pds
 services:
   tranquil-pds:
     container_name: tranquil-pds
-    image: atcr.io/tranquil.farm/tranquil-pds:91999819c616afbb26586dce4e1ab70f767684de
+    image: atcr.io/tranquil.farm/tranquil-pds:v0.7.1
     # tag: 0.6.5
     restart: unless-stopped
     environment:
       SERVER_HOST: "[::]"
     ports:
-      - "127.0.0.1:6166:3000"
+      - "127.0.0.1:2010:3000"
     volumes:
       - ./config.toml:/etc/tranquil-pds/config.toml:ro
       # In memory of @olaren.dev's blobs when lewis forgot to update /tranquil to /tranquil-pds :(

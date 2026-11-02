@@ -39,7 +39,7 @@ age_assurance_override = true
 # Can also be specified via environment variable `INVITE_CODE_REQUIRED`.
 #
 # Default value: true
-invite_code_required = true
+# invite_code_required = true
 
 # Allow HTTP (non-TLS) proxy requests. Only useful during development.
 #
@@ -96,7 +96,7 @@ contact_email = "me@fantomitechno.dev"
 # - 1, if the TLS termination *isn't* happening here.
 #
 # Can also be specified via environment variable `TRUSTED_PROXY_COUNT`.
-#trusted_proxy_count =
+trusted_proxy_count = 1
 
 [server.tls]
 # The path to the TLS cert chain.
@@ -179,7 +179,7 @@ from_address = "me@no-reply.fantomitechno.dev"
 # Can also be specified via environment variable `MAIL_SMARTHOST_TLS`.
 #
 # Default value: "starttls"
-#tls = "starttls"
+tls = "implicit"
 
 # Max size of the connection pool.
 #

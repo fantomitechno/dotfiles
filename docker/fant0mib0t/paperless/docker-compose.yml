@@ -4,6 +4,8 @@ services:
     image: docker.io/library/redis:8
     container_name: paperless_redis
     restart: unless-stopped
+    volumes:
+      - redisdata:/data
 
   db:
     image: docker.io/library/postgres:18
@@ -26,8 +28,8 @@ services:
     ports:
       - "127.0.0.1:4060:8000"
     volumes:
-      - /nas/paperless/data:/usr/src/paperless/data
-      - /nas/paperless/media:/usr/src/paperless/media
+      - data:/usr/src/paperless/data
+      - media:/usr/src/paperless/media
       - /var/paperless/export:/usr/src/paperless/export
       - /nas/paperless/import:/usr/src/paperless/consume
     env_file: .env
@@ -37,3 +39,6 @@ services:
 
 volumes:
   pg_data:
+  data:
+  media:
+  redisdata:
