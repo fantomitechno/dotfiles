@@ -49,17 +49,10 @@
     };
 
     tangled = {
-      url = "git+https://tangled.org/tangled.org/core?ref=refs/tags/v1.15.0-alpha";
+      url = "git+https://tangled.org/tangled.org/core";
       inputs.nixpkgs.follows = "nixpkgs";
       # Disable useless monorepo inputs
-      inputs.actor-typeahead-src.follows = "";
-      inputs.fenix.follows = "";
-      inputs.htmx-src.follows = "";
-      inputs.htmx-ws-src.follows = "";
       inputs.ibm-plex-mono-src.follows = "";
-      inputs.inter-fonts-src.follows = "";
-      inputs.lucide-src.follows = "";
-      inputs.mermaid-src.follows = "";
     };
 
     disko = {

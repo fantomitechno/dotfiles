@@ -10,6 +10,13 @@
       hostname = "spindle.fantomitechno.dev";
       owner = "did:plc:q2leouakch2kg4ruldreunip";
     };
+    keyPath = "/var/lib/secrets/spindle-key.pem";
+    contact.email = "spindle@fantomitechno.dev";
+    artifactStores.s3.bucket = "";
     pipelines.workflowTimeout = "10m";
   };
+
+  systemd.tmpfiles.rules = [
+    "L+ /var/lib/spindle/images/nixos - - - - ${flakes.inputs.tangled.packages.x86_64-linux.spindle-nixos-image}"
+  ];
 }
