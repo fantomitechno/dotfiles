@@ -11,9 +11,8 @@
     ../server.nix
   ]
   ++ builtins.map (i: ../../modules/${i}) ([
-    "caddy"
-    "nas"
     "docker.nix"
+    "nas.nix"
   ]);
 
   # Bootloader

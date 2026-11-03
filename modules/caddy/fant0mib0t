@@ -45,22 +45,7 @@ livekit.fantomitechno.dev {
   reverse_proxy 127.0.0.1:2002
 }
 
-pds.fantomitechno.dev {
-  import logging pds
-  reverse_proxy 127.0.0.1:2010
-}
-
 # Storage
-knot.fantomitechno.dev {
-  import logging knot
-  reverse_proxy 127.0.0.1:4000
-}
-
-spindle.fantomitechno.dev {
-  import logging spindle
-  reverse_proxy 127.0.0.1:4001
-}
-
 git.fantomitechno.dev {
   import logging gitea
 
@@ -69,11 +54,6 @@ git.fantomitechno.dev {
   
   reverse_proxy @not_local_net 127.0.0.1:4006
   reverse_proxy @local_net 127.0.0.1:4005
-}
-
-hold.fantomitechno.dev {
-  import logging hold
-  reverse_proxy 127.0.0.1:4010
 }
 
 drive.renoux.dev, drive.s.renoux.dev {
