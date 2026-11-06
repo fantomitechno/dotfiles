@@ -18,7 +18,7 @@ rack.renoux.dev {
   respond "yup, this is a rack!"
 }
 
-celestenet.fantomitechno.dev {
+cnet.renoux.dev {
   import logging cnet
 
   @not_local_net not client_ip 172.16.0.0/12
