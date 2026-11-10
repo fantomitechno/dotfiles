@@ -39,6 +39,7 @@ in
   users.groups.forgejo = {
     gid = 990;
   };
+  networking.firewall.allowedTCPPorts = [ 2222 ];
 
   services = {
     forgejo = {
@@ -59,7 +60,10 @@ in
           ROOT_URL = "https://git.fantomitechno.dev";
           HTTP_ADDR = "127.0.0.1";
           HTTP_PORT = 4005;
-          SSH_PORT = lib.head config.services.openssh.ports;
+          START_SSH_SERVER = true;
+          BUILTIN_SSH_SERVER_USER = "forgejo"; # user in clone URLs: git@host
+          SSH_LISTEN_PORT = 2222;
+          SSH_PORT = 22;
         };
         service.DISABLE_REGISTRATION = true;
         actions = {
@@ -115,11 +119,6 @@ in
           };
         };
       };
-    };
-
-    openssh = {
-      settings.AllowUsers = [ config.services.forgejo.user ];
-      settings.AllowGroups = [ config.services.forgejo.group ];
     };
 
     anubis.instances."forgejo" = {
