@@ -1,15 +1,15 @@
 name: vaultwarden
 services:
   vaultwarden:
-    image: vaultwarden/server:alpine
+    image: vaultwarden/server:latest
     container_name: vaultwarden
     restart: unless-stopped
-    user: "1000:1000"
+    # user: "1000:1000"
     environment:
       DOMAIN: "https://vault.renoux.dev"
-      SIGNUPS_ALLOWED: false
+      SIGNUPS_ALLOWED: true
       ADMIN_TOKEN: $ADMIN_TOKEN
     volumes:
-      - /nas/vaultwarden/vw-data/:/data/
+      - /var/vaultwarden/vw-data/:/data/
     ports:
       - 127.0.0.1:4050:80
