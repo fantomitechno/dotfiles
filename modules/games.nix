@@ -33,6 +33,8 @@
     # stream
     sunshine
     moonlight-qt
+    #3ds stream
+    cutentr
   ];
 
   networking.firewall = {
