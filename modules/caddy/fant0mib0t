@@ -242,6 +242,14 @@ simon.renoux.dev {
   import logging site
   root /var/www/simon.renoux.dev
   encode gzip
+
+  @cachedFiles {
+      path *.ico *.css *.js *.gif *.webp *.avif *.jpg *.jpeg *.png *.svg *.woff *.woff2 *.ttf
+  }
+  header @cachedFiles {
+      Cache-Control "public, max-age=31536000, immutable"
+  }
+
   handle_errors {
     rewrite /404.html
     file_server
@@ -255,4 +263,28 @@ simon.renoux.dev {
 english-blog.renoux.dev {
   import logging blog
   reverse_proxy 127.0.0.1:1098
+}
+
+2ds.fantomitechno.dev {
+  import logging 2ds
+
+  @cachedFiles {
+      path *.ico *.css *.js *.gif *.webp *.avif *.jpg *.jpeg *.png *.svg *.woff *.woff2 *.ttf
+  }
+  header @cachedFiles {
+      Cache-Control "public, max-age=31536000, immutable"
+  }
+
+  @not_local_net {
+    not client_ip 172.16.0.0/12
+    path /system/reboot /system/exit
+  }
+	respond @not_local_net 403 {
+    close
+  }
+  reverse_proxy 172.16.100.15:8081
+
+  handle_errors 502 {
+    respond "my new2dsxl is not able to answer sorry"
+  }
 }
