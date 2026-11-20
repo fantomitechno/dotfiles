@@ -11,10 +11,12 @@
   ]
   ++ builtins.map (i: ../../modules/${i}) ([
     "cli-apps"
+    "desktop-apps"
     "fastfetch"
-    "kde-bigscreen"
+    "niri"
     "git"
     "wallpapers"
+    "games.nix"
     "network.nix"
     "terminal.nix"
     "ssh.nix"
