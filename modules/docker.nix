@@ -13,6 +13,13 @@
     dockerCompat = true; # Create a `docker` alias for podman
     dockerSocket.enable = true;
   };
+  # Keep your user manager running after logout and start it at boot
+  users.users.fantomitechno.linger = true;
+
+  # Restart containers that have a restart policy after boot
+  systemd.user.services.podman-restart = {
+    wantedBy = [ "default.target" ];
+  };
 
   virtualisation.containers.containersConf.settings.engine.compose_warning_logs = false;
 

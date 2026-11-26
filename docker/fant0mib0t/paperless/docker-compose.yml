@@ -19,6 +19,10 @@ services:
       POSTGRES_PASSWORD: paperless
 
   webserver:
+    userns_mode: "keep-id:uid=1000,gid=100"
+    environment:
+      USERMAP_UID: 1000
+      USERMAP_GID: 100
     image: ghcr.io/paperless-ngx/paperless-ngx:3.4.1
     container_name: paperless
     restart: unless-stopped
@@ -30,8 +34,8 @@ services:
     volumes:
       - data:/usr/src/paperless/data
       - media:/usr/src/paperless/media
-      - /var/paperless/export:/usr/src/paperless/export
-      - /nas/paperless/import:/usr/src/paperless/consume
+      - /var/paperless/export:/usr/src/paperless/export:U
+      - /nas/paperless/import:/usr/src/paperless/consume:U
     env_file: .env
     environment:
       PAPERLESS_REDIS: redis://broker:6379
