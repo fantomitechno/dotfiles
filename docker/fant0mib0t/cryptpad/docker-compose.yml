@@ -30,5 +30,5 @@ services:
 
     ulimits:
       nofile:
-        soft: 1000000
-        hard: 1000000
+        soft: 524288
+        hard: 524288
