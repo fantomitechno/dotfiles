@@ -3,7 +3,8 @@
 {
   networking = {
     nameservers = [
-      "9.9.9.9"
+      "80.67.169.12" # FDN
+      "86.54.11.100" # Unfiltred DNS4EU
     ];
   };
 
@@ -15,7 +16,7 @@
     description = "Simon Renoux";
     extraGroups = [
       "wheel"
-      "docker"
+      "podman"
       "dialout"
     ];
     shell = pkgs.zsh;

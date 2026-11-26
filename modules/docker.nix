@@ -1,14 +1,20 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    docker
-    docker-compose
-    lazydocker
+    podman-tui # status of containers in the terminal
+    podman-compose
   ];
 
-  virtualisation.docker = {
+  # Enable Podman in configuration.nix
+  virtualisation.podman = {
     enable = true;
+    # Create the default bridge network for podman
+    defaultNetwork.settings.dns_enabled = true;
+    dockerCompat = true; # Create a `docker` alias for podman
+    dockerSocket.enable = true;
   };
+
+  virtualisation.containers.containersConf.settings.engine.compose_warning_logs = false;
 
   home-manager.users."fantomitechno" =
     {
@@ -19,6 +25,7 @@
         zsh = {
           oh-my-zsh = {
             plugins = [
+              "podman"
               "docker"
               "docker-compose"
             ];
