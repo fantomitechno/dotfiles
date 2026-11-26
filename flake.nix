@@ -48,13 +48,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    tangled = {
-      url = "git+https://tangled.org/tangled.org/core";
-      inputs.nixpkgs.follows = "nixpkgs";
-      # Disable useless monorepo inputs
-      inputs.ibm-plex-mono-src.follows = "";
-    };
-
     disko = {
       url = "github:nix-community/disko?tag=v1.20.16";
       inputs.nixpkgs.follows = "nixpkgs";

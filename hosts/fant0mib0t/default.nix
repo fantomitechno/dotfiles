@@ -13,7 +13,6 @@
   ++ builtins.map (i: ../../modules/${i}) ([
     "caddy"
     "forgejo"
-    # "tangled"
     "copyparty.nix"
     "docker.nix"
     "ipmi-fan-control.nix"
