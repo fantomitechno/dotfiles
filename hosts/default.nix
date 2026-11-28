@@ -18,6 +18,7 @@
       "wheel"
       "podman"
       "dialout"
+      "cdrom"
     ];
     shell = pkgs.zsh;
   };

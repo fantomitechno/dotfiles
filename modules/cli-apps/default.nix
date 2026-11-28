@@ -16,6 +16,7 @@
     # terminal stuff
     bat
     btop
+    cdparanoia
     curl
     dig
     duf
